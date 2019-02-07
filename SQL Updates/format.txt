@@ -1,0 +1,12 @@
+Fecha - hora - lo que se añadió/modificó.sql
+
+Prefijos:
+	n = new
+	u = update
+	d = delete
+
+Ejemplo:
+
+06022019 - nSP uTable
+
+Además dentro del archivo .sql tiene que haber una descripción de lo que se modificó/añadió (a que tabla afectan, por ejemplo)
