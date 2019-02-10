@@ -2,3 +2,4 @@
 .vs/Genesis/v15/.suo
 .vs
 Genesis/obj
+*.cache
