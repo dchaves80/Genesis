@@ -26,9 +26,10 @@ IF @Password IS NOT NULL
 SET @sql = SUBSTRING(@sql, 1, (LEN(@sql) - 1))
 SET @sql = @sql + ' WHERE Id = @Id';
 
-EXEC sp_executesql @sql, N'
-		@Id bigint, 
-		@UserName varchar(50), 
-		@Email varchar(50), 
-		@Password varchar(40)',
-		@Id, @UserName, @Email, @Password;
+IF NOT(@UserName IS NULL AND @Email IS NULL AND @Password IS NULL)
+	EXEC sp_executesql @sql, N'
+			@Id bigint, 
+			@UserName varchar(50), 
+			@Email varchar(50), 
+			@Password varchar(40)',
+			@Id, @UserName, @Email, @Password;
