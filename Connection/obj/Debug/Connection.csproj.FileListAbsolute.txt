@@ -1,0 +1,7 @@
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\bin\Debug\Connection.dll.config
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\bin\Debug\Connection.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\bin\Debug\Connection.pdb
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\obj\Debug\Connection.csprojAssemblyReference.cache
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\obj\Debug\Connection.csproj.CoreCompileInputs.cache
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\obj\Debug\Connection.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\obj\Debug\Connection.pdb
