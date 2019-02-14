@@ -30,7 +30,7 @@ namespace Connection
 
     public static class TableAdapterManager
     {
-       public static void ChangeConnection (ref System.Data.SqlClient.SqlConnection MyConnection, string MyClass)
+       public static void ChangeConnection (ref System.Data.SqlClient.SqlConnection MyConnection)
        {
 
 
