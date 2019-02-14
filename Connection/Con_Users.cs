@@ -28,7 +28,7 @@ namespace Connection
             }
         }
 
-        public static DataTable Get_User(int Id, string UserName, string Email, string Password)
+        public static DataTable Get_User(int? Id, string UserName, string Email, string Password)
         {
             GenesisDataSetTableAdapters.Get_UserTableAdapter TA = new GenesisDataSetTableAdapters.Get_UserTableAdapter();
             GenesisDataSet.Get_UserDataTable DT = new GenesisDataSet.Get_UserDataTable();

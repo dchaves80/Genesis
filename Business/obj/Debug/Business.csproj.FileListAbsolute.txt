@@ -1,0 +1,6 @@
+C:\Proyecto Genesis\Genesis\Business\bin\Debug\Business.dll
+C:\Proyecto Genesis\Genesis\Business\bin\Debug\Business.pdb
+C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.csprojAssemblyReference.cache
+C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.dll
+C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.pdb
