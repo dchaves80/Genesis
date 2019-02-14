@@ -9,7 +9,6 @@ namespace Connection
 {
     public class Con_Users
     {
-        QTACustomized QTA = new QTACustomized();
 
         public static DataTable Insert_User(string UserName, string Email, string Password)
         {
@@ -45,6 +44,32 @@ namespace Connection
             }
         }
 
-        public static 
+        public static bool Update_User(int Id, string UserName, string Email, string Password)
+        {
+            QTACustomized QTA = new QTACustomized();
+            int response = QTA.Update_User(Id, UserName, Email, Password);
+            if (response > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool Delete_User(int Id, string UserName, string Email)
+        {
+            QTACustomized QTA = new QTACustomized();
+            int response = QTA.Delete_User(Id, UserName, Email);
+            if (response > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
