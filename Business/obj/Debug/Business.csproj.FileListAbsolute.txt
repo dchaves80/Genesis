@@ -4,3 +4,7 @@ C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.csprojAssemblyReference.
 C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
 C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.dll
 C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.pdb
+C:\Proyecto Genesis\Genesis\Business\bin\Debug\Connection.dll
+C:\Proyecto Genesis\Genesis\Business\bin\Debug\Connection.pdb
+C:\Proyecto Genesis\Genesis\Business\bin\Debug\Connection.dll.config
+C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.csproj.CopyComplete

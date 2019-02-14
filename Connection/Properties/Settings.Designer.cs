@@ -26,8 +26,8 @@ namespace Connection.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=RAMIRO-HP\\SQLEXPRESS;Initial Catalog=Genesis;User ID=sa;Password=olym" +
-            "pussoftware")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LOSHA-PC\\SQLEXPRESS;Initial Catalog=Genesis;User ID=sa;Password=olymp" +
+            "ussoftware")]
         public string GenesisConnectionString {
             get {
                 return ((string)(this["GenesisConnectionString"]));

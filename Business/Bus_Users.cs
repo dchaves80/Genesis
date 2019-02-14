@@ -10,12 +10,18 @@ namespace Business
 {
     public class Bus_Users
     {
-
+        /// <summary>
+        /// Se fija si las credenciales son correctas o no al loguear.
+        /// </summary>
+        /// <param name="user">User del usuario</param>
+        /// <param name="password">Password del usuario</param>
+        /// <returns>Devuelve true si son correctas, false si no</returns>
         public static bool Get_UserByUserAndPassword (
             string user,
             string password)
         {
             DataTable DT = Con_Users.Get_User(null, user, null, password);
+            
 
             if (DT != null && DT.Rows.Count > 0) return true;
             else return false;
