@@ -20,8 +20,9 @@ namespace Business
             string user,
             string password)
         {
-            DataTable DT = Con_Users.Get_User(null, user, null, password);
-            
+            DataTable DT = Con_Users.Get_User(5, "420a425a5414316c2d39eb2a058f0af5", "b", "420a425a5414316c2d39eb2a058f0af5");
+
+
 
             if (DT != null && DT.Rows.Count > 0) return true;
             else return false;

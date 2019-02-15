@@ -34,6 +34,8 @@ namespace Connection
             System.Data.SqlClient.SqlConnection SQLCONN = TA.Connection;
             Connection.TableAdapterManager.ChangeConnection(ref SQLCONN);
 
+            TA.Fill(DT, Id, UserName, Email, Password);
+
             if (DT != null && DT.Rows.Count > 0)
             {
                 return DT;
