@@ -28,13 +28,13 @@ namespace Connection
             }
         }
 
-        public static DataTable Get_User(int? Id, string UserName, string Email, string Password)
+        public static DataTable Get_User(int? Id, string UserName, string Email, string Password, int Response)
         {
             GenesisDataSetTableAdapters.Get_UserTableAdapter TA = new GenesisDataSetTableAdapters.Get_UserTableAdapter();
             GenesisDataSet.Get_UserDataTable DT = new GenesisDataSet.Get_UserDataTable();
             System.Data.SqlClient.SqlConnection SQLCONN = TA.Connection;
             TableAdapterManager.ChangeConnection(ref SQLCONN);
-            TA.Fill(DT, Id, UserName, Email, Password);
+            TA.Fill(DT, Id, UserName, Email, Password, Response);
 
             if (DT != null && DT.Rows.Count > 0)
             {

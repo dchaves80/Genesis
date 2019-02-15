@@ -8,3 +8,13 @@ C:\Proyecto Genesis\Genesis\Business\bin\Debug\Connection.dll
 C:\Proyecto Genesis\Genesis\Business\bin\Debug\Connection.pdb
 C:\Proyecto Genesis\Genesis\Business\bin\Debug\Connection.dll.config
 C:\Proyecto Genesis\Genesis\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\bin\Debug\Business.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\bin\Debug\Business.pdb
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\bin\Debug\Connection.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\bin\Debug\Connection.pdb
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\bin\Debug\Connection.dll.config
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\obj\Debug\Business.csprojAssemblyReference.cache
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\obj\Debug\Business.csproj.CopyComplete
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\obj\Debug\Business.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Business\obj\Debug\Business.pdb
