@@ -1,0 +1,2 @@
+C:\Proyecto Genesis\Genesis\Models\obj\Debug\Models.csprojAssemblyReference.cache
+C:\Proyecto Genesis\Genesis\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
