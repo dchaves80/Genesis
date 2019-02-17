@@ -1,0 +1,140 @@
+﻿/* PALETA TELEGRAM DARK:
+
+    ~NEGRO:         #111717
+    ~CELESTE:       #3571A7
+    ~CELESTE:       #3C7DB5
+    ~CELESTE DARK:  #233444
+    ~GRIS:          #1F1F1F
+    ~CELESTE LIGHT: #8CBFEA
+    ~AZUL:          #00367E
+    ~GRIS LIGHT:    #4D4D4D
+    ~GRIS DARK:     #18191A
+    ~GRIS TR:       #9CAAC1
+*/
+
+
+body.BackgroundDark {
+    /*background: #233444;*/
+    /*background: #2B3441;*/
+    background: linear-gradient(#131517, #1b2835);
+    margin: 0;
+    overflow: hidden;
+}
+
+
+/* Top bar */
+div.TopBarDark {
+    /*background: #131517;*/
+    background: black;
+    height: 75px;
+}
+
+i.OpenSideBar {
+    font-size: 30px;
+    margin-top: 22px;
+    margin-left: 22px;
+}
+
+img.ProfilePic {
+    height: 70%;
+    float: right;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-top: 6px;
+    margin-right: 15px;
+}
+
+/* DropDown */
+.DropDown {
+    height: 100px;
+    float: right;
+    margin-top: 25px;
+    margin-right: 65px;
+    font-family: 'Roboto';
+}
+
+    .DropDown:hover .DropDownContent {
+        height: 190px;
+    }
+
+        .DropDown:hover .DropDownContent a {
+            color: white;
+        }
+
+i.DropDownMark {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.DropDownContent {
+    /*position: absolute;*/
+    background: #3c5166;
+    margin-top: 30px;
+    margin-right: -37px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,2);
+    border-radius: 3px;
+    height: 0px;
+    transition: 0.3s;
+    display: block;
+}
+
+.DropDownOption {
+    cursor: pointer;
+    display: block;
+    padding: 16px 12px;
+    color: rgba(0,0,0,0);
+    transition: 0.3s;
+}
+
+    .DropDownOption:hover {
+        background: #3571A7;
+    }
+
+.DropDownSeparator {
+    cursor: default;
+    display: block;
+    padding: 16px 12px;
+    color: rgba(0,0,0,0);
+}
+
+
+/* Side Bar */
+div.SideBarDark {
+    /*background: #3C7DB5;*/
+    background: #3c5166;
+    height: 100vh;
+    margin-top: -75px;
+    transition: 0.5s;
+    z-index: 1;
+    position: fixed;
+    overflow-x: hidden;
+    width: 0px;
+}
+
+a.SideBarDarkOption {
+    display: block;
+    font-family: 'Roboto';
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+a.SideBarOptionSeparator {
+    display: block;
+    padding: 20px;
+    cursor: pointer;
+}
+
+a.SideBarDarkOption:hover {
+    background: #3571A7;
+    transform: translateX(15px);
+}
+
+/* MODULE CONTAINER */
+div.ModuleContainer {
+    padding-top: 30px;
+    padding-left: 30px;
+    transition: 0.3s;
+}

@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Genesis {
+namespace Genesis.Pages.Main {
     
     
-    public partial class _default {
+    public partial class Main {
         
         /// <summary>
         /// Control form1.
@@ -22,12 +22,12 @@ namespace Genesis {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control inputPass.
+        /// Control ModuleContainer.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inputPass;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ModuleContainer;
     }
 }

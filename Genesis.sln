@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genesis", "Genesis\Genesis.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connection", "Connection\Connection.csproj", "{8C1C2D38-628A-47E4-BAF0-5B499ACB1FE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{1F3A9371-DAEE-4433-8087-1179899E2317}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{8C1C2D38-628A-47E4-BAF0-5B499ACB1FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C1C2D38-628A-47E4-BAF0-5B499ACB1FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C1C2D38-628A-47E4-BAF0-5B499ACB1FE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F3A9371-DAEE-4433-8087-1179899E2317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F3A9371-DAEE-4433-8087-1179899E2317}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F3A9371-DAEE-4433-8087-1179899E2317}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F3A9371-DAEE-4433-8087-1179899E2317}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
