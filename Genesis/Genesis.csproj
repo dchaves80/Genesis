@@ -78,6 +78,8 @@
     <Content Include="Assets\Js\Main.js" />
     <Content Include="default.aspx" />
     <Content Include="Pages\Login\LoginWS.aspx" />
+    <Content Include="Pages\Main\Controls\SideBar.ascx" />
+    <Content Include="Pages\Main\Controls\TopBar.ascx" />
     <Content Include="Pages\Main\Main.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -95,6 +97,20 @@
     </Compile>
     <Compile Include="Pages\Login\LoginWS.aspx.designer.cs">
       <DependentUpon>LoginWS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\Controls\SideBar.ascx.cs">
+      <DependentUpon>SideBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Main\Controls\SideBar.ascx.designer.cs">
+      <DependentUpon>SideBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main\Controls\TopBar.ascx.cs">
+      <DependentUpon>TopBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Main\Controls\TopBar.ascx.designer.cs">
+      <DependentUpon>TopBar.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Main\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
@@ -122,6 +138,7 @@
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

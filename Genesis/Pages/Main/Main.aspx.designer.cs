@@ -22,6 +22,24 @@ namespace Genesis.Pages.Main {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Control TopBar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Genesis.Pages.Main.Controls.TopBar TopBar;
+        
+        /// <summary>
+        /// Control SideBar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Genesis.Pages.Main.Controls.SideBar SideBar;
+        
+        /// <summary>
         /// Control ModuleContainer.
         /// </summary>
         /// <remarks>

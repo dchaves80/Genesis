@@ -1,5 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="Genesis.Pages.Main.Main" %>
 
+<%@ Register Src="~/Pages/Main/Controls/TopBar.ascx" TagPrefix="uc1" TagName="TopBar" %>
+<%@ Register Src="~/Pages/Main/Controls/SideBar.ascx" TagPrefix="uc1" TagName="SideBar" %>
+
+
+
 <!DOCTYPE html>
 
 <html style="height: 100%;" xmlns="http://www.w3.org/1999/xhtml">
@@ -22,44 +27,15 @@
     <form id="form1" runat="server">
 
         <!-- USER CONTROL -->
-        <div id="UserControl">
+        <div id="UserControl">            
 
-            <!-- TopBar -->
-            <div class="TopBarDark">
-
-                <img class="ProfilePic" src="../../Assets/Images/Images/photo_2018-09-28_20-11-18.jpg" />
-
-                <!-- Dropdown de opciones -->
-                <div class="DropDown">
-
-                    <i class="DropDownMark fas fa-chevron-down"></i>
-
-                    <!-- Opciones -->
-                    <div class="DropDownContent">
-                        <a class="DropDownOption">Perfil</a>
-                        <a class="DropDownOption">Opciones</a>
-                        <a class="DropDownSeparator"></a>
-                        <a class="DropDownOption">Salir</a>
-                    </div>
-                </div>
-
-                <i onclick="OpenSideBar()" style="cursor: pointer;" class="OpenSideBar fas fa-bars"></i>
-            </div>
-
-            <!-- SideBar -->
-            <div id="MenuSideBar" class="SideBarDark">
-
-                <!-- Options -->
-                <a class="SideBarDarkOption" onclick="CloseSideBar()" style="background: #233444; height: 35px; cursor: pointer;">CERRAR</a>                                        
-                <a class="SideBarDarkOption"><i class="fas fa-address-card"></i> PACIENTES</a>                    
-                <a class="SideBarDarkOption"><i class="fas fa-book"></i> HISTORIA CLÍNICA</a>
-                <a class="SideBarOptionSeparator" style="cursor: default;"></a>
-                <a class="SideBarDarkOption">OPCION 3</a>
-            </div>
+            <uc1:TopBar runat="server" id="TopBar" />
+            <uc1:SideBar runat="server" ID="SideBar" />
+            
         </div>
 
         <!-- MODULE CONTAINER -->
-        <div runat="server" id="ModuleContainer">
+        <div style="padding: 50px;" runat="server" id="ModuleContainer">
 
         </div>
 
