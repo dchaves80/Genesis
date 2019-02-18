@@ -12,11 +12,11 @@ namespace Models
     {
 
         /// <summary>
-        /// Se fija si las credenciales son correctas o no al loguear
+        /// Checks if the credentials are correct when logging in
         /// </summary>
-        /// <param name="user">Username del usuario</param>
-        /// <param name="password">Password del usuario</param>
-        /// <returns>Devuelve true si son correctas, false si no</returns>
+        /// <param name="user">Username</param>
+        /// <param name="password">Password</param>
+        /// <returns>Returns true if the credentials are correct, false otherwise</returns>
         public static bool Get_UserByUserAndPassword (
             string user,
             string password)
