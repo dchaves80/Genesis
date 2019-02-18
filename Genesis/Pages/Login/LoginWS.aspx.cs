@@ -28,11 +28,10 @@ namespace Genesis.Pages.Login
         private void CheckUserPass (
             string user,
             string pass)
-        {
-            string userCrypted = Crypt.StringByMD5(user);
+        {            
             string passCrypted = Crypt.StringByMD5(pass);
 
-            bool isCorrect = Mod_Users.Get_UserByUserAndPassword(userCrypted, passCrypted);
+            bool isCorrect = Mod_Users.Get_UserByUserAndPassword(user, passCrypted);
             content = isCorrect.ToString();
         }
     }
