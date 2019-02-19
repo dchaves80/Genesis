@@ -14,6 +14,7 @@
         </label>
 
         <input type="button" class="ButtonDark" value="BUSCAR" />
+        <input type="button" value="AGREGAR" class="ButtonDark"/>
     </div>
 
     <!-- Tabla de resultados -->
@@ -31,18 +32,21 @@
                 <td>Luciano</td>
                 <td>52912920</td>
                 <td>42673345</td>
+                <td><input type="button" value="EDITAR" class="ButtonDark"/></td>
             </tr>
             <tr class="TableRows">
                 <td>Suriano</td>
                 <td>Ramiro</td>
                 <td>14408732</td>
                 <td>32874014</td>
+                <td><input type="button" value="EDITAR" class="ButtonDark"/></td>
             </tr>
             <tr class="TableRows">
                 <td>Chaves</td>
                 <td>David</td>
                 <td>34084119</td>
                 <td>19410834</td>
+                <td><input type="button" value="EDITAR" class="ButtonDark"/></td>
             </tr>
 
         </table>

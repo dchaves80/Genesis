@@ -34,3 +34,39 @@ C:\Proyecto Genesis\Genesis\Modules\Pacientes\Pacientes\obj\Debug\Pacientes.cspr
 C:\Proyecto Genesis\Genesis\Modules\Pacientes\Pacientes\obj\Debug\Pacientes.csproj.CopyComplete
 C:\Proyecto Genesis\Genesis\Modules\Pacientes\Pacientes\obj\Debug\Pacientes.dll
 C:\Proyecto Genesis\Genesis\Modules\Pacientes\Pacientes\obj\Debug\Pacientes.pdb
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\Pacientes.dll.config
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\Pacientes.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\Pacientes.pdb
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\csc.exe
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\csc.exe.config
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\csc.rsp
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\csi.exe
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\csi.rsp
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\System.AppContext.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\System.Collections.Immutable.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\System.IO.FileSystem.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\System.Reflection.Metadata.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\vbc.exe
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\vbc.exe.config
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\vbc.rsp
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\VBCSCompiler.exe
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\roslyn\VBCSCompiler.exe.config
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\obj\Debug\Pacientes.csprojAssemblyReference.cache
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\obj\Debug\Pacientes.csproj.CoreCompileInputs.cache
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\obj\Debug\Pacientes.csproj.CopyComplete
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\obj\Debug\Pacientes.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Pacientes\Pacientes\obj\Debug\Pacientes.pdb
