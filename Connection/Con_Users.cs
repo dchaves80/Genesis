@@ -9,6 +9,9 @@ namespace Connection
 {
     public class Con_Users
     {
+
+
+        //  En vez de devolver un DataRow debe devolver un DataRow  -   19/02/2019 - 20.11
         /// <summary>
         /// Inserts a new user to the database.
         /// </summary>
