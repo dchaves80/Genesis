@@ -9,7 +9,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 create procedure [dbo].[Get_Module] (	@Id bigint = NULL,
-								@NombreModulo varchar(50) = NULL,
+								@ModuleName varchar(50) = NULL,
 								@Ascx varchar(50) = NULL,
 								@Dll varchar(50) = NULL)
 AS
@@ -22,8 +22,8 @@ SET @Sql = 'SELECT * from [Modules] where 1=1';
 IF @Id IS NOT NULL
 	SET @Sql = @Sql + 'AND Id = @Id';
 
-IF @NombreModulo IS NOT NULL
-	SET @Sql = @Sql + 'AND NombreModulo = @NombreModulo';
+IF @ModuleName IS NOT NULL
+	SET @Sql = @Sql + 'AND ModuleName = @ModuleName';
 
 IF @Ascx IS NOT NULL
 	SET @Sql = @Sql + 'AND Ascx = @Ascx';
@@ -34,10 +34,10 @@ IF @Dll IS NOT NULL
 
 EXEC sp_executesql @sql, N'
 		@Id bigint,
-		@NombreModulo varchar(50),
+		@@ModuleName varchar(50),
 		@Ascx varchar(50),
 		@Dll varchar(50)',
-		@Id, @NombreModulo, @Ascx, @Dll;		
+		@Id, @ModuleName, @Ascx, @Dll;		
 
 END
 
@@ -54,13 +54,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-create procedure [dbo].[Insert_Module] (	@NombreModulo varchar(50),
+create procedure [dbo].[Insert_Module] (	@ModuleName varchar(50),
 									@Ascx varchar(50),
 									@Dll varchar(50))
 as
 begin
 
-insert into [Modules] values (@NombreModulo, @Ascx, @Dll);
+insert into [Modules] values (@ModuleName, @Ascx, @Dll);
 select top 1 Id from [Modules] order by Id desc
 
 end								

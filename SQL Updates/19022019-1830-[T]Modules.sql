@@ -13,7 +13,7 @@ GO
 
 CREATE TABLE [dbo].[Modules](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[NombreModulo] [varchar](50) NOT NULL,
+	[ModuleName] [varchar](50) NOT NULL,
 	[Ascx] [varchar](50) NOT NULL,
 	[Dll] [varchar](50) NOT NULL,
  CONSTRAINT [PK_Modules] PRIMARY KEY CLUSTERED 
