@@ -2,9 +2,9 @@
 .vs/Genesis/v15/.suo
 .vs
 Genesis/obj
+.Connection/obj
 *.cache
 *.cache
 Connection/obj/Debug/Connection.csproj.CoreCompileInputs.cache
 Connection/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-*.cache
-*.cache
+
