@@ -1,0 +1,11 @@
+USE Genesis
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[ASIMOV3_GetSPs] AS
+
+SELECT ROUTINE_NAME FROM Genesis.information_schema.routines WHERE routine_type = 'PROCEDURE'
