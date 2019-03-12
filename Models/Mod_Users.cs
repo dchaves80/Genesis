@@ -27,5 +27,16 @@ namespace Models
             else return false;
         }
 
+        public static DataTable Insert_User(
+            string userName,
+            string email,
+            string password)
+        {
+            DataTable DT = Con_Users.Insert_User(userName, email, Crypt.StringByMD5(password));
+
+            if (DT != null && DT.Rows.Count > 0) return DT;
+            else return null;
+        }
+
     }
 }

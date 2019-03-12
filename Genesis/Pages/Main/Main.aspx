@@ -21,6 +21,7 @@
     <link href="../../Assets/CSS/Main.css" rel="stylesheet" />
 
     <script src="../../Assets/Js/Main.js"></script>
+    <script src="../../Modules/Usuarios/Usuarios.js"></script>
 
 </head>
 <body class="BackgroundDark" style="font-family: 'Roboto'; color: white;">
@@ -36,6 +37,7 @@
 
         <!-- MODULE CONTAINER -->
         <div style="padding: 50px;" runat="server" id="ModuleContainer">
+            
 
         </div>
 

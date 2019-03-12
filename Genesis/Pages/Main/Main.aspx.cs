@@ -11,8 +11,9 @@ namespace Genesis.Pages.Main
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Control ctrl = LoadControl("/Modules/Pacientes.ascx");
-            ModuleContainer.Controls.Add(ctrl);
+            Control Pacientes = LoadControl("/Modules/Pacientes.ascx");
+            Control Usuarios = LoadControl("/Modules/Usuarios/Usuarios.ascx");
+            ModuleContainer.Controls.Add(Usuarios);
         }
     }
 }

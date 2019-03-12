@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Models">
+      <HintPath>..\..\..\..\Models\bin\Debug\Models.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,8 +70,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Usuarios.js" />
     <Content Include="Usuarios.ascx" />
     <Content Include="Web.config" />
+    <Content Include="WebServiceUsuarios.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +83,13 @@
     </Compile>
     <Compile Include="Usuarios.ascx.designer.cs">
       <DependentUpon>Usuarios.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceUsuarios.aspx.cs">
+      <DependentUpon>WebServiceUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebServiceUsuarios.aspx.designer.cs">
+      <DependentUpon>WebServiceUsuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +132,12 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(ProjectDir)\*.aspx" "C:\Proyecto Genesis\Genesis\Genesis\Modules\Usuarios"
+copy /Y "$(ProjectDir)\*.js" "C:\Proyecto Genesis\Genesis\Genesis\Modules\Usuarios"
+copy /Y "$(ProjectDir)\*.ascx" "C:\Proyecto Genesis\Genesis\Genesis\Modules\Usuarios"
+copy /Y "$(ProjectDir)\bin\Usuarios.dll" "C:\Proyecto Genesis\Genesis\Genesis\bin"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
