@@ -22,6 +22,7 @@
 
     <script src="../../Assets/Js/Main.js"></script>
     <script src="../../Modules/Usuarios/Usuarios.js"></script>
+	<script src="../../Modules/Roles/Roles.js"></script>
 
 </head>
 <body class="BackgroundDark" style="font-family: 'Roboto'; color: white;">
