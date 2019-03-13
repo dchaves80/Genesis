@@ -1,45 +1,57 @@
-﻿function ConfirmUserAndEmail() {    
+﻿//Evita que se introduzcan espacios en los input
+$(function () {
+    $('.ExcludeChar').keypress(function (e) {
+        var chr = String.fromCharCode(e.which);
+        if (" ".indexOf(chr) >= 0)
+            return false;
+    })
+})
+
+
+function ConfirmUserAndEmail() {    
 
     var username = $('#inputUsername').val();
     var email = $('#inputEmail').val();
     var confirmEmail = $('#inputConfirmEmail').val();
 
-    console.log(username + " " + email + " " + confirmEmail);
-
-
     // Comprueba que no falten datos y sean correctos.
-    if (username != "" && email != "" && confirmEmail != "") {
+    if (username != "" && email != "" && confirmEmail != "") {        
 
-        console.log("No falta ningún campo");
-
-        if (email == confirmEmail) {
-            // Recupera los users que coincidan
-            $.ajax({
-                url: '/Modules/Usuarios/WebServiceUsuarios.aspx',
-                dataType: 'text',
-                data:
-                {
-                    checkUser: 'true',
-                    username: username
-                },
-                success: function (data) {
-                    if (data == "True") {
-                        alert("Ya existe un usuario con ese nombre");
-                    }
-                    // Si no coinciden procede
-                    else {
-                        $('#emailHidden').val(email);
-                        $('#userHidden').val(username);
-
-                        // Siguiente stage
-                        $('#stage1').hide('slow', function () { $('#stage2').show('slow'); });
-                    }
-                }
-            });
+        // Comprueba que la dirección de correo electrónico contenga un @
+        if (email.indexOf("@") == -1) {
+            alert("Introduzca una dirección de correo electrónico correcta.");
         }
         else {
-            alert("Los correos electrónicos no coinciden.");
-        }
+            // Comprueba que las direcciones de correo electrónico sean iguales
+            if (email == confirmEmail) {
+                // Recupera los users que coincidan
+                $.ajax({
+                    url: '/Modules/Usuarios/WebServiceUsuarios.aspx',
+                    dataType: 'text',
+                    data:
+                    {
+                        checkUser: 'true',
+                        username: username
+                    },
+                    success: function (data) {
+                        if (data == "True") {
+                            alert("Ya existe un usuario con ese nombre");
+                        }
+                        // Si no coinciden procede
+                        else {
+                            $('#emailHidden').val(email);
+                            $('#userHidden').val(username);
+
+                            // Siguiente stage
+                            $('#stage1').hide('slow', function () { $('#stage2').show('slow'); });
+                        }
+                    }
+                });
+            }
+            else {
+                alert("Los correos electrónicos no coinciden.");
+            }
+        }        
     }
     else {
         alert("Falta rellenar algún campo.");

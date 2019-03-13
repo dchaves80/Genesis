@@ -13,7 +13,7 @@
         <!-- Input username -->
         <div>
             <label class="LabelInput" style="display: inline-block;">
-                <input id="inputUsername" type="text" class="Input" placeholder="ej: Luciano Lapenna" />
+                <input id="inputUsername" type="text" class="Input ExcludeChar" placeholder="ej: Luciano Lapenna" />
                 <span class="InputPlaceholderWrap"><span class="InputPlaceholder">USERNAME</span></span>
             </label>
         </div>
@@ -25,14 +25,14 @@
 
             <!-- Input Email -->
             <label class="LabelInput" style="display: inline-block;">
-                <input id="inputEmail" type="text" class="Input" placeholder="ej: xxx@yyy.com" />
+                <input id="inputEmail" type="text" class="Input ExcludeChar" placeholder="ej: xxx@yyy.com" />
                 <span class="InputPlaceholderWrap"><span class="InputPlaceholder">E-MAIL</span></span>
             </label>
 
 
             <!-- Input confirmar email -->
             <label class="LabelInput" style="display: inline-block;">
-                <input id="inputConfirmEmail" type="text" class="Input" placeholder="ej: xxx@yyy.com" />
+                <input id="inputConfirmEmail" type="text" class="Input ExcludeChar" placeholder="ej: xxx@yyy.com" />
                 <span class="InputPlaceholderWrap"><span class="InputPlaceholder">CONFIRMAR E-MAIL</span></span>
             </label>
 
@@ -53,13 +53,13 @@
 
             <!-- Input Password -->
             <label class="LabelInput" style="display: inline-block;">
-                <input id="inputPassword" type="password" class="Input" placeholder="ej: ********" />
+                <input id="inputPassword" type="password" class="Input ExcludeChar" placeholder="ej: ********" />
                 <span class="InputPlaceholderWrap"><span class="InputPlaceholder">CONTRASEÑA</span></span>
             </label>
 
             <!-- Input confirmar email -->
             <label class="LabelInput" style="display: inline-block;">
-                <input id="inputConfirmPassword" type="password" class="Input" placeholder="ej: ********" />
+                <input id="inputConfirmPassword" type="password" class="Input ExcludeChar" placeholder="ej: ********" />
                 <span class="InputPlaceholderWrap"><span class="InputPlaceholder">CONFIRMAR CONTRASEÑA</span></span>
             </label>
         </div>
