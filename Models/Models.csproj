@@ -45,6 +45,7 @@
     <Compile Include="Crypt.cs" />
     <Compile Include="Mod_Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Connection\Connection.csproj">

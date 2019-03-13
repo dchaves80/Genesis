@@ -26,7 +26,12 @@
 </head>
 <body class="BackgroundDark" style="font-family: 'Roboto'; color: white;">
     <form id="form1" runat="server">
-
+        <%
+            if (Session["misesion"] != null)
+            {
+                Response.Write("Existe,");
+            }
+            %>
         <!-- USER CONTROL -->
         <div id="UserControl">            
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using Connection;
 
 namespace Models
 {
@@ -28,6 +29,32 @@ namespace Models
             }
 
             return sb.ToString();
+        }
+
+        public static bool Insert_AccessCode(
+            string accessCode,
+            int idUser)
+        {
+            return Con_AccessCodes.Insert_AccessCode(accessCode, idUser, Utils.SQL_To_FullString_DateTime(DateTime.Now));
+        }
+
+        public static bool Update_AccessCode(string accessCode)
+        {
+            return Con_AccessCodes.Update_AccessCode(accessCode);
+        }
+
+        public static int Get_IdUserByAccessCode(string accessCode)
+        {
+            return Con_AccessCodes.Get_IdUserByAccessCode(accessCode);
+        }
+
+        public static bool Get_AlreadyUsedByAccessCode(string accessCode)
+        {
+            bool? alreadyUsed = Con_AccessCodes.Get_AlreadyUsedByAccessCode(accessCode);
+
+            if (alreadyUsed != null)
+                return alreadyUsed.Value;
+            else return false;
         }
     }
 }
