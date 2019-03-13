@@ -52,8 +52,8 @@ namespace Models
             string email,
             string password)
         {
-            int Id = int.Parse(Con_Users.Insert_User(userName, email, Crypt.StringByMD5(password)).Rows[0][0].ToString());
-            DataTable DT = Con_Users.Get_User(Id, null, null, null, 0);
+            int id = int.Parse(Con_Users.Insert_User(userName, email, Crypt.StringByMD5(password)).Rows[0][0].ToString());
+            DataTable DT = Con_Users.Get_User(id, null, null, null, 0);
 
 
             if (DT != null && DT.Rows.Count > 0)
