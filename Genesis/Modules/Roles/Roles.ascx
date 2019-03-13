@@ -11,7 +11,7 @@
 
     <div class="Table">       
       
-        <table>
+        <table id="RolesTable">
             <tr class="TopRow">
                 <th>ROL</th>
             </tr>
@@ -29,8 +29,11 @@
                                     "<input class='ButtonDark' onclick='EditarRol(this)' value='Editar' type='button'/>" +
                                     "<input class='ButtonDark' value='Eliminar' type='button'/>" +
                                     "<div style='position: relative; display: inline-block; opacity: 0;'>" +
-                                        "<input type='text'/> " +
-                                        "<input class='ButtonDark' value='✓' type='button'/>" +
+                                        "<label style='display: inline-block; margin-right: 20px;' class='LabelInput'>" +
+                                            "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='Input' type='text'/>" +
+                                            "<span class='InputPlaceholderWrap'><span class='InputPlaceholder'>NUEVO ROL</span></span>" +
+                                        "</label>" +
+                                        "<input onclick='ConfirmarRolNuevo(this,\"" + Role.ID + "\")' class='ButtonDark' value='✓' type='button'/>" +
                                         "<input type='button' class='ButtonDark' value='✕'/>" +
                                     "</div>" +
                                 "</td>" +
@@ -54,5 +57,8 @@
 
 <!-- HIDDENS -->
 <div>
+
+    <!-- Usado para verificar-->
+    <input type="hidden" id="Status" />
 
 </div>
