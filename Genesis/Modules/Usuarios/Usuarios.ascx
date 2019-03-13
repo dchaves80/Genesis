@@ -9,12 +9,15 @@
 
     <!-- Stage 1 -->
     <div id="stage1">
-        <!-- Input username -->
-        <label class="LabelInput" style="display: inline-block;">
-            <input id="inputUsername" type="text" class="Input" placeholder="ej: Luciano Lapenna" />
-            <span class="InputPlaceholderWrap"><span class="InputPlaceholder">USERNAME</span></span>
-        </label>
 
+        <!-- Input username -->
+        <div>
+            <label class="LabelInput" style="display: inline-block;">
+                <input id="inputUsername" type="text" class="Input" placeholder="ej: Luciano Lapenna" />
+                <span class="InputPlaceholderWrap"><span class="InputPlaceholder">USERNAME</span></span>
+            </label>
+        </div>
+        
         <br />
 
         <!-- Input Emails -->
@@ -32,6 +35,7 @@
                 <input id="inputConfirmEmail" type="text" class="Input" placeholder="ej: xxx@yyy.com" />
                 <span class="InputPlaceholderWrap"><span class="InputPlaceholder">CONFIRMAR E-MAIL</span></span>
             </label>
+
         </div>
 
         <br />
@@ -63,7 +67,7 @@
         <br />
 
         <div style="margin-left: 130px; margin-top: 20px; display: inline-block;">
-            <input class="ButtonDark" value="VOLVER" type="button" />
+            <input class="ButtonDark" onclick="Volver()" value="VOLVER" type="button" />
             <input class="ButtonDark" onclick="ConfirmPassword()" value="CREAR" type="button" />
         </div>
 

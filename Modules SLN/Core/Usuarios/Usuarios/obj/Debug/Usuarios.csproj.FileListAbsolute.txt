@@ -38,3 +38,4 @@ C:\Proyecto Genesis\Genesis\Modules SLN\Core\Usuarios\Usuarios\bin\Connection.dl
 C:\Proyecto Genesis\Genesis\Modules SLN\Core\Usuarios\Usuarios\bin\Models.pdb
 C:\Proyecto Genesis\Genesis\Modules SLN\Core\Usuarios\Usuarios\bin\Connection.pdb
 C:\Proyecto Genesis\Genesis\Modules SLN\Core\Usuarios\Usuarios\bin\Connection.dll.config
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Usuarios\Usuarios\obj\Debug\Usuarios.csprojAssemblyReference.cache

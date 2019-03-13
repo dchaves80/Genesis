@@ -38,5 +38,14 @@ namespace Models
             else return null;
         }
 
+        public static DataTable Get_UserByUsername(string username)
+        {
+            DataTable DT = Con_Users.Get_User(null, username, null, null, 0);
+
+            if (DT != null && DT.Rows.Count > 0)
+                return DT;
+            else return null;
+        }
+
     }
 }

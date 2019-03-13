@@ -21,6 +21,8 @@ namespace Usuarios
 
             if (Request["createUser"] != null)
                 content = CreateUser(Request["user"], Request["email"], Request["password"]);
+            if (Request["checkUser"] != null)
+                content = CheckIfUSerExists(Request["username"]);
 
             Response.Write(content);
             Response.Flush();
@@ -38,6 +40,16 @@ namespace Usuarios
                 return "True";
             else
                 return "False";
+        }
+
+        private string CheckIfUSerExists(
+            string username)
+        {
+            DataTable DT = Mod_Users.Get_UserByUsername(username);
+
+            if (DT != null && DT.Rows.Count > 0)
+                return "True";
+            else return "False";
         }
     }
 }

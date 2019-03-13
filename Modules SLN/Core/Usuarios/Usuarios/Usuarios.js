@@ -1,37 +1,57 @@
-﻿// Siguiente stage
-function ConfirmUserAndEmail() {
+﻿function ConfirmUserAndEmail() {    
+
     var username = $('#inputUsername').val();
     var email = $('#inputEmail').val();
-    var confirmEmail = $('#inputConfirmEmail').val()
+    var confirmEmail = $('#inputConfirmEmail').val();
 
+    console.log(username + " " + email + " " + confirmEmail);
+
+
+    // Comprueba que no falten datos y sean correctos.
     if (username != "" && email != "" && confirmEmail != "") {
 
+        console.log("No falta ningún campo");
+
         if (email == confirmEmail) {
+            // Recupera los users que coincidan
+            $.ajax({
+                url: '/Modules/Usuarios/WebServiceUsuarios.aspx',
+                dataType: 'text',
+                data:
+                {
+                    checkUser: 'true',
+                    username: username
+                },
+                success: function (data) {
+                    if (data == "True") {
+                        alert("Ya existe un usuario con ese nombre");
+                    }
+                    // Si no coinciden procede
+                    else {
+                        $('#emailHidden').val(email);
+                        $('#userHidden').val(username);
 
-            $('#emailHidden').val(email);
-            $('#userHidden').val(username);
-
-            //Access Granted
-            $('#stage1').hide('slow', function () { $('#stage2').show('slow'); });
-
+                        // Siguiente stage
+                        $('#stage1').hide('slow', function () { $('#stage2').show('slow'); });
+                    }
+                }
+            });
         }
         else {
-            alert("Las direcciones de e-mail no coinciden.")
+            alert("Los correos electrónicos no coinciden.");
         }
     }
     else {
-        alert("Falta rellenar algún campo.")
+        alert("Falta rellenar algún campo.");
     }
-
 }
 
+// Registrar nuevo usuario
 function ConfirmPassword() {
     var password = $('#inputPassword').val();
     var confirmPassword = $('#inputConfirmPassword').val();
     var user = $('#userHidden').val();
     var email = $('#emailHidden').val();
-
-    console.log(password + " " + confirmPassword + " " + user + " " + email);
 
     if (password == "" && confirmPassword == "") {
         alert("Falta rellenar algún campo.");
@@ -64,7 +84,19 @@ function ConfirmPassword() {
         else {
             alert("Las contraseñas no coinciden.");
         }
-    }
+    }    
+}
 
-    
+// Botón volver
+function Volver() {
+    $('#stage2').hide('slow',
+        function () {
+            $('#stage1').show('slow');
+        });
+
+    // Limpiar los valores
+    $('#inputPassword').val("");
+    $('#inputConfirmPassword').val("");
+    $('#userHidden').val("");
+    $('#emailHidden').val("");
 }
