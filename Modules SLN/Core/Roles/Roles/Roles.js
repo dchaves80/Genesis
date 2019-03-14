@@ -25,7 +25,7 @@ $(window).on('load', function () {
 // Obtiene todos los roles
 function GetAllRoles() {
     $.ajax({
-        url: '/Modules/Usuarios/WebServiceRoles.aspx',
+        url: '/Modules/Roles/WebServiceRoles.aspx',
         dataType: 'json',
         data:
         {
@@ -38,7 +38,7 @@ function GetAllRoles() {
                 for (a = 0; a < data.length; a++) {
                     $('#RolesTable').append(
                         "<tr>" +
-                            "<td class='draggable'>" + data[a].Role + "</td>" +
+                            "<td class='draggable'>" + data[a].ROLE + "</td>" +
                             "<td>" +
                                 "<input class='ButtonDark' onclick='EditarRol(this)' value='Editar' type='button' />" +
                                 "<input class='ButtonDark' value='Eliminar' type='button'/>" +
@@ -47,7 +47,7 @@ function GetAllRoles() {
                                         "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='Input' type='text'/>" +
                                         "<span class='InputPlaceholderWrap'><span class='InputPlaceholder'>NUEVO ROL</span></span>" +
                                     "</label>" +
-                                    "<input onclick='ConfirmarRolNuevo(this,\"" + data[a].Id + "\")' class='ButtonDark' value='✓' type='button'/>" +
+                                    "<input onclick='ConfirmarRolNuevo(this,\"" + data[a].ID + "\")' class='ButtonDark' value='✓' type='button'/>" +
                                     "<input type='button' class='ButtonDark' value='✕'/>" +
                                 "</div>" +
                             "</td>" +
@@ -86,7 +86,7 @@ function ConfirmarRolNuevo(object, id) {
 
     if (newRole != "" || newRole != " ") {
         $.ajax({
-            url: '/Modules/Usuarios/WebServiceRoles.aspx',
+            url: '/Modules/Roles/WebServiceRoles.aspx',
             dataType: 'text', 
             data:
             {
