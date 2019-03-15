@@ -76,9 +76,9 @@ function AsignarRol(object) {
             },
             stop: function (event, ui) {
 
-            }
+            }            
         })
-
+        $('.draggable').draggable('enable');
     }
     else {
 
@@ -97,7 +97,6 @@ function AsignarRol(object) {
 
         thisButton.val("ASIGNAR");
     }
-
 }
 
 //                      //
