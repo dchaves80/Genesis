@@ -18,7 +18,7 @@ function CheckUserPass() {
             {
                 user: user,
                 pass: pass,
-            },
+            },            
             success: function (data) {
                 if (data != 'False') {
                     AccessGranted(data);
@@ -34,3 +34,5 @@ function CheckUserPass() {
         alert('Falta rellenar algún campo');
     }
 }
+
+

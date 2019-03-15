@@ -41,7 +41,7 @@
         <div class="PopUp">
 
             <!-- LOGIN -->
-            <div class="CustomPopUp" style="position: absolute; left: 600px;">
+            <div class="CustomPopUp" style="position: absolute; left: 40%;">
 
                 <!-- Title -->
                 <div class="PopUpTitle">
@@ -66,7 +66,7 @@
                         </span>
                     </label>
 
-                    <input onclick="CheckUserPass()" type="button" value="INGRESAR" style="margin-top: 20px; margin-left: 25px;" id="ingressButton" class="ButtonDark"  />
+                    <input onclick="CheckUserPass()" type="button" value="INGRESAR" style="margin-top: 20px; margin-left: 0px; position: relative; left: 25%;" id="ingressButton" class="ButtonDark"  />                    
 
                 </div>
             </div>

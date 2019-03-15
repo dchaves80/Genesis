@@ -6,11 +6,21 @@
 <!-- CONTENT -->
 <div>
 
-    
+    <!-- CREAR ROL -->
+    <input type="button" onclick="AbrirCrearlRol(this)" class="ButtonDark" value="CREAR" id="crearRolButton" />
+
+    <div style="display: none;" id="crearRolDiv">
+
+        <label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='LabelInput'>
+            <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='Input' type='text' id="nuevoRolText" />
+            <span class='InputPlaceholderWrap'><span class='InputPlaceholder'>NUEVO ROL</span></span>
+        </label>
+
+        <input onclick="CrearRol()" type="button" class="ButtonDark" value="CREAR"/>
+    </div>
 
 
-    <div class="Table">       
-      
+    <div id='RolesTableDiv' class="Table">             
         <table id="RolesTable">
             <tr class="TopRow">
                 <th>ROL</th>
@@ -27,14 +37,14 @@
                                 "<td class='draggable'>" + Role.ROLE + "</td>" +
                                 "<td>" +
                                     "<input class='ButtonDark' onclick='EditarRol(this)' value='Editar' type='button'/>" +
-                                    "<input class='ButtonDark' value='Eliminar' type='button'/>" +
+                                    "<input class='ButtonDark' onclick='EliminarRol(\"" + Role.ID + "\",\"" + Role.ROLE + "\")' value='Eliminar' type='button'/>" +
                                     "<div style='position: relative; display: inline-block; opacity: 0;'>" +
                                         "<label style='display: inline-block; margin-right: 20px;' class='LabelInput'>" +
                                             "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='Input' type='text'/>" +
                                             "<span class='InputPlaceholderWrap'><span class='InputPlaceholder'>NUEVO ROL</span></span>" +
                                         "</label>" +
-                                        "<input onclick='ConfirmarRolNuevo(this,\"" + Role.ID + "\")' class='ButtonDark' value='✓' type='button'/>" +
-                                        "<input type='button' class='ButtonDark' value='✕'/>" +
+                                        "<input style='margin-right: 10px;' onclick='ConfirmarRolEdit(this,\"" + Role.ID + "\")' class='ButtonDark' value='✓' type='button'/>" +
+                                        "<input style='margin-right: 10px;' onclick='CancelEditing(this)' type='button' class='ButtonDark' value='✕'/>" +
                                     "</div>" +
                                 "</td>" +
                             "</tr>");
