@@ -23,10 +23,13 @@ namespace Connection
             string Ascx,
             string Dll)
         {
+            
+            
             GenesisDataSetTableAdapters.Insert_ModuleTableAdapter TA =
                 new GenesisDataSetTableAdapters.Insert_ModuleTableAdapter();
             GenesisDataSet.Insert_ModuleDataTable DR =
                 new GenesisDataSet.Insert_ModuleDataTable();
+            
 
             System.Data.SqlClient.SqlConnection SQLCONN = TA.Connection;
             TableAdapterManager.ChangeConnection(ref SQLCONN);

@@ -31,9 +31,22 @@ input.ButtonDark {
         color: #3a7999;
         cursor: pointer;
     }
+input.ButtonDarkDisabled {
+	background: rgba(0,0,0,0);
+	box-shadow: inset 0 0 0 2px white;
+	margin-right: 10px;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	color: #f2f2f2;
+	border: none;
+}	
 
-/* INPUT TEXT */
-.Input {
+
+
+
+/*.Input {
     background-color: rgba(0,0,0,0);
     border: none;
     font-family: 'Roboto';
@@ -121,18 +134,106 @@ input.ButtonDark {
 
     .LabelInput .Input:focus ~ .InputPlaceholderWrap:after {
         width: 100%;
+    }*/
+
+/* INPUT TEXT */
+.InputTextDark {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    font-family: 'Roboto';
+    font-size: 1em;
+}
+
+.InputTextDarkLabel {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 1em;
+    padding-top: 1em;
+}
+
+    .InputTextDarkLabel .InputTextDark {
+        height: 40px;
+        padding: 0 15px 0 15px;
+        border-bottom: 2px solid rgba(255,255,255,0.8);
+    }
+
+        .InputTextDarkLabel .InputTextDark::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .InputTextDarkLabel .InputTextDark::-moz-placeholder {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .InputTextDarkLabel .InputTextDark:not(:placeholder-shown) ~ .InputTextDarkPlaceholderWrap .InputTextDarkPlaceholder {
+            opacity: 0;
+            bottom: 15px;
+        }
+
+        .InputTextDarkLabel .InputTextDark:focus::-webkit-input-placeholder {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+
+        .InputTextDarkLabel .InputTextDark:focus::-moz-placeholder {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+
+    .InputTextDarkLabel .InputTextDarkPlaceholderWrap {
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        pointer-events: none;
+        cursor: text;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .InputTextDarkLabel .InputTextDarkPlaceholder {
+        position: absolute;
+        left: 15px;
+        bottom: calc(50% - .5em);
+        line-height: 1;
+        font-size: 1em;
+        pointer-events: none;
+        transition: bottom .2s cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .2s ease-out;
+        will-change: bottom, opacity;
+    }
+
+    .InputTextDarkLabel .InputTextDark:focus ~ .InputTextDarkPlaceholderWrap .InputTextDarkPlaceholder {
+        opacity: 1;
+        bottom: 40px;
+    }
+
+    .InputTextDarkLabel .InputTextDarkPlaceholderWrap:after {
+        content: "";
+        box-sizing: border-box;
+        width: 0;
+        height: 2px;
+        background-color: #3a7999;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        will-change: width;
+        transition: width .285s ease-out;
+    }
+
+    .InputTextDarkLabel .InputTextDark:focus ~ .InputTextDarkPlaceholderWrap:after {
+        width: 100%;
     }
 
 
 
 /* TABLE */
-div.Table {
-    margin-top: 50px;
-}
 
-    div.Table table {
-        border-collapse: collapse;
-    }
+table.Table {
+    border-collapse: collapse;
+}
 
 .TableRows {
     transition: 0.3s;
@@ -148,11 +249,11 @@ div.Table {
     border-bottom: 1px solid rgba(255,255,255,0.8);
 }
 
-div.Table th {
+table.Table th {
     color: #9CAAC1;
 }
 
-div.Table td {
+table.Table td {
     padding: 10px 50px;
     color: rgba(255,255,255,0.8);
 }

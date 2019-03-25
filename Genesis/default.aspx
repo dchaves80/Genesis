@@ -41,7 +41,7 @@
         <div class="PopUp">
 
             <!-- LOGIN -->
-            <div class="CustomPopUp" style="position: absolute; left: 600px;">
+            <div class="CustomPopUp" style="position: absolute; left: 40%;">
 
                 <!-- Title -->
                 <div class="PopUpTitle">
@@ -52,21 +52,21 @@
                 <div>
 
                     <!-- Input de texto -->
-                    <label style="margin-top: 5px;" class="LabelInput">
-                        <input id="inputUser" style="color:rgba(255,255,255,0.8)" placeholder="ej: l_lapenna" class="Input" type="text"/>
-                        <span class="InputPlaceholderWrap">
-                            <span class="InputPlaceholder">USUARIO</span>
+                    <label style="margin-top: 5px;" class="InputTextDarkLabel">
+                        <input id="inputUser" style="color:rgba(255,255,255,0.8)" placeholder="ej: l_lapenna" class="InputTextDark" type="text"/>
+                        <span class="InputTextDarkPlaceholderWrap">
+                            <span class="InputTextDarkPlaceholder">USUARIO</span>
                         </span>
                     </label>
 
-                    <label style="margin-top: 5px;" class="LabelInput">
-                        <input runat="server" id="inputPass" style="color:rgba(255,255,255,0.8)" placeholder="ej: *******" class="Input" type="password"/>                   
-                        <span class="InputPlaceholderWrap">
-                            <span class="InputPlaceholder">CONTRASEÑA</span>
+                    <label style="margin-top: 5px;" class="InputTextDarkLabel">
+                        <input runat="server" id="inputPass" style="color:rgba(255,255,255,0.8)" placeholder="ej: *******" class="InputTextDark" type="password"/>                   
+                        <span class="InputTextDarkPlaceholderWrap">
+                            <span class="InputTextDarkPlaceholder">CONTRASEÑA</span>
                         </span>
                     </label>
 
-                    <input onclick="CheckUserPass()" type="button" value="INGRESAR" style="margin-top: 20px; margin-left: 25px;" id="ingressButton" class="ButtonDark"  />
+                    <input onclick="CheckUserPass()" type="button" value="INGRESAR" style="margin-top: 20px; margin-left: 0px; position: relative; left: 25%;" id="ingressButton" class="ButtonDark"  />                    
 
                 </div>
             </div>

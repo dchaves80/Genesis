@@ -7,7 +7,7 @@
 
 <!DOCTYPE html>
 
-<html style="height: 100%;" xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Genesis</title>
@@ -21,11 +21,18 @@
     <link href="../../Assets/CSS/Main.css" rel="stylesheet" />
 
     <script src="../../Assets/Js/Main.js"></script>
+    <script src="../../Modules/Usuarios/Usuarios.js"></script>
+	<script src="../../Modules/Roles/Roles.js"></script>
 
 </head>
-<body class="BackgroundDark" style="font-family: 'Roboto'; color: white;">
+<body class="BackgroundDark" style="font-family: 'Roboto'; color: white; background: linear-gradient(#131517, #1b2835); background-attachment: fixed;">
     <form id="form1" runat="server">
-
+        <%
+            if (Session["misesion"] != null)
+            {
+                Response.Write("Existe,");
+            }
+            %>
         <!-- USER CONTROL -->
         <div id="UserControl">            
 
@@ -36,6 +43,7 @@
 
         <!-- MODULE CONTAINER -->
         <div style="padding: 50px;" runat="server" id="ModuleContainer">
+            
 
         </div>
 

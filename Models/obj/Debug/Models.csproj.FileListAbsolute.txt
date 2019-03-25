@@ -1,8 +1,6 @@
 C:\Proyecto Genesis\Genesis\Models\obj\Debug\Models.csprojAssemblyReference.cache
 C:\Proyecto Genesis\Genesis\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
-C:\Proyecto Genesis\Genesis\Models\bin\Debug\Models.dll
 C:\Proyecto Genesis\Genesis\Models\bin\Debug\Models.pdb
-C:\Proyecto Genesis\Genesis\Models\bin\Debug\Connection.dll
 C:\Proyecto Genesis\Genesis\Models\bin\Debug\Connection.pdb
 C:\Proyecto Genesis\Genesis\Models\bin\Debug\Connection.dll.config
 C:\Proyecto Genesis\Genesis\Models\obj\Debug\Models.csproj.CopyComplete

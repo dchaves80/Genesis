@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Con_AccessCodes.cs" />
     <Compile Include="Con_Modules.cs" />
+    <Compile Include="Con_Roles.cs" />
     <Compile Include="Con_Users.cs" />
     <Compile Include="GenesisDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

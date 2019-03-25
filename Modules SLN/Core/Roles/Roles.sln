@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roles", "Roles\Roles.csproj", "{B67571EC-F292-43B8-9ED5-86EA080E1F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "..\..\..\Models\Models.csproj", "{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B67571EC-F292-43B8-9ED5-86EA080E1F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B67571EC-F292-43B8-9ED5-86EA080E1F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B67571EC-F292-43B8-9ED5-86EA080E1F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B67571EC-F292-43B8-9ED5-86EA080E1F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E79BEB4-E9C4-423C-9466-31BD50FE99DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70B1BE28-AC88-4B23-AEE6-29043D1CD434}
+	EndGlobalSection
+EndGlobal

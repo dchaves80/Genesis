@@ -1,6 +1,6 @@
 ﻿//  Datos correctos, procede a entrar a la página
-function AccessGranted() {
-    window.location.href = "/Pages/Main/Main.aspx";
+function AccessGranted(data) {
+    window.location.href = "/Pages/Main/Main.aspx?losha=" + data;
 }
 
 //  Verifica las credenciales
@@ -8,8 +8,6 @@ function CheckUserPass() {
 
     var user = $('#inputUser').val()
     var pass = $('#inputPass').val()
-
-    console.log(user + " " + pass);
 
     if (user != "" && pass != "") {
 
@@ -20,10 +18,10 @@ function CheckUserPass() {
             {
                 user: user,
                 pass: pass,
-            },
+            },            
             success: function (data) {
-                if (data == 'True') {
-                    AccessGranted();
+                if (data != 'False') {
+                    AccessGranted(data);
 
                 }
                 else {
@@ -36,3 +34,5 @@ function CheckUserPass() {
         alert('Falta rellenar algún campo');
     }
 }
+
+
