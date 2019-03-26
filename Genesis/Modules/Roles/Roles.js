@@ -50,6 +50,7 @@ function AsignarRol(object) {
     var thisButton = $(object);
     var usuariosDiv = $('#UsuariosTableDiv');
 
+    // Si no es visible, lo muestra y activa el modo asignar
     if (!usuariosDiv.is(':visible')) {
 
         usuariosDiv.css('display', 'inline-block');
@@ -66,6 +67,7 @@ function AsignarRol(object) {
 
         thisButton.val("OCULTAR USUARIOS");
 
+        // Definición del draggable y el droppable
         $('.draggable').draggable({
             // Propiedades
             opacity: 0.5,
@@ -78,8 +80,28 @@ function AsignarRol(object) {
 
             }            
         })
+
+        $('.droppable').droppable({
+            // Propiedades
+            accept: ".draggable",
+            tolerance: "pointer",
+            // Función ejecutada al dropear el objeto
+            drop: function (event, ui) {
+                $.ajax({
+                    url: '/Modules/Roles/WebServiceRoles.aspx',
+                    dataType: 'text',
+                    data:
+                    {
+
+                    }
+                })
+            },
+        })
+
+        $('.droppable').droppable('enable');
         $('.draggable').draggable('enable');
     }
+    // Si está visible, entonces desactiv el modo asignar
     else {
 
         usuariosDiv.animate(

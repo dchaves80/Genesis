@@ -77,6 +77,8 @@
     <Content Include="Assets\Js\Login.js" />
     <Content Include="Assets\Js\Main.js" />
     <Content Include="default.aspx" />
+    <Content Include="Pages\General\TableDark.ascx" />
+    <Content Include="Pages\General\TextInputDark.ascx" />
     <Content Include="Pages\Login\LoginWS.aspx" />
     <Content Include="Pages\Main\Controls\SideBar.ascx" />
     <Content Include="Pages\Main\Controls\TopBar.ascx" />
@@ -90,6 +92,20 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\General\TableDark.ascx.cs">
+      <DependentUpon>TableDark.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\General\TableDark.ascx.designer.cs">
+      <DependentUpon>TableDark.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\General\TextInputDark.ascx.cs">
+      <DependentUpon>TextInputDark.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\General\TextInputDark.ascx.designer.cs">
+      <DependentUpon>TextInputDark.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login\LoginWS.aspx.cs">
       <DependentUpon>LoginWS.aspx</DependentUpon>
