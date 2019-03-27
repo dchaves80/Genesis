@@ -62,7 +62,14 @@ namespace Models
                 return null;
         }
 
-
+        public static Mod_Users Get_UserById(int Id)
+        {
+            DataTable DT = Con_Users.Get_User(Id, null, null, null, 1);
+            if (DT != null && DT.Rows.Count > 0)
+                return new Mod_Users(DT.Rows[0]);
+            else
+                return null;
+        }
 
         public static Mod_Users Get_UserByUsername(string username)
         {

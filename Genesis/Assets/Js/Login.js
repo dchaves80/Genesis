@@ -1,6 +1,6 @@
 ﻿//  Datos correctos, procede a entrar a la página
 function AccessGranted(data) {
-    window.location.href = "/Pages/Main/Main.aspx?losha=" + data;
+    window.location.href = "/Pages/Main/Main.aspx?sk=" + data;
 }
 
 //  Verifica las credenciales
