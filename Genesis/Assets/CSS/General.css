@@ -1,4 +1,20 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Roboto');
+﻿/* PALETA TELEGRAM DARK:
+
+    ~NEGRO:         #111717
+    ~CELESTE:       #3571A7
+    ~CELESTE:       #3C7DB5
+    ~CELESTE DARK:  #233444
+    ~GRIS:          #1F1F1F
+    ~CELESTE LIGHT: #8CBFEA
+    ~AZUL:          #00367E
+    ~GRIS LIGHT:    #4D4D4D
+    ~GRIS DARK:     #18191A
+    ~GRIS TR:       #9CAAC1
+*/
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 @font-face {
