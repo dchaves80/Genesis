@@ -82,5 +82,12 @@ namespace Genesis.Pages.Main.Controls
             }
         }
 
+        
+
+        protected void ExitButton_Click(object sender, EventArgs e)
+        {
+            Session.Remove("User");
+            Redirect(false);
+        }
     }
 }
