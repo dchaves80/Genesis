@@ -9,7 +9,7 @@ namespace Genesis.Pages.General
 {
     public partial class TableDark : System.Web.UI.UserControl
     {
-        string idControl;
+      /*  string idControl;
         string th;        
 
         /// <summary>
@@ -20,11 +20,11 @@ namespace Genesis.Pages.General
         /// <summary>
         /// Id del control
         /// </summary>
-        public string IdControl { get => idControl; set => idControl = value; }
+        public string IdControl { get => idControl; set => idControl = value; }*/
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string[] cabeceras = Th.Split(',');
+            //string[] cabeceras = Th.Split(',');
            
         }
     }
