@@ -11,3 +11,5 @@ D:\Genesis\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
 D:\Genesis\Models\obj\Debug\Models.csproj.CopyComplete
 D:\Genesis\Models\obj\Debug\Models.dll
 D:\Genesis\Models\obj\Debug\Models.pdb
+C:\Proyecto Genesis\Genesis\Models\bin\Debug\Models.dll
+C:\Proyecto Genesis\Genesis\Models\bin\Debug\Connection.dll

@@ -32,14 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Connection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Connection.dll</HintPath>
-    </Reference>
-    <Reference Include="Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Models.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,6 +48,12 @@
     <Compile Include="Mod_UsersRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Connection\Connection.csproj">
+      <Project>{8c1c2d38-628a-47e4-baf0-5b499acb1fe8}</Project>
+      <Name>Connection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

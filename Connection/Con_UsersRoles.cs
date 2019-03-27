@@ -23,7 +23,7 @@ namespace Connection
 			if (DT != null && DT.Rows.Count > 0) { return DT; } else { return null; }
 		}
 
-		public static DataTable Insert_UsersRoles(int? UserId, int? RoleId)
+		public static DataTable Insert_UsersRoles(int UserId, int RoleId)
 		{
 			GenesisDataSetTableAdapters.Insert_UsersRolesTableAdapter TA = new GenesisDataSetTableAdapters.Insert_UsersRolesTableAdapter();
 			GenesisDataSet.Insert_UsersRolesDataTable DT = new GenesisDataSet.Insert_UsersRolesDataTable();
