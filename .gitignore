@@ -8,3 +8,4 @@ Genesis/obj
 Connection/obj/Debug/Connection.csproj.CoreCompileInputs.cache
 Connection/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 
+*.cache

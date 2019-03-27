@@ -1,9 +1,7 @@
 USE [Genesis]
 GO
 
-/****** Object:  Table [dbo].[AccessCodes]    Script Date: 12/03/2019 23:23:55 ******/
-DROP TABLE [dbo].[AccessCodes]
-GO
+
 
 /****** Object:  Table [dbo].[AccessCodes]    Script Date: 12/03/2019 23:23:55 ******/
 SET ANSI_NULLS ON
