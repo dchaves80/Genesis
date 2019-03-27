@@ -12,9 +12,10 @@
 
         <!-- Opciones -->
         <div class="DropDownContent">
+            <a class="DropDownOption"><%=USERNAME%></a>
             <a class="DropDownOption">Perfil</a>
             <a class="DropDownOption">Opciones</a>
-            <a class="DropDownSeparator"></a>
+            <a class="DropDownSeparator">--------</a>
             <a class="DropDownOption">Salir</a>
         </div>
     </div>
