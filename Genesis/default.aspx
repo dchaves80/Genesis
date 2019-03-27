@@ -12,10 +12,16 @@
 
     <link href="Assets/CSS/General.css" rel="stylesheet" />
     <link href="Assets/CSS/Login.css" rel="stylesheet" />
-
+     <script src="Assets/Js/ThirdParty/progressbar.min.js"></script>
     <script src="Assets/Js/Login.js"></script>
-
+   
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script>
+        $(document).ready(function ()
+        {
+            LoadProgressBar();
+        });
+    </script>
     <title>Login</title>
 </head>
 <body>
@@ -67,6 +73,7 @@
                     </label>
 
                     <input onclick="CheckUserPass()" type="button" value="INGRESAR" style="margin-top: 20px; margin-left: 0px; position: relative; left: 25%;" id="ingressButton" class="ButtonDark"  />                    
+                    <div id="progressbarContainer"></div>
 
                 </div>
             </div>

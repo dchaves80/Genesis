@@ -17,10 +17,10 @@ namespace Genesis.Pages.Login
 
             Response.Clear();
             Response.ClearHeaders();
-
+            
             if (Request["user"] != null && Request["pass"] != null)
                 content = CheckUserPass(Request["user"], Request["pass"]);
-
+            Response.AddHeader("Content-Length", content.Length.ToString());
             Response.Write(content);
             Response.Flush();
             Response.End();

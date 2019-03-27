@@ -21,6 +21,7 @@
     <link href="../../Assets/CSS/Main.css" rel="stylesheet" />
 
     <script src="../../Assets/Js/Main.js"></script>
+    <script src="../../Assets/Js/ThirdParty/progressbar.min.js"></script>
     <script src="../../Modules/Usuarios/Usuarios.js"></script>
 	<script src="../../Modules/Roles/Roles.js"></script>
 
