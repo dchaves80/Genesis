@@ -73,7 +73,7 @@
                     </label>
 
                     <input onclick="CheckUserPass()" type="button" value="INGRESAR" style="margin-top: 20px; margin-left: 0px; position: relative; left: 25%;" id="ingressButton" class="ButtonDark"  />                    
-                    <div id="progressbarContainer"></div>
+                    
 
                 </div>
             </div>
