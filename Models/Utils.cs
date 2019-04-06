@@ -19,5 +19,11 @@ namespace Models
             string completeSTR = year + "-" + month + "-" + day + " " + hour + ":" + minutes + ":" + seconds;
             return completeSTR;
         }
+
+        public static string GetModulePath(int IdModule)
+        {
+            Mod_Modules aux = Mod_Modules.GetModuleById(IdModule);
+            return aux.Path;
+        }
     }
 }

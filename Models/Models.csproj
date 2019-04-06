@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crypt.cs" />
+    <Compile Include="Mod_Modules.cs" />
     <Compile Include="Mod_Roles.cs" />
     <Compile Include="Mod_Users.cs" />
     <Compile Include="Mod_UsersRoles.cs" />
