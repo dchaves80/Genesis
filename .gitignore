@@ -11,4 +11,6 @@ Connection/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Genesis/bin/Genesis.dll
 *.dll
 *.pdb
-.bin
+.roslyn
+*.config
+
