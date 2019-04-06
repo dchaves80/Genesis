@@ -10,10 +10,16 @@
     <%@ Import Namespace="Models" %>
     <%
         List<Mod_Modules> ActiveModules = Mod_Modules.GetModules();
-        foreach (Mod_Modules module in ActiveModules)
+        try {
+            foreach (Mod_Modules module in ActiveModules)
+            {
+                Response.Write("<a class=\"SideBarDarkOption\" OnClick=\"LoadModule('" + module.Id + "')\"><i class=\"fas fa-address-card\"></i> "+ module.Name +"</a>");
+            }
+        } catch (Exception E)
         {
-            Response.Write("<a class=\"SideBarDarkOption\" OnClick=\"LoadModule('" + module.Id + "')\"><i class=\"fas fa-address-card\"></i> "+ module.Name +"</a>");
+            new Mod_Exception(E, Response);
         }
+
     %>
     
     
