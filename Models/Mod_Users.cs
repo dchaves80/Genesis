@@ -46,6 +46,21 @@ namespace Models
                 return null;
         }
 
+        public static List<Mod_Users> Get_Users()
+        {
+            DataTable DT = Con_Users.Get_User(null, null, null, null, 0);
+            if (DT != null && DT.Rows.Count > 0)
+            {
+                List<Mod_Users> aux = new List<Mod_Users>();
+                foreach (DataRow DR in DT.Rows)
+                {
+                    aux.Add(new Mod_Users(DR));
+                }
+                return aux;
+            }
+            else { return null; }
+        }
+
 
         public static Mod_Users Insert_User(
             string userName,
