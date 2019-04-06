@@ -14,3 +14,4 @@ Genesis/bin/Genesis.dll
 .roslyn
 *.config
 
+Genesis/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
