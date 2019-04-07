@@ -28,12 +28,6 @@
 </head>
 <body class="BackgroundDark" style="font-family: 'Roboto'; color: white; background: linear-gradient(#131517, #1b2835); background-attachment: fixed;">
     <form id="form1" runat="server">
-        <%
-            if (Session["misesion"] != null)
-            {
-                Response.Write("Existe,");
-            }
-            %>
         <!-- USER CONTROL -->
         <div id="UserControl">            
 
