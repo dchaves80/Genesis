@@ -26,7 +26,14 @@ namespace Genesis.Pages.Main
                 if (Session["ActiveModule"] != null)
                 {
                     string path = Utils.GetModulePath(int.Parse(Session["ActiveModule"].ToString()));
-                    ModuleContainer.Controls.Add(LoadControl(path));
+                    try
+                    {
+                        ModuleContainer.Controls.Add(LoadControl(path));
+                    }
+                    catch (Exception E)
+                    {
+                        new Mod_Exception(E, Response, "No se puede cargar el módulo " + Session["ActiveModule"].ToString());
+                    }
                 }
             }
         }
