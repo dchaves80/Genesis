@@ -9,10 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+    <script src="Assets/Js/ThirdParty/js.cookie.js"></script>
     <link href="Assets/CSS/General.css" rel="stylesheet" />
     <link href="Assets/CSS/Login.css" rel="stylesheet" />
-     <script src="Assets/Js/ThirdParty/progressbar.min.js"></script>
+    <script src="Assets/Js/ThirdParty/progressbar.min.js"></script>
     <script src="Assets/Js/Login.js"></script>
    
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>

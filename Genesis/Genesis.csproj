@@ -78,6 +78,7 @@
     <Content Include="Assets\Js\Login.js" />
     <Content Include="Assets\Js\Main.js" />
     <Content Include="Assets\Js\SideBar.js" />
+    <Content Include="Assets\Js\ThirdParty\js.cookie.js" />
     <Content Include="Assets\Js\ThirdParty\progressbar.min.js" />
     <Content Include="default.aspx" />
     <Content Include="Pages\General\TableDark.ascx" />
