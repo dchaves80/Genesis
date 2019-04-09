@@ -43,9 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Connection">
-      <HintPath>..\..\..\..\Models\bin\Debug\Connection.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Models">
       <HintPath>..\..\..\..\Models\bin\Debug\Models.dll</HintPath>
@@ -136,10 +133,10 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(ProjectDir)\*.aspx" "C:\Proyecto Genesis\Genesis\Genesis\Modules\Roles"
-copy /Y "$(ProjectDir)\*.js" "C:\Proyecto Genesis\Genesis\Genesis\Modules\Roles"
-copy /Y "$(ProjectDir)\*.ascx" "C:\Proyecto Genesis\Genesis\Genesis\Modules\Roles"
-copy /Y "$(ProjectDir)\bin\Roles.dll" "C:\Proyecto Genesis\Genesis\Genesis\bin"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(ProjectDir)*.aspx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
+copy /Y "$(ProjectDir)*.js" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
+copy /Y "$(ProjectDir)*.ascx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
+copy /Y "$(ProjectDir)bin\$(ProjectName).dll" "$(ProjectDir)..\..\..\..\Genesis\bin"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

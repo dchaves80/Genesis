@@ -34,9 +34,9 @@ namespace Usuarios
             string email,
             string password)
         {
-            DataTable DT = Mod_Users.Insert_User(userName, email, password);
+            Mod_Users u = Mod_Users.New(userName, email, password);
 
-            if (DT != null && DT.Rows.Count > 0)
+            if (u != null)
                 return "True";
             else
                 return "False";
@@ -45,9 +45,9 @@ namespace Usuarios
         private string CheckIfUSerExists(
             string username)
         {
-            DataTable DT = Mod_Users.Get_UserByUsername(username);
+            Mod_Users user = Mod_Users.Get_ByUsername(username);
 
-            if (DT != null && DT.Rows.Count > 0)
+            if (user != null)
                 return "True";
             else return "False";
         }

@@ -41,10 +41,22 @@ namespace Roles
         /// <param name="newRole">Nuevo string del rol</param>
         /// <returns>Devuelve un string "True" si se modificó, "False" si no.</returns>
         private string UpdateRole(
-            int? id,
+            int id,
             string newRole)
         {
-            return Mod_Roles.Update_Role(id, newRole).ToString();
+            Mod_Roles r = Mod_Roles.Get_ById(id);
+            if (r != null)
+            {
+                if (r.Update(newRole) == true)
+                {
+                    return true.ToString();
+                }
+                else
+                {
+                    return false.ToString();
+                }
+            } else { return false.ToString(); }
+           
         }
 
         /// <summary>
@@ -53,7 +65,7 @@ namespace Roles
         /// <returns>Devuelve una lista con todos los roles</returns>
         private List<Mod_Roles> GetAllRoles()
         {
-            return Mod_Roles.Get_Roles(null, null);
+            return Mod_Roles.Get_All();
         }
 
         /// <summary>
@@ -66,7 +78,11 @@ namespace Roles
             int id,
             string role)
         {
-            return Mod_Roles.Delete_Role(id, role).ToString();
+
+            Mod_Roles r = Mod_Roles.Get_ById(id);
+            bool result = r.Delete();
+
+            return result.ToString();
         }
 
         /// <summary>
@@ -76,7 +92,7 @@ namespace Roles
         /// <returns>Devuelve un string "True" si se creó, "False" si no.</returns>
         private string InsertRole(string role)
         {
-            if (Mod_Roles.Insert_Role(role) != null)
+            if (Mod_Roles.Insert(role) != null)
                 return "True";
             else
                 return "False";

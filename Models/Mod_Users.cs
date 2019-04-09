@@ -62,7 +62,7 @@ namespace Models
         }
 
 
-        public static Mod_Users Insert_User(
+        public static Mod_Users New(
             string userName,
             string email,
             string password)
