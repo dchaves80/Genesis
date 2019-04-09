@@ -9,7 +9,7 @@
 
     <%@ Import Namespace="Models" %>
     <%
-        List<Mod_Modules> ActiveModules = Mod_Modules.GetModules();
+        List<Mod_Modules> ActiveModules = Mod_Modules.Get_All();
         try {
             foreach (Mod_Modules module in ActiveModules)
             {

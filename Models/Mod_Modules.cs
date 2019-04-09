@@ -28,7 +28,7 @@ namespace Models
             dll = DR["Dll"].ToString();
         }
 
-        public static List<Mod_Modules> GetModules()
+        public static List<Mod_Modules> Get_All()
         {
             DataTable DT = Con_Modules.Get_Module(null, null, null, null);
             if (DT !=null && DT.Rows.Count > 0)
@@ -46,7 +46,7 @@ namespace Models
             }
         }
 
-        public static Mod_Modules GetModuleById(int Id)
+        public static Mod_Modules Get_ById(int Id)
         {
             DataTable DT = Con_Modules.Get_Module(Id, null, null, null);
             if (DT != null && DT.Rows.Count > 0)

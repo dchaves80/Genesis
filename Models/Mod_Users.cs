@@ -35,7 +35,7 @@ namespace Models
         /// <param name="user">Username</param>
         /// <param name="password">Password</param>
         /// <returns>Returns true if the credentials are correct, false otherwise</returns>
-        public static Mod_Users Get_UserByUserAndPassword (
+        public static Mod_Users Get_ByUserAndPassword (
             string user,
             string password)
         {
@@ -46,7 +46,7 @@ namespace Models
                 return null;
         }
 
-        public static List<Mod_Users> Get_Users()
+        public static List<Mod_Users> Get_All()
         {
             DataTable DT = Con_Users.Get_User(null, null, null, null, 0);
             if (DT != null && DT.Rows.Count > 0)
@@ -77,7 +77,7 @@ namespace Models
                 return null;
         }
 
-        public static Mod_Users Get_UserById(int Id)
+        public static Mod_Users Get_ById(int Id)
         {
             DataTable DT = Con_Users.Get_User(Id, null, null, null, 1);
             if (DT != null && DT.Rows.Count > 0)
@@ -86,7 +86,7 @@ namespace Models
                 return null;
         }
 
-        public static Mod_Users Get_UserByUsername(string username)
+        public static Mod_Users Get_ByUsername(string username)
         {
             DataTable DT = Con_Users.Get_User(null, username, null, null, 0);
 

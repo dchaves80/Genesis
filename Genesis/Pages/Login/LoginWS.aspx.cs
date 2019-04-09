@@ -31,7 +31,7 @@ namespace Genesis.Pages.Login
             string pass)
         {            
             string passCrypted = Crypt.StringByMD5(pass);
-            Mod_Users User = Mod_Users.Get_UserByUserAndPassword(user, passCrypted);
+            Mod_Users User = Mod_Users.Get_ByUserAndPassword(user, passCrypted);
 
             if (User != null)
             {

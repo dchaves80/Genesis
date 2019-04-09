@@ -36,7 +36,7 @@ namespace Genesis.Pages.Main.Controls
 
                     if (IdUser != 0)
                     {
-                        Mod_Users _User = Mod_Users.Get_UserById(IdUser);
+                        Mod_Users _User = Mod_Users.Get_ById(IdUser);
                         if (_User != null)
                         {
                             Session.Add("User", _User);

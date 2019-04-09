@@ -22,11 +22,9 @@ namespace Models
             role = DR["Role"].ToString();
         }
 
-        public static List<Mod_Roles> Get_Roles(
-            int? id,
-            string role)
+        public static List<Mod_Roles> Get_All()
         {            
-            DataTable DT = Con_Roles.Get_Roles(id, role);
+            DataTable DT = Con_Roles.Get_Roles(null, null);
             List<Mod_Roles> List = new List<Mod_Roles>();
 
             if (DT != null && DT.Rows.Count > 0)
@@ -41,7 +39,36 @@ namespace Models
                 return null;
         }
 
-        public static Mod_Roles Insert_Role(string role)
+        public static Mod_Roles Get_ById(int id)
+        {
+            DataTable DT = Con_Roles.Get_Roles(id, null);
+            if (DT != null && DT.Rows.Count > 0)
+            {
+                return new Mod_Roles(DT.Rows[0]);
+            }
+            else
+                return null;
+        }
+
+        public static List<Mod_Roles> Get_ByName(string searchString)
+        {
+            DataTable DT = Con_Roles.Get_Roles(null, searchString);
+            List<Mod_Roles> List = new List<Mod_Roles>();
+
+            if (DT != null && DT.Rows.Count > 0)
+            {
+                foreach (DataRow DR in DT.Rows)
+                {
+                    List.Add(new Mod_Roles(DR));
+                }
+                return List;
+            }
+            else
+                return null;
+        }
+
+
+        public static Mod_Roles Insert(string role)
         {
             int id = int.Parse(Con_Roles.Insert_Role(role).Rows[0][0].ToString());
 
@@ -54,18 +81,23 @@ namespace Models
 
         }
 
-        public static bool Delete_Role(
-            int? id,
-            string role)
+        public bool Delete()
         {
-            return Con_Roles.Delete_Role(id, role);
+            return Con_Roles.Delete_Role(id,null);
         }
 
-        public static bool Update_Role(
-            int? id,
-            string role)
+        public bool Update(string newName)
         {
-            return Con_Roles.Update_Role(id, role);
+
+            if (Con_Roles.Update_Role(id, newName) == true)
+            {
+                role = newName;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

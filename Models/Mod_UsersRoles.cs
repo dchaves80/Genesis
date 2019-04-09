@@ -52,7 +52,7 @@ namespace Models
                 return null;
         }
 
-        public static Mod_UsersRoles Insert_UserRole(
+        public static Mod_UsersRoles Insert(
             int userId,
             int roleId)
         {
