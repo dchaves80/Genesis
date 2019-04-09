@@ -39,7 +39,7 @@ img.ProfilePic {
 }
 
     .DropDown:hover .DropDownContent {
-        height: 190px;
+        height: 200px;
     }
 
         .DropDown:hover .DropDownContent a {
@@ -70,6 +70,7 @@ i.DropDownMark {
     padding: 16px 12px;
     color: rgba(0,0,0,0);
     transition: 0.3s;
+    text-decoration:none;
 }
 
     .DropDownOption:hover {

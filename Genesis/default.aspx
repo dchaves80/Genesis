@@ -19,17 +19,21 @@
     <script>
         $(document).ready(function ()
         {
-            LoadProgressBar();
+            //LoadProgressBar();
+            var x = document.getElementById("welcometag");
+            x.play();
+            $("#loginFrame").show(1000);
         });
     </script>
     <title>Login</title>
 </head>
 <body>
+    
     <form id="form1" style="transition: 0.3s; color: rgba(255,255,255,0.8)" runat="server">
         
         <!-- Page -->
         <div id="View">
-
+            
             <div class="TopBar">
 
                 <!-- Logo -->
@@ -47,7 +51,7 @@
         <div class="PopUp">
 
             <!-- LOGIN -->
-            <div class="CustomPopUp" style="position: absolute; left: 40%;">
+            <div class="CustomPopUp" id="loginFrame" style="position: absolute; left: 40%; display:none">
 
                 <!-- Title -->
                 <div class="PopUpTitle">
@@ -87,5 +91,6 @@
 
 
     </form>
+    <audio src="Assets/Audio/welcome.mp3" id="welcometag" controls hidden="hidden" />
 </body>
 </html>

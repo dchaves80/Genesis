@@ -23,7 +23,11 @@ namespace Genesis.Pages.Main.Controls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            if (Request["Logout"] != null)
+            {
+                Session.Remove("User");
+            }
 
             if (Request["sk"] != null)
             {
@@ -86,10 +90,6 @@ namespace Genesis.Pages.Main.Controls
 
         
 
-        protected void ExitButton_Click(object sender, EventArgs e)
-        {
-            Session.Remove("User");
-            Redirect(false);
-        }
+       
     }
 }

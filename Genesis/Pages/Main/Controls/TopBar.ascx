@@ -15,8 +15,8 @@
             <a class="DropDownOption"><%=USERNAME%></a>
             <a class="DropDownOption">Perfil</a>
             <a class="DropDownOption">Opciones</a>
-            <a class="DropDownSeparator"></a>
-            <a class="DropDownOption"><asp:Button Text="Salir" ID="ExitButton" runat="server" OnClick="ExitButton_Click" /></a>
+            <!-- <a class="DropDownSeparator"></a> -->
+            <a class="DropDownOption" href="/Pages/Main/Main.aspx?Logout=1">Salir</a>
         </div>
     </div>
 
