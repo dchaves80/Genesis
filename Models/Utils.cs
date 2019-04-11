@@ -31,7 +31,7 @@ namespace Models
         /// </summary>
         /// <param name="Path">Raw html path</param>
         /// <param name="Page">Suele ser "this" si se invoca desde modulo o control</param>
-        public static void IncludeJavaScript(string Path, ref Page Page)
+        public static void IncludeJavaScript(string Path, Page Page)
         {
             //<script src="//static.h-bid.com/sncmp/sncmp_stub.min.js" type="text/javascript"></script>
             System.Web.UI.HtmlControls.HtmlGenericControl Meta1 = new System.Web.UI.HtmlControls.HtmlGenericControl("script");
