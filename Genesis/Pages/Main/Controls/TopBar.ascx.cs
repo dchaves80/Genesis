@@ -1,4 +1,5 @@
 ﻿using Models;
+using Models.ConstantLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace Genesis.Pages.Main.Controls
 
             if (Request["Logout"] != null)
             {
-                Session.Remove("User");
+                Session.Remove(Session_Library.USER);
             }
 
             if (Request["sk"] != null)
@@ -43,7 +44,7 @@ namespace Genesis.Pages.Main.Controls
                         Mod_Users _User = Mod_Users.Get_ById(IdUser);
                         if (_User != null)
                         {
-                            Session.Add("User", _User);
+                            Session.Add(Session_Library.USER, _User);
                             Models.Crypt.Update_AccessCode(secretkey);
                             Redirect(true);
                         }
@@ -65,9 +66,9 @@ namespace Genesis.Pages.Main.Controls
             }
             else
             {
-                if (Session["User"] != null)
+                if (Session[Session_Library.USER] != null)
                 {
-                    _UserName = (Session["User"] as Mod_Users).USERNAME;
+                    _UserName = (Session[Session_Library.USER] as Mod_Users).USERNAME;
                 }
                 else
                 {

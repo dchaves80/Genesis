@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Models;
+using Models.ConstantLibrary;
 
 namespace Genesis.Pages.Main
 {
@@ -18,21 +19,21 @@ namespace Genesis.Pages.Main
             //ModuleContainer.Controls.Add(Roles);
             if (Request["IDM"] != null)
             {
-                Session.Add("ActiveModule", Request["IDM"].ToString());
+                Session.Add(Session_Library.ACTIVE_MODULE, Request["IDM"].ToString());
                 Response.Redirect("./Main.aspx");
             }
             else
             {
-                if (Session["ActiveModule"] != null)
+                if (Session[Session_Library.ACTIVE_MODULE] != null)
                 {
-                    string path = Utils.GetModulePath(int.Parse(Session["ActiveModule"].ToString()));
+                    string path = Utils.GetModulePath(int.Parse(Session[Session_Library.ACTIVE_MODULE].ToString()));
                     try
                     {
                         ModuleContainer.Controls.Add(LoadControl(path));
                     }
                     catch (Exception E)
                     {
-                        new Mod_Exception(E, Response, "No se puede cargar el módulo " + Session["ActiveModule"].ToString());
+                        new Mod_Exception(E, Response, "No se puede cargar el módulo " + Session[Session_Library.ACTIVE_MODULE].ToString());
                     }
                 }
             }

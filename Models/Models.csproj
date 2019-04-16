@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstantLibrary\Session_Library.cs" />
     <Compile Include="Crypt.cs" />
     <Compile Include="Mod_Exception.cs" />
     <Compile Include="Mod_Modules.cs" />
