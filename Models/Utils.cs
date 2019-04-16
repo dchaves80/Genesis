@@ -42,7 +42,7 @@ namespace Models
 
         
         /// <summary>
-        ///Obtiene el path de un modulo 
+        /// Obtiene el path de un modulo 
         /// </summary>
         /// <param name="IdModule">Id del modulo</param>
         /// <returns></returns>
