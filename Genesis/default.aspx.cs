@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace Genesis
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Utils.IncludeJavaScript("https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js", Page);
         }
     }
 }
