@@ -14,11 +14,13 @@ namespace Models
         string name;
         string path;
         string dll;
+        string icon;
 
         public string Name { get => name; set => name = value; }
         public string Path { get => path; set => path = value; }
         public string Dll { get => dll; set => dll = value; }
         public int Id { get => id; set => id = value; }
+        public string Icon { get => icon; set => icon = value; }
 
         private Mod_Modules(DataRow DR)
         {
@@ -26,11 +28,12 @@ namespace Models
             name = DR["ModuleName"].ToString();
             path = DR["Ascx"].ToString();
             dll = DR["Dll"].ToString();
+            icon = DR["Icon"].ToString();
         }
 
         public static List<Mod_Modules> Get_All()
         {
-            DataTable DT = Con_Modules.Get_Module(null, null, null, null);
+            DataTable DT = Con_Modules.Get_Module(null, null, null, null, null);
             if (DT !=null && DT.Rows.Count > 0)
             {
                 List<Mod_Modules> aux = new List<Mod_Modules>();
@@ -48,7 +51,7 @@ namespace Models
 
         public static Mod_Modules Get_ById(int Id)
         {
-            DataTable DT = Con_Modules.Get_Module(Id, null, null, null);
+            DataTable DT = Con_Modules.Get_Module(Id, null, null, null, null);
             if (DT != null && DT.Rows.Count > 0)
             {
                 return new Mod_Modules(DT.Rows[0]);

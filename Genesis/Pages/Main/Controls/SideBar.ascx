@@ -13,7 +13,12 @@
         try {
             foreach (Mod_Modules module in ActiveModules)
             {
-                Response.Write("<a class=\"SideBarDarkOption\" OnClick=\"LoadModule('" + module.Id + "')\"><i class=\"fas fa-address-card\"></i> "+ module.Name +"</a>");
+                Response.Write("<a class=\"SideBarDarkOption\" OnClick=\"LoadModule('" + module.Id + "')\">");
+                if (module.Icon != null) //esto no tiene efecto, es al pedo
+                {
+                    Response.Write("<i class=\"fas fa-"+module.Icon+"\"></i> ");
+                }
+                Response.Write(module.Name +"</a>");
             }
         } catch (Exception E)
         {
