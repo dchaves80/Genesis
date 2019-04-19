@@ -21,9 +21,7 @@
     <link href="../../Assets/CSS/Main.css" rel="stylesheet" />
 
     <script src="../../Assets/Js/Main.js"></script>
-    <script src="../../Assets/Js/ThirdParty/progressbar.min.js"></script>
-    <script src="../../Modules/Usuarios/Usuarios.js"></script>
-	<script src="../../Modules/Roles/Roles.js"></script>
+    <script src="../../Assets/Js/ThirdParty/progressbar.min.js"></script>    
 
 </head>
 <body class="BackgroundDark" style="font-family: 'Roboto'; color: white; background: linear-gradient(#131517, #1b2835); background-attachment: fixed;">

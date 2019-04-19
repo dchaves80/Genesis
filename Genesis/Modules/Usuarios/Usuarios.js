@@ -86,7 +86,7 @@ function ConfirmPassword() {
 
                     if (data == "True") {
                         alert("Usuario creado con éxito.");
-                        location.replace("./default.aspx");
+                        location.reload(true);
                     }
                     else {
                         alert("Eror inesperado. El usuario no pudo crearse. Contacte con el soporte.");

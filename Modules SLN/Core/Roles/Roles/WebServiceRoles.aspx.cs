@@ -22,7 +22,7 @@ namespace Roles
             // Requests
             if (Request["updateRole"] != null)
                 content = UpdateRole(int.Parse(Request["id"]), Request["newRole"]);
-            if (Request["getRoles"] != null)
+            if (Request["getAllRoles"] != null)
                 content = new JavaScriptSerializer().Serialize(GetAllRoles());
             if (Request["deleteRole"] != null)
                 content = DeleteRole(int.Parse(Request["id"]), Request["role"]);

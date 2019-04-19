@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Models;
 
 namespace Usuarios
 {
@@ -11,7 +12,7 @@ namespace Usuarios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Utils.IncludeJavaScript("../../Modules/Usuarios/Usuarios.js", Page);
         }
     }
 }
