@@ -49,6 +49,7 @@
     <Compile Include="Con_AccessCodes.cs" />
     <Compile Include="Con_Modules.cs" />
     <Compile Include="Con_Roles.cs" />
+    <Compile Include="Con_RolesPermissions.cs" />
     <Compile Include="Con_Users.cs" />
     <Compile Include="Con_UsersRoles.cs" />
     <Compile Include="GenesisDataSet.Designer.cs">
