@@ -16,7 +16,7 @@ namespace Models
         public int ID { get => id; }
         public string ROLE { get => role; }
 
-        private Mod_Roles(DataRow DR)
+        public Mod_Roles(DataRow DR)
         {
             id = int.Parse(DR["Id"].ToString());
             role = DR["Role"].ToString();

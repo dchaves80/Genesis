@@ -61,5 +61,33 @@ namespace Models
                 return null;
             }
         }
+
+        public void LinkRole(int RoleId)
+        {
+            DataTable DT = Con_RolesPermissions.Insert_RolesPermissions(RoleId, id);
+        }
+
+        public void LinkRole(Mod_Roles Role)
+        {
+            Con_RolesPermissions.Insert_RolesPermissions(Role.ID, id);
+        }
+
+        public List<Mod_Roles> Get_Roles()
+        {
+            List<Mod_Roles> aux = new List<Mod_Roles>();
+            DataTable DT = Con_RolesPermissions.Get_RolesPermissions(null, null, id);
+            foreach (DataRow DR in DT.Rows)
+            {
+                aux.Add(new Mod_Roles(DR));
+            }
+            if (aux != null)
+            {
+                return aux;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
