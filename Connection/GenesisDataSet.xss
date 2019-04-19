@@ -16,9 +16,9 @@
     <Shape ID="DesignTable:Insert_Role" ZOrder="5" X="2918" Y="70" Height="112" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="54" />
     <Shape ID="DesignTable:Insert_User" ZOrder="4" X="3233" Y="70" Height="112" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="54" />
     <Shape ID="DesignTable:Insert_UsersRoles" ZOrder="3" X="3603" Y="70" Height="112" Width="291" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="54" />
-    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="13" X="70" Y="70" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="52" />
     <Shape ID="DesignTable:Get_RolesPermissions" ZOrder="2" X="3964" Y="70" Height="158" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Insert_RolesPermissions" ZOrder="1" X="4334" Y="70" Height="112" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="54" />
+    <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="13" X="70" Y="70" Height="309" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="259" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
