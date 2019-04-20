@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Connection;
 
+// Editado el código para simplificarlo en los return - Losha - 2019/04/19 22.18
+
 namespace Models
 {
     public class Mod_Modules
@@ -52,14 +54,16 @@ namespace Models
         public static Mod_Modules Get_ById(int Id)
         {
             DataTable DT = Con_Modules.Get_Module(Id, null, null, null, null);
-            if (DT != null && DT.Rows.Count > 0)
-            {
-                return new Mod_Modules(DT.Rows[0]);
-            }
-            else
-            {
-                return null;
-            }
+            //if (DT != null && DT.Rows.Count > 0)
+            //{
+            //    return new Mod_Modules(DT.Rows[0]);
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+
+            return (DT != null && DT.Rows.Count > 0) ? new Mod_Modules(DT.Rows[0]) : null;
         }
 
         public void LinkRole(int RoleId)
@@ -80,14 +84,17 @@ namespace Models
             {
                 aux.Add(new Mod_Roles(DR));
             }
-            if (aux != null)
-            {
-                return aux;
-            }
-            else
-            {
-                return null;
-            }
+
+            //if (aux != null)
+            //{
+            //    return aux;
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+
+            return (aux != null) ? aux : null;
         }
     }
 }

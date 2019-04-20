@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 using Connection;
 
+
+
 namespace Models
 {
     public class Crypt
@@ -48,13 +50,17 @@ namespace Models
             return Con_AccessCodes.Get_IdUserByAccessCode(accessCode);
         }
 
+        // Editado el código para simplificarlo en el return - Losha - 2019/04/19 22.16
+
         public static bool Get_AlreadyUsedByAccessCode(string accessCode)
         {
             bool? alreadyUsed = Con_AccessCodes.Get_AlreadyUsedByAccessCode(accessCode);
 
-            if (alreadyUsed != null)
-                return alreadyUsed.Value;
-            else return false;
+            //if (alreadyUsed != null)
+            //    return alreadyUsed.Value;
+            //else return false;
+
+            return (alreadyUsed != null) ? alreadyUsed.Value : false;
         }
     }
 }

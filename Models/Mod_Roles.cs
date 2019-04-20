@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Connection;
 using System.Data;
 
+// Editado el código para simplificarlo en los return - Losha - 2019/04/19 22.21
+
 namespace Models
 {
     public class Mod_Roles
@@ -42,12 +44,14 @@ namespace Models
         public static Mod_Roles Get_ById(int id)
         {
             DataTable DT = Con_Roles.Get_Roles(id, null);
-            if (DT != null && DT.Rows.Count > 0)
-            {
-                return new Mod_Roles(DT.Rows[0]);
-            }
-            else
-                return null;
+            //if (DT != null && DT.Rows.Count > 0)
+            //{
+            //    return new Mod_Roles(DT.Rows[0]);
+            //}
+            //else
+            //    return null;
+
+            return (DT != null && DT.Rows.Count > 0) ? new Mod_Roles(DT.Rows[0]) : null;
         }
 
         public static List<Mod_Roles> Get_ByName(string searchString)
@@ -74,10 +78,12 @@ namespace Models
 
             DataTable DT = Con_Roles.Get_Roles(id, null);
 
-            if (DT != null && DT.Rows.Count > 0)
-                return new Mod_Roles(DT.Rows[0]);
-            else
-                return null;
+            //if (DT != null && DT.Rows.Count > 0)
+            //    return new Mod_Roles(DT.Rows[0]);
+            //else
+            //    return null;
+
+            return (DT != null && DT.Rows.Count > 0) ? new Mod_Roles(DT.Rows[0]) : null;
 
         }
 

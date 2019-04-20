@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Editado el código para simplificarlo en los return - Losha - 2019/04/19 22.13
+
 namespace Connection
 {
     public class Con_Users
@@ -27,14 +29,16 @@ namespace Connection
             TableAdapterManager.ChangeConnection(ref SQLCONN);
             TA.Fill(DT, UserName, Email, Password);
 
-            if ( DT != null && DT.Rows.Count > 0)
-            {
-                return DT;
-            }
-            else
-            {
-                return null;
-            }
+            //if ( DT != null && DT.Rows.Count > 0)
+            //{
+            //    return DT;
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+
+            return (DT != null && DT.Rows.Count > 0) ? DT : null;
         }
 
         /// <summary>
@@ -54,14 +58,16 @@ namespace Connection
             TableAdapterManager.ChangeConnection(ref SQLCONN);
             TA.Fill(DT, Id, UserName, Email, Password, Response);
 
-            if (DT != null && DT.Rows.Count > 0)
-            {
-                return DT;
-            }
-            else
-            {
-                return null;
-            }
+            //if ( DT != null && DT.Rows.Count > 0)
+            //{
+            //    return DT;
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+
+            return (DT != null && DT.Rows.Count > 0) ? DT : null;
         }
 
         /// <summary>
@@ -76,14 +82,17 @@ namespace Connection
         {
             QTACustomized QTA = new QTACustomized();
             int response = QTA.Update_User(Id, UserName, Email, Password);
-            if (response > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            //if (response > 0)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+
+            return response > 0;
         }
 
         /// <summary>
@@ -97,14 +106,17 @@ namespace Connection
         {
             QTACustomized QTA = new QTACustomized();
             int response = QTA.Delete_User(Id, UserName, Email);
-            if (response > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            //if (response > 0)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+
+            return response > 0;
         }
     }
 }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using Connection;
 
+// Editado el código para simplificarlo en los return - Losha - 2019/04/19 22.24
+
 namespace Models
 {
     public class Mod_Users
@@ -40,10 +42,12 @@ namespace Models
             string password)
         {
             DataTable DT = Con_Users.Get_User(null, user, null, password, 0);
-            if (DT != null && DT.Rows.Count > 0)
-                return new Mod_Users(DT.Rows[0]);
-            else
-                return null;
+            //if (DT != null && DT.Rows.Count > 0)
+            //    return new Mod_Users(DT.Rows[0]);
+            //else
+            //    return null;
+
+            return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
 
         public static List<Mod_Users> Get_All()
@@ -71,29 +75,35 @@ namespace Models
             DataTable DT = Con_Users.Get_User(id, null, null, null, 0);
 
 
-            if (DT != null && DT.Rows.Count > 0)
-                return new Mod_Users(DT.Rows[0]);
-            else
-                return null;
+            //if (DT != null && DT.Rows.Count > 0)
+            //    return new Mod_Users(DT.Rows[0]);
+            //else
+            //    return null;
+
+            return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
 
         public static Mod_Users Get_ById(int Id)
         {
             DataTable DT = Con_Users.Get_User(Id, null, null, null, 1);
-            if (DT != null && DT.Rows.Count > 0)
-                return new Mod_Users(DT.Rows[0]);
-            else
-                return null;
+            //if (DT != null && DT.Rows.Count > 0)
+            //    return new Mod_Users(DT.Rows[0]);
+            //else
+            //    return null;
+
+            return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
 
         public static Mod_Users Get_ByUsername(string username)
         {
             DataTable DT = Con_Users.Get_User(null, username, null, null, 0);
 
-            if (DT != null && DT.Rows.Count > 0)
-                return new Mod_Users(DT.Rows[0]);
-            else
-                return null;
+            //if (DT != null && DT.Rows.Count > 0)
+            //    return new Mod_Users(DT.Rows[0]);
+            //else
+            //    return null;
+
+            return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
 
     }

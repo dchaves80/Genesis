@@ -9,6 +9,7 @@ using Connection;
 ////	Code generated via Losha v1.0. By Losha, for Losha.	////
 ////	Date of this code: 26/3/2019						////
 
+// Editado el código para simplificarlo en los return - Losha - 2019/04/19 22.25
 
 namespace Models
 {
@@ -60,10 +61,12 @@ namespace Models
 
             DataTable DT = Con_UsersRoles.Get_UsersRoles(id, null, null);
 
-            if (id > 0)
-                return new Mod_UsersRoles(DT.Rows[0]);
-            else
-                return null;
+            //if (id > 0)
+            //    return new Mod_UsersRoles(DT.Rows[0]);
+            //else
+            //    return null;
+
+            return (id > 0) ? new Mod_UsersRoles(DT.Rows[0]) : null;
         }
 
         public static bool Delete_UserRole(

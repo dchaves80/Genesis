@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Connection
 {
+    // Editado el código para simplificarlo en los return - Losha - 2019/04/19 21.55
+
     public static class Con_AccessCodes
     {
         public static bool Insert_AccessCode(
@@ -16,10 +18,8 @@ namespace Connection
             QTACustomized QTA = new QTACustomized();
             int a = QTA.Insert_AccessCode(accessCode, idUser, loginDate, false);
 
-            if (a == 1)
-                return true;
-            else
-                return false;
+            return a == 1;
+            
         }
 
         public static int Get_IdUserByAccessCode(string accessCode)
@@ -34,10 +34,7 @@ namespace Connection
 
             TA.Fill(DT, accessCode);
 
-            if (DT.Rows.Count > 0)
-                return int.Parse(DT.Rows[0][0].ToString());
-            else
-                return 0;
+            return (DT.Rows.Count > 0) ? int.Parse(DT.Rows[0][0].ToString()) : 0;
         }
 
         public static bool Update_AccessCode(string accessCode)
@@ -45,10 +42,7 @@ namespace Connection
             QTACustomized QTA = new QTACustomized();
             int a = QTA.Update_AccessCode(accessCode);
 
-            if (a == 1)
-                return true;
-            else
-                return false;
+            return a == 1;            
         }
 
         public static bool? Get_AlreadyUsedByAccessCode(string accessCode)
@@ -67,6 +61,8 @@ namespace Connection
                 return bool.Parse(DT.Rows[0][0].ToString());
             else
                 return null;
+
+            //bool? a = DT.Rows.Count > 0 ? bool.Parse(DT.Rows[0][0].ToString()) : null;
         }
     }
 }
