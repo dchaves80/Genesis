@@ -408,16 +408,66 @@ function GetAllRoles() {
                 }
                 
             }
+            CrearDragDrop();
         }
     })
 }
 
-// ReconstruirTala
-function ReconstruirTabla() {
+// Get All User Roles
+function GetAllUserRoles() {
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'json',
+        data:
+        {
+            getAllUserRoles: 'true',
+        },
+        success: function (data) {
+            ReconstruirTablaUsuariosRoles()            
+
+            if (data != null) {
+
+                var users = [];
+
+                for (a = 0; a < data.length; a++) {
+                    if (users.indexOf(data[a].USERID) > -1) {
+                        $('ul[idUser=' + data[a].USERID + ']').append(
+                            "<li><input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + data[a].ROLEID + "\")'/>" + data[a].ROLE.ROLE + "</li>");
+                    }
+                    else {
+                        $('#tablaUsuariosRoles').append(
+                            "<tr idUser='" + data[a].USERID + "' class='droppable TableRows'>" +
+                                "<td>" + data[a].USER.USERNAME + "</td>" +
+                                "<td>"+
+                                    "<ul idUser='" + data[a].USERID + "' style='list-style-type: none;'>" +
+                                        "<li><input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + data[a].ROLEID + "\")'/>" + data[a].ROLE.ROLE + "</li>" +
+                                    "</ul>" +
+                                "</td>" +
+                            "</tr>");
+
+                        users[a] = data[a].USERID;
+                    }                    
+                }
+            }
+            CrearDragDrop();
+        }
+    })
+}
+
+// Reconstruir tablas
+function ReconstruirTablaRoles() {
     $('#tablaRoles').empty();
     $('#tablaRoles').append(
         "<tr class='TopRow'>" +
             "<td>ROL</td>" +
+        "</tr>");
+}
+function ReconstruirTablaUsuariosRoles() {
+    $('#tablaUsuariosRoles').empty();
+    $('#tablaUsuariosRoles').append(
+        "<tr class='TopRow'>" +
+            "<td>USUARIO</td>" +
+            "<td>ROL ASIGNADO</td>" +
         "</tr>");
 }
 
@@ -452,7 +502,10 @@ function CrearDragDrop() {
         // Función ejecutada al dropear el objeto
         drop: function (event, ui) {
 
-            console.log("Intento de añadir rol");
+            idRole = ui.draggable.attr("idRole");
+            //idUsuario = $(this).
+
+            AsignarRol(idRole, $(this).attr("idUser"));
 
         },
     })
@@ -487,6 +540,37 @@ function CrearRol(object) {
     }
 }
 
+///                         ///
+///         ASIGNAR         ///
+///                         ///
+// Asignar rol
+function AsignarRol(idRol, idUsuario) {
+    console.log(idRol, idUsuario);
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'text',
+        data:
+        {
+            assignRole: 'true',
+            idRol: idRol,
+            idUsuario: idUsuario,
+        },
+        success: function (data) {
+            if (data != null) {
+
+                alert("Rol asignado con éxito");
+
+                GetAllUserRoles();
+            }
+            else
+                alert("Hubo un error y no se pudo asignar el rol. Contacte con el soporte.");
+        }
+    });
+}
+// Desasignar un rol
+function DesasignarRol() {
+
+}
 
 
 

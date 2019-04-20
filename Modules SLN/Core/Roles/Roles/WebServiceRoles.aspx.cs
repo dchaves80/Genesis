@@ -22,12 +22,21 @@ namespace Roles
             // Requests
             if (Request["updateRole"] != null)
                 content = UpdateRole(int.Parse(Request["id"]), Request["newRole"]);
+
             if (Request["getAllRoles"] != null)
-                content = new JavaScriptSerializer().Serialize(GetAllRoles());
+                content = GetAllRoles();
+
             if (Request["deleteRole"] != null)
                 content = DeleteRole(int.Parse(Request["id"]), Request["role"]);
+
             if (Request["insertRole"] != null)
                 content = InsertRole(Request["newRole"]);
+
+            if (Request["assignRole"] != null)
+                content = AssignRole(int.Parse(Request["idRol"]), int.Parse(Request["idUsuario"]));
+
+            if (Request["getAllUserRoles"] != null)
+                content = GetAllUsersRoles();
 
             Response.Write(content);
             Response.Flush();
@@ -47,25 +56,30 @@ namespace Roles
             Mod_Roles r = Mod_Roles.Get_ById(id);
             if (r != null)
             {
-                if (r.Update(newRole) == true)
-                {
-                    return true.ToString();
-                }
-                else
-                {
-                    return false.ToString();
-                }
-            } else { return false.ToString(); }
-           
+                #region return deprecated
+                //if (r.Update(newRole) == true)
+                //{
+                //    return true.ToString();
+                //}
+                //else
+                //{
+                //    return false.ToString();
+                //}
+                #endregion
+
+                return (r.Update(newRole)) ? true.ToString() : false.ToString();
+            }
+            else
+                return false.ToString();            
         }
 
         /// <summary>
         /// Obtiene todos los roles
         /// </summary>
         /// <returns>Devuelve una lista con todos los roles</returns>
-        private List<Mod_Roles> GetAllRoles()
+        private string GetAllRoles()
         {
-            return Mod_Roles.Get_All();
+            return new JavaScriptSerializer().Serialize(Mod_Roles.Get_All());
         }
 
         /// <summary>
@@ -80,9 +94,9 @@ namespace Roles
         {
 
             Mod_Roles r = Mod_Roles.Get_ById(id);
-            bool result = r.Delete();
+            //bool result = r.Delete();
 
-            return result.ToString();
+            return r.Delete().ToString();
         }
 
         /// <summary>
@@ -92,10 +106,32 @@ namespace Roles
         /// <returns>Devuelve un string "True" si se creó, "False" si no.</returns>
         private string InsertRole(string role)
         {
-            if (Mod_Roles.Insert(role) != null)
-                return "True";
-            else
-                return "False";
+            #region return deprecated
+            //    if (Mod_Roles.Insert(role) != null)
+            //        return "True";
+            //    else
+            //        return "False";
+            #endregion
+
+            return (Mod_Roles.Insert(role) != null) ? "True" : "False";
+        }
+
+        /// <summary>
+        /// Asigna un rol a un usuario
+        /// </summary>
+        /// <param name="idRole">Id del rol</param>
+        /// <param name="idUser">Id de usuario</param>
+        /// <returns>Devuelve un string "True" si se asignó, "False" si no.</returns>
+        private string AssignRole(
+            int idRole,
+            int idUser)
+        {
+            return (Mod_UsersRoles.Insert(idUser, idRole) != null) ? "True" : "False";
+        }
+
+        private string GetAllUsersRoles()
+        {
+            return new JavaScriptSerializer().Serialize(Mod_UsersRoles.GetAll());
         }
     }
 }

@@ -125,12 +125,12 @@
 
 
             <!-- Tabla usuarios -->
-            <table class="Table" style="display: inline; margin-left: 50px;">
+            <table id="tablaUsuariosRoles" class="Table" style="display: inline; margin-left: 50px;">
                 <tr class="TopRow">
                     <td>USUARIO</td>
                     <td>ROL ASIGNADO</td>
                 </tr>
-                <tr class="droppable TableRows">
+                <tr idUser="1" class="droppable TableRows">
                     <td>l_lapenna</td>
                     <td>
                         <ul>
@@ -139,7 +139,7 @@
                         </ul>
                     </td>
                 </tr>
-                <tr class="droppable TableRows">
+                <tr idUSer="2" class="droppable TableRows">
                     <td>atomicperson</td>
                     <td>
                         <ul>
