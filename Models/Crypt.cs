@@ -16,7 +16,7 @@ namespace Models
         /// <summary>
         /// Encripta un string por MD5
         /// </summary>
-        /// <param name="input">Strijng de entrada</param>
+        /// <param name="input">String de entrada</param>
         /// <returns>Devuelve un string encriptado por MD5</returns>
         public static string StringByMD5(string input)
         {
@@ -50,15 +50,9 @@ namespace Models
             return Con_AccessCodes.Get_IdUserByAccessCode(accessCode);
         }
 
-        // Editado el código para simplificarlo en el return - Losha - 2019/04/19 22.16
-
         public static bool Get_AlreadyUsedByAccessCode(string accessCode)
         {
             bool? alreadyUsed = Con_AccessCodes.Get_AlreadyUsedByAccessCode(accessCode);
-
-            //if (alreadyUsed != null)
-            //    return alreadyUsed.Value;
-            //else return false;
 
             return (alreadyUsed != null) ? alreadyUsed.Value : false;
         }
