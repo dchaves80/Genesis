@@ -13,10 +13,6 @@ namespace Genesis.Pages.Main
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Control Pacientes = LoadControl("/Modules/Pacientes/Pacientes.ascx");
-            //Control Usuarios = LoadControl("/Modules/Usuarios/Usuarios.ascx");
-            //Control Roles = LoadControl("/Modules/Roles/Roles.ascx");
-            //ModuleContainer.Controls.Add(Roles);
             if (Request["IDM"] != null)
             {
                 Session.Add(Session_Library.ACTIVE_MODULE, Request["IDM"].ToString());

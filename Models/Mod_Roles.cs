@@ -44,12 +44,6 @@ namespace Models
         public static Mod_Roles Get_ById(int id)
         {
             DataTable DT = Con_Roles.Get_Roles(id, null);
-            //if (DT != null && DT.Rows.Count > 0)
-            //{
-            //    return new Mod_Roles(DT.Rows[0]);
-            //}
-            //else
-            //    return null;
 
             return (DT != null && DT.Rows.Count > 0) ? new Mod_Roles(DT.Rows[0]) : null;
         }
@@ -77,11 +71,6 @@ namespace Models
             int id = int.Parse(Con_Roles.Insert_Role(role).Rows[0][0].ToString());
 
             DataTable DT = Con_Roles.Get_Roles(id, null);
-
-            //if (DT != null && DT.Rows.Count > 0)
-            //    return new Mod_Roles(DT.Rows[0]);
-            //else
-            //    return null;
 
             return (DT != null && DT.Rows.Count > 0) ? new Mod_Roles(DT.Rows[0]) : null;
 

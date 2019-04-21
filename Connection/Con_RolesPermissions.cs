@@ -39,7 +39,7 @@ namespace Connection
             return (DT != null && DT.Rows.Count > 0) ? DT : null;
         }
 
-		public static bool Delete_RolesPermissions(int Id, int RoleId, int ModuleId)
+		public static bool Delete_RolesPermissions(int? Id, int RoleId, int? ModuleId)
 		{
 			QTACustomized QTA = new QTACustomized();
 			int response = QTA.Delete_RolesPermissions(Id, RoleId, ModuleId);
