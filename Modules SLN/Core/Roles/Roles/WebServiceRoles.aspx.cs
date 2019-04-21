@@ -131,7 +131,8 @@ namespace Roles
 
         private string GetAllUsersRoles()
         {
-            return new JavaScriptSerializer().Serialize(Mod_UsersRoles.GetAll());
+            //return new JavaScriptSerializer().Serialize(Mod_UsersRoles.GetAll());
+            return new JavaScriptSerializer().Serialize(Mod_Users.Get_All());
         }
     }
 }
