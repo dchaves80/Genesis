@@ -13,13 +13,28 @@
         try {
             foreach (Mod_Modules module in ActiveModules)
             {
-                Response.Write("<a class=\"SideBarDarkOption\" OnClick=\"LoadModule('" + module.Id + "')\">");
-                if (module.Icon != null) //esto no tiene efecto, es al pedo
+                List<Mod_Roles> legalRoles = module.Get_Permissions();
+                Mod_Users activeUser = Session[Models.ConstantLibrary.Session_Library.USER] as Mod_Users;
+                List<Mod_Roles> activeRoles = activeUser.GetRoles();
+
+                if (legalRoles != null && activeRoles != null)
                 {
-                    Response.Write("<i class=\"fas fa-"+module.Icon+"\"></i> ");
+                    foreach (Mod_Roles legalRole in legalRoles)
+                    {
+                        foreach (Mod_Roles activeRole in activeRoles)
+                        {
+                            if (legalRole.ID == activeRole.ID)
+                            {
+                                Response.Write("<a class=\"SideBarDarkOption\" OnClick=\"LoadModule('" + module.Id + "')\">");
+                                Response.Write("<i class=\"fas fa-"+module.Icon+"\"></i> ");
+                                Response.Write(module.Name +"</a>");
+                            }
+                        }
+                    }
                 }
-                Response.Write(module.Name +"</a>");
+                
             }
+
         } catch (Exception E)
         {
             new Mod_Exception(E, Response);
@@ -27,11 +42,4 @@
 
     %>
     
-    
-    <!--
-    <a class="SideBarDarkOption"><i class="fas fa-address-card"></i>PACIENTES</a>
-    <a class="SideBarDarkOption"><i class="fas fa-book"></i>HISTORIA CLÍNICA</a>
-    <a class="SideBarOptionSeparator" style="cursor: default;"></a>
-    <a class="SideBarDarkOption">OPCION 3</a>
-    -->
 </div>

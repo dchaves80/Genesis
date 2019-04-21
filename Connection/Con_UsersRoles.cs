@@ -47,7 +47,7 @@ namespace Connection
             return response > 0;
 		}
 
-		public static bool Delete_UsersRoles(int Id, int UserId, int RoleId)
+		public static bool Delete_UsersRoles(int? Id, int? UserId, int? RoleId)
 		{
 			QTACustomized QTA = new QTACustomized();
 			int response = QTA.Delete_UsersRoles(Id, UserId, RoleId);

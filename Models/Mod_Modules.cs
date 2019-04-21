@@ -54,47 +54,53 @@ namespace Models
         public static Mod_Modules Get_ById(int Id)
         {
             DataTable DT = Con_Modules.Get_Module(Id, null, null, null, null);
-            //if (DT != null && DT.Rows.Count > 0)
-            //{
-            //    return new Mod_Modules(DT.Rows[0]);
-            //}
-            //else
-            //{
-            //    return null;
-            //}
 
             return (DT != null && DT.Rows.Count > 0) ? new Mod_Modules(DT.Rows[0]) : null;
         }
 
-        public void LinkRole(int RoleId)
+
+        ////                                        ////
+        ////    Role Permissions for each module    ////
+        ////                                        ////
+        public bool LinkRole(int RoleId)
         {
             DataTable DT = Con_RolesPermissions.Insert_RolesPermissions(RoleId, id);
+            return (DT != null && DT.Rows.Count > 0) ? true : false;
         }
-
-        public void LinkRole(Mod_Roles Role)
+        public bool LinkRole(Mod_Roles Role)
         {
-            Con_RolesPermissions.Insert_RolesPermissions(Role.ID, id);
+            DataTable DT = Con_RolesPermissions.Insert_RolesPermissions(Role.ID, id);
+            return (DT != null && DT.Rows.Count > 0) ? true : false;
         }
 
-        public List<Mod_Roles> Get_Roles()
+        public bool UnlinkRole(int RoleId)
+        {
+            return Con_RolesPermissions.Delete_RolesPermissions(null, RoleId, id);
+        }
+        public bool UnlinkRole(Mod_Roles Role)
+        {
+            return Con_RolesPermissions.Delete_RolesPermissions(null, Role.ID, id);
+        }
+
+        public List<Mod_Roles> Get_Permissions()
         {
             List<Mod_Roles> aux = new List<Mod_Roles>();
             DataTable DT = Con_RolesPermissions.Get_RolesPermissions(null, null, id);
-            foreach (DataRow DR in DT.Rows)
+            if (DT != null)
             {
-                aux.Add(new Mod_Roles(DR));
+                foreach (DataRow DR in DT.Rows)
+                {
+                    Mod_Roles auxR = Mod_Roles.Get_ById(int.Parse(DR["RoleId"].ToString()));
+                    aux.Add(auxR);
+                }
+                return aux;
             }
-
-            //if (aux != null)
-            //{
-            //    return aux;
-            //}
-            //else
-            //{
-            //    return null;
-            //}
-
-            return (aux != null) ? aux : null;
+            else
+            {
+                return null;
+            }
+            
         }
+        
     }
 }

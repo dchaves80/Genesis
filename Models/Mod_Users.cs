@@ -106,5 +106,48 @@ namespace Models
             return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
 
+
+        ////                                        ////
+        ////    Role settings for each user         ////
+        ////                                        ////
+        public bool AddRole(int RoleId)
+        {
+            DataTable DT = Con_UsersRoles.Insert_UsersRoles(ID, RoleId);
+            return (DT != null && DT.Rows.Count > 0) ? true : false;
+        }
+        public bool AddRole(Mod_Roles Role)
+        {
+            DataTable DT = Con_UsersRoles.Insert_UsersRoles(ID, Role.ID);
+            return (DT != null && DT.Rows.Count > 0) ? true : false;
+        }
+
+        public bool RemoveRole(int RoleId)
+        {
+            return Con_UsersRoles.Delete_UsersRoles(null, ID, RoleId);
+        }
+        public bool RemoveRole(Mod_Roles Role)
+        {
+            return Con_UsersRoles.Delete_UsersRoles(null, ID, Role.ID);
+        }
+
+        public List<Mod_Roles> GetRoles()
+        {
+            List<Mod_Roles> aux = new List<Mod_Roles>();
+            DataTable DT = Con_UsersRoles.Get_UsersRoles(null, ID, null);
+            if (DT != null)
+            {
+                foreach (DataRow DR in DT.Rows)
+                {
+                    Mod_Roles auxR = Mod_Roles.Get_ById(int.Parse(DR["RoleId"].ToString()));
+                    aux.Add(auxR);
+                }
+                return aux;
+            }
+            else
+            {
+                return null;
+            }
+            
+        }
     }
 }
