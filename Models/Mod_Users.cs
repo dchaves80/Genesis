@@ -16,11 +16,13 @@ namespace Models
         string username;
         string email;
         string password;
+        List<Mod_Roles> roles;
 
         public int ID { get => id; }
         public string USERNAME { get => username; }
         public string EMAIL { get => email; }
         public string PASSWORD { get => password; }
+        public List<Mod_Roles> ROLES { get => roles; }
 
         private Mod_Users(DataRow DR)
         {
@@ -28,6 +30,7 @@ namespace Models
             username = DR["UserName"].ToString();
             email = DR["Email"].ToString();
             password = DR["Password"].ToString();
+            GetRoles();
         }
 
 
@@ -130,23 +133,21 @@ namespace Models
             return Con_UsersRoles.Delete_UsersRoles(null, ID, Role.ID);
         }
 
-        public List<Mod_Roles> GetRoles()
+        private void GetRoles()
         {
             List<Mod_Roles> aux = new List<Mod_Roles>();
-            DataTable DT = Con_UsersRoles.Get_UsersRoles(null, ID, null);
+            DataTable DT = Con_UsersRoles.Get_UsersRoles(null, id, null);
             if (DT != null)
             {
+                roles = new List<Mod_Roles>();
                 foreach (DataRow DR in DT.Rows)
                 {
                     Mod_Roles auxR = Mod_Roles.Get_ById(int.Parse(DR["RoleId"].ToString()));
-                    aux.Add(auxR);
+                    roles.Add(auxR);
                 }
-                return aux;
+                
             }
-            else
-            {
-                return null;
-            }
+            
             
         }
     }
