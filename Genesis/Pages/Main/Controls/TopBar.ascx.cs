@@ -28,6 +28,7 @@ namespace Genesis.Pages.Main.Controls
             if (Request["Logout"] != null)
             {
                 Session.Remove(Session_Library.USER);
+                Session.Remove(Session_Library.ACTIVE_MODULE);
             }
 
             if (Request["sk"] != null)
