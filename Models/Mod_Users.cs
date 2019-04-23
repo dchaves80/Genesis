@@ -33,7 +33,6 @@ namespace Models
             GetRoles();
         }
 
-
         /// <summary>
         /// Checks if the credentials are correct when logging in
         /// </summary>

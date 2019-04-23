@@ -413,40 +413,38 @@ function GetAllRoles() {
     })
 }
 
-// Get All User Roles
 function GetAllUserRoles() {
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
         dataType: 'json',
         data:
         {
-            getAllUserRoles: 'true',
+            getAllUsersRoles: 'true',
         },
         success: function (data) {
-            ReconstruirTablaUsuariosRoles()            
 
             if (data != null) {
 
-                var users = [];
+                ReconstruirTablaUsuariosRoles();
 
                 for (a = 0; a < data.length; a++) {
-                    if (users.indexOf(data[a].USERID) > -1) {
-                        $('ul[idUser=' + data[a].USERID + ']').append(
-                            "<li><input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + data[a].ROLEID + "\")'/>" + data[a].ROLE.ROLE + "</li>");
-                    }
-                    else {
-                        $('#tablaUsuariosRoles').append(
-                            "<tr idUser='" + data[a].USERID + "' class='droppable TableRows'>" +
-                                "<td>" + data[a].USER.USERNAME + "</td>" +
-                                "<td>"+
-                                    "<ul idUser='" + data[a].USERID + "' style='list-style-type: none;'>" +
-                                        "<li><input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + data[a].ROLEID + "\")'/>" + data[a].ROLE.ROLE + "</li>" +
-                                    "</ul>" +
-                                "</td>" +
-                            "</tr>");
 
-                        users[a] = data[a].USERID;
+                    var listItems = "";
+
+                    for (i = 0; i < data[a].ROLES.length; i++) {
+                        listItems += "<li><input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + data[a].ROLES[i].ID + "\")' /> " + data[a].ROLES[i].ROLE + " </li>";
                     }
+
+                    $('#tablaUsuariosRoles').append(
+                        "<tr>" +
+                            "<td>" + data[a].USERNAME + "</td>" +
+                            "<td>" +
+                                "<ul  idUser='" + data[a].ID + "' style='list-style-type: none;'>" +
+                                    listItems +
+                                "</ul>" +
+                            "</td>" +
+                        "</tr>");
+
                 }
             }
             CrearDragDrop();

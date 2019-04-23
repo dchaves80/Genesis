@@ -104,9 +104,7 @@
                     <td>ROL</td>
                 </tr>
 
-                <%
-                    //List<>
-
+                <%                    
 
                     List<Models.Mod_Roles> LMR = Models.Mod_Roles.Get_All();
 
@@ -133,7 +131,6 @@
                     <td>USUARIO</td>
                     <td>ROL ASIGNADO</td>
                 </tr>
-                <tr>
                     <%
 
                         List<Models.Mod_Users> LMU = Models.Mod_Users.Get_All();
@@ -156,8 +153,9 @@
                                 Response.Write(
                                     "<tr class='droppable TableRows' idUser='" + User.ID + "'>" +
                                         "<td>" + User.USERNAME + "</td>" +
+                                        "<td>" +
                                             "<ul idUser='" + User.ID + "' style='list-style-type: none;'>" +
-                                                listItems +
+                                                listItems +                                                
                                             "</ul>" +
                                         "</td>" +
                                     "</tr>");
@@ -167,7 +165,6 @@
                         }
 
                     %>
-                </tr>
 
 
 
