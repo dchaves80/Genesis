@@ -15,7 +15,7 @@
             {
                 List<Mod_Roles> legalRoles = module.Get_Permissions();
                 Mod_Users activeUser = Session[Models.ConstantLibrary.Session_Library.USER] as Mod_Users;
-                List<Mod_Roles> activeRoles = activeUser.GetRoles();
+                List<Mod_Roles> activeRoles = activeUser.ROLES;
 
                 if (legalRoles != null && activeRoles != null)
                 {

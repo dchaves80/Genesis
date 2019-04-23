@@ -446,7 +446,7 @@ function GetAllUserRoles() {
                             "</tr>");
 
                         users[a] = data[a].USERID;
-                    }                    
+                    }
                 }
             }
             CrearDragDrop();

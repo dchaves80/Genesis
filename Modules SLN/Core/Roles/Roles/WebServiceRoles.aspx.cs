@@ -32,8 +32,8 @@ namespace Roles
             if (Request["insertRole"] != null)
                 content = InsertRole(Request["newRole"]);
 
-            if (Request["assignRole"] != null)
-                content = AssignRole(int.Parse(Request["idRol"]), int.Parse(Request["idUsuario"]));
+            //if (Request["assignRole"] != null)
+            //    content = AssignRole(int.Parse(Request["idRol"]), int.Parse(Request["idUsuario"]));
 
             if (Request["getAllUserRoles"] != null)
                 content = GetAllUsersRoles();
@@ -122,12 +122,12 @@ namespace Roles
         /// <param name="idRole">Id del rol</param>
         /// <param name="idUser">Id de usuario</param>
         /// <returns>Devuelve un string "True" si se asignó, "False" si no.</returns>
-        private string AssignRole(
-            int idRole,
-            int idUser)
-        {
-            return (Mod_UsersRoles.Insert(idUser, idRole) != null) ? "True" : "False";
-        }
+        //private string AssignRole(
+        //    int idRole,
+        //    int idUser)
+        //{
+        //    return (Mod_UsersRoles.Insert(idUser, idRole) != null) ? "True" : "False";
+        //}
 
         private string GetAllUsersRoles()
         {

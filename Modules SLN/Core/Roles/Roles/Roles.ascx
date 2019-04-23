@@ -105,6 +105,9 @@
                 </tr>
 
                 <%
+                    //List<>
+
+
                     List<Models.Mod_Roles> LMR = Models.Mod_Roles.Get_All();
 
                     if (LMR != null && LMR.Count > 0)
@@ -130,7 +133,45 @@
                     <td>USUARIO</td>
                     <td>ROL ASIGNADO</td>
                 </tr>
-                <tr idUser="1" class="droppable TableRows">
+                <tr>
+                    <%
+
+                        List<Models.Mod_Users> LMU = Models.Mod_Users.Get_All();
+
+                        if (LMU != null && LMU.Count > 0)
+                        {
+                            foreach (Models.Mod_Users User in LMU)
+                            {
+
+                                string listItems = "";
+                                if (User.ROLES != null && User.ROLES.Count > 0)
+                                {
+
+                                    foreach (Models.Mod_Roles Roles in User.ROLES)
+                                    {
+                                        listItems += "<li> <input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + Roles.ID + "\")' /> " + Roles.ROLE + " </li>";
+                                    }
+                                }
+
+                                Response.Write(
+                                    "<tr class='droppable TableRows' idUser='" + User.ID + "'>" +
+                                        "<td>" + User.USERNAME + "</td>" +
+                                            "<ul idUser='" + User.ID + "' style='list-style-type: none;'>" +
+                                                listItems +
+                                            "</ul>" +
+                                        "</td>" +
+                                    "</tr>");
+
+                                listItems = "";
+                            }
+                        }
+
+                    %>
+                </tr>
+
+
+
+                <%--<tr idUser="1" class="droppable TableRows">
                     <td>l_lapenna</td>
                     <td>
                         <ul>
@@ -146,7 +187,7 @@
                             <li>SuperUser</li>
                         </ul>
                     </td>
-                </tr>
+                </tr>--%>
             </table>
 
         </div>

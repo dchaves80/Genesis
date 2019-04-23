@@ -133,7 +133,7 @@ namespace Models
             return Con_UsersRoles.Delete_UsersRoles(null, ID, Role.ID);
         }
 
-        private void GetRoles()
+        public void GetRoles()
         {
             List<Mod_Roles> aux = new List<Mod_Roles>();
             DataTable DT = Con_UsersRoles.Get_UsersRoles(null, id, null);
