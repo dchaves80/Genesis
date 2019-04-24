@@ -402,7 +402,7 @@ function GetAllRoles() {
             if (data != null) {
                 for (a = 0; a < data.length; a++) {
                     $('#tablaRoles').append(
-                        "<tr class='draggable TableRows' idRole=" + data[a].ID + ">" +
+                        "<tr style='cursor: pointer;' class='draggable TableRows' idRole=" + data[a].ID + ">" +
                             "<td>" + data[a].ROLE + "</td>" +
                         "</tr>");
                 }
@@ -567,8 +567,18 @@ function AsignarRol(idRol, idUsuario) {
 }
 // Desasignar un rol
 function DesasignarRol() {
-
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'text',
+        data:
+        {
+            unassignRole: 'true',
+        }
+    })
 }
+
+
+
 
 
 

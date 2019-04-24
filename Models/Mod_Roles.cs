@@ -68,12 +68,16 @@ namespace Models
 
         public static Mod_Roles Insert(string role)
         {
-            int id = int.Parse(Con_Roles.Insert_Role(role).Rows[0][0].ToString());
+            DataRow DR = Con_Roles.Insert_Role(role).Rows[0];
 
-            DataTable DT = Con_Roles.Get_Roles(id, null);
+            if (DR != null)
+            {
+                DataTable DT = Con_Roles.Get_Roles(int.Parse(DR[0].ToString()), null);
 
-            return (DT != null && DT.Rows.Count > 0) ? new Mod_Roles(DT.Rows[0]) : null;
-
+                return (DT != null && DT.Rows.Count > 0) ? new Mod_Roles(DT.Rows[0]) : null;
+            }
+            else
+                return null;
         }
 
         public bool Delete()
