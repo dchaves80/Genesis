@@ -38,8 +38,9 @@
                         foreach (Models.Mod_Roles Role in LMR)
                         {
                             Response.Write(
-                                "<tr onclick='EditRole()' style='cursor: pointer;' class='draggable TableRows' idRole=" + Role.ID + ">" +
+                                "<tr  style='cursor: pointer;' class='draggable TableRows' idRole=" + Role.ID + ">" +
                                     "<td>" + Role.ROLE + "</td>" +
+                                    "<td> <input type='button' class='ButtonDark' value='EDITAR' onclick='AbrirEditarRol(\"" + Role.ID + "\")' /> </td>" +
                                 "</tr>");
                         }
                     }
@@ -98,7 +99,7 @@
     <!-- Modo editar-->
     <div id="editarDiv" style="display: none;">
 
-        <!-- Rol, eliminar y editar-->
+        <%--<!-- Rol, eliminar y editar-->
         <div>
             <h2 style="display: inline;">SuperUser</h2>
 
@@ -131,7 +132,7 @@
                     <td><input type="button" class="ButtonDark" value="X" /> atomicperson</td>
                 </tr>
             </table>
-        </div>
+        </div>--%>
         
     </div>
      

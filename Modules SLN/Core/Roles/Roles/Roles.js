@@ -397,13 +397,14 @@ function GetAllRoles() {
             getAllRoles: 'true',
         },
         success: function (data) {
-            ReconstruirTabla();
+            ReconstruirTablaRoles();
 
             if (data != null) {
                 for (a = 0; a < data.length; a++) {
                     $('#tablaRoles').append(
                         "<tr style='cursor: pointer;' class='draggable TableRows' idRole=" + data[a].ID + ">" +
                             "<td>" + data[a].ROLE + "</td>" +
+                            "<td> <input type='button' class='ButtonDark' value='EDITAR' onclick='AbrirEditarRol(\"" + data[a].ID + "\")' /> </td>" +
                         "</tr>");
                 }
                 
@@ -518,6 +519,8 @@ function CrearDragDrop() {
 function CrearRol(object) {    
     var nombreRol = $(object).siblings("label").children("input").val();
 
+    console.log(nombreRol);
+
     if (nombreRol != "") {
         
         $.ajax({
@@ -588,18 +591,19 @@ function DesasignarRol(idRole, idUser) {
                 GetAllUserRoles();
             }
             else
-                alert("Hubo un error y no se pudo asignar el rol. Contacte con el soporte.");            
-        }        
-    })
+                alert("Hubo un error y no se pudo asignar el rol. Contacte con el soporte.");
+        }
+    });
 }
 
-///                         ///
-///         EDITAR          ///
-///                         ///
-function EditRole(id) {
-    $('#crearDiv').hide('blind', function () {
-        $('#editarDiv').show('blind');
-    });
+///                               ///
+///         EDITAR/CREAR          ///
+///                               ///
+// Abrir el div de Editar Rol
+function AbrirEditarRol(idRol) {
+
+    var editar = $('#editarDiv');
+    var crear = $('#crearDiv');
 
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
@@ -607,16 +611,130 @@ function EditRole(id) {
         data:
         {
             getRole: 'true',
+            idRol: idRol,
 
+        },
+        success: function (data) {
+
+            editar.empty()
+
+            if (data != null) {
+                editar.append(
+                    "<div>" +
+                        "<input type='button' class='ButtonDark' value='ATRÁS' onclick='VolverCrearRol()'/>" +
+                        "<br/>" +
+                        "<h2 style='display: inline;'>" + data.ROLE + "</h2>" +
+                        "<input type='button' class='ButtonDark' value='ELIMINAR' onclick='EliminarRol(\"" + data.ID + "\")' style='margin-left: 20px;' />" +
+                        "<label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>" +
+                            "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text' />" +
+                            "<span class='InputTextDarkPlaceholderWrap'><span class='InputTextDarkPlaceholder'>NUEVO NOMBRE</span></span>" +
+                        "</label>" +
+                        "<input type='button' class='ButtonDark' value='GUARDAR' onclick='EditarRol(this, \"" + data.ID + "\")'/>" +
+                        "<br />" +                        
+                    "</div>" +
+                    "<div style='margin-top: 50px;'>" +
+                        "<input type='button' class='ButtonDark' value='VER USUARIOS ASOCIADOS' onclick='GetAssociatedUsers(\"" + data.ID + "\")' />" +
+                        "<div style='display: none;'>" +
+                            "<table class='Table'>" +
+                                "<tr class='TopRow'> <th>USUARIO</th> </tr>" +
+                            "</table>" +
+                        "</div>" +
+                    "</div>");
+            }
+
+            crear.hide('blind', function () {
+                editar.show('blind');
+            });            
         }
-    })
-    
+    });
+}
+// Volver a crear rol
+function VolverCrearRol() {
+
+    var editar = $('#editarDiv');
+    var crear = $('#crearDiv');
+
+    GetAllRoles();
+    GetAllUserRoles();
+
+    editar.hide('blind', function () {
+        crear.show('blind');
+    });
+}
+// Editar rol
+function EditarRol(object, idRol) {
+    var nombreRol = $(object).siblings("label").children("input").val();
+
+    if (nombreRol != "") {
+        $.ajax({
+            url: '/Modules/Roles/WebServiceRoles.aspx',
+            dataType: 'text',
+            data:
+            {
+                editRole: 'true',
+                idRol: idRol,
+                roleName: nombreRol,
+            },
+            success: function (data) {
+                if (data == "True") {
+
+                    alert("Rol editado con éxito.");
+
+                    GetAllRoles();
+                    GetAllUserRoles();
+
+                    VolverCrearRol();
+                }
+                else
+                    alert("Hubo un error y no se pudo eliminar el rol. Contacte con el soporte.");
+            }
+
+        })
+    }
+    else
+        alert("Inserte un nombre nuevo para el rol.");
+}
+
+///                         ///
+///         ASIGNAR         ///
+///                         ///
+// Eliminar rol
+function EliminarRol(idRol) {
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'text',
+        data:
+        {
+            deleteRole: 'true',
+            idRol: idRol,
+        },
+        success: function (data) {
+            if (data == "True") {
+
+                alert("Rol eliminado con éxito.");
+
+                GetAllRoles();
+                GetAllUserRoles();
+
+                VolverCrearRol();
+            }
+            else
+                alert("Hubo un error y no se pudo eliminar el rol. Contacte con el soporte.");
+        }
+    });
 }
 
 
 
 
 
+
+/* FUNCIONES QUE FALTAN
+ * EliminarRol(idRol)
+ * EditarRol(idRol)
+ * GetAssociatedUsers(idRol)
+ * VolverCrearRol()
+ */
 
 
 

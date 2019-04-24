@@ -20,14 +20,14 @@ namespace Roles
             Response.ClearHeaders();
 
             // Requests
-            if (Request["updateRole"] != null)
-                content = UpdateRole(int.Parse(Request["id"]), Request["newRole"]);
+            if (Request["editRole"] != null)
+                content = UpdateRole(int.Parse(Request["idRol"]), Request["roleName"]);
 
             if (Request["getAllRoles"] != null)
                 content = GetAllRoles();
 
             if (Request["deleteRole"] != null)
-                content = DeleteRole(int.Parse(Request["id"]), Request["role"]);
+                content = DeleteRole(int.Parse(Request["id"]));
 
             if (Request["insertRole"] != null)
                 content = InsertRole(Request["newRole"]);
@@ -40,6 +40,9 @@ namespace Roles
 
             if (Request["unassignRole"] != null)
                 content = UnassignRole(int.Parse(Request["idUser"]), int.Parse(Request["idRole"]));
+
+            if (Request["getRole"] != null)
+                content = GetRole(int.Parse(Request["idRol"]));
 
             Response.Write(content);
             Response.Flush();
@@ -92,12 +95,10 @@ namespace Roles
         /// <param name="role">Nombre del rol</param>
         /// <returns>Devuelve un string "True" si se eliminó, "False" si no.</returns>
         private string DeleteRole(
-            int id,
-            string role)
+            int id)
         {
 
-            Mod_Roles r = Mod_Roles.Get_ById(id);
-            //bool result = r.Delete();
+            Mod_Roles r = Mod_Roles.Get_ById(id);            
 
             return r.Delete().ToString();
         }
@@ -152,6 +153,16 @@ namespace Roles
             int idRole)
         {
             return Mod_Users.Get_ById(idUser).RemoveRole(idRole).ToString();
+        }
+
+        /// <summary>
+        /// Busca un único rol por su id
+        /// </summary>
+        /// <param name="idRole">Id del rol</param>
+        /// <returns>Devuelve un string del objeto serializado a json</returns>
+        private string GetRole(int idRole)
+        {
+            return new JavaScriptSerializer().Serialize(Mod_Roles.Get_ById(idRole));
         }
     }
 }
