@@ -430,13 +430,15 @@ function GetAllUserRoles() {
                 for (a = 0; a < data.length; a++) {
 
                     var listItems = "";
-
-                    for (i = 0; i < data[a].ROLES.length; i++) {
-                        listItems += "<li><input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + data[a].ROLES[i].ID + "\")' /> " + data[a].ROLES[i].ROLE + " </li>";
+                    if (data[a].ROLES != undefined) {
+                        for (i = 0; i < data[a].ROLES.length; i++) {
+                            listItems += "<li><input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + data[a].ROLES[i].ID + "\",\"" + data[a].ID + "\")' /> " + data[a].ROLES[i].ROLE + " </li>";
+                        }
                     }
+                    
 
                     $('#tablaUsuariosRoles').append(
-                        "<tr>" +
+                        "<tr class='droppable TableRows' idUser='" + data[a].ID + "'>" +
                             "<td>" + data[a].USERNAME + "</td>" +
                             "<td>" +
                                 "<ul  idUser='" + data[a].ID + "' style='list-style-type: none;'>" +
@@ -566,16 +568,51 @@ function AsignarRol(idRol, idUsuario) {
     });
 }
 // Desasignar un rol
-function DesasignarRol() {
+function DesasignarRol(idRole, idUser) {
+
+
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
         dataType: 'text',
         data:
         {
             unassignRole: 'true',
-        }
+            idUser: idUser,
+            idRole: idRole,
+        },
+        success: function (data) {
+
+            if (data == "True") {
+                alert("Rol desasignado con éxito.");
+
+                GetAllUserRoles();
+            }
+            else
+                alert("Hubo un error y no se pudo asignar el rol. Contacte con el soporte.");            
+        }        
     })
 }
+
+///                         ///
+///         EDITAR          ///
+///                         ///
+function EditRole(id) {
+    $('#crearDiv').hide('blind', function () {
+        $('#editarDiv').show('blind');
+    });
+
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'json',
+        data:
+        {
+            getRole: 'true',
+
+        }
+    })
+    
+}
+
 
 
 

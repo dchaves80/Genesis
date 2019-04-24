@@ -7,7 +7,7 @@
 <div>     
 
     <!-- Modo crear -->
-    <div>
+    <div id="crearDiv">
         <!-- Controles de usuario -->
         <div style="margin-bottom: 50px;">
 
@@ -38,7 +38,7 @@
                         foreach (Models.Mod_Roles Role in LMR)
                         {
                             Response.Write(
-                                "<tr style='cursor: pointer;' class='draggable TableRows' idRole=" + Role.ID + ">" +
+                                "<tr onclick='EditRole()' style='cursor: pointer;' class='draggable TableRows' idRole=" + Role.ID + ">" +
                                     "<td>" + Role.ROLE + "</td>" +
                                 "</tr>");
                         }
@@ -71,7 +71,7 @@
 
                                     foreach (Models.Mod_Roles Roles in User.ROLES)
                                     {
-                                        listItems += "<li> <input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + Roles.ID + "\")' /> " + Roles.ROLE + " </li>";
+                                        listItems += "<li> <input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + Roles.ID + "\",\"" + User.ID + "\")' /> " + Roles.ROLE + " </li>";
                                     }
                                 }
 
@@ -89,34 +89,14 @@
                             }
                         }
 
-                    %>
-
-
-
-                <%--<tr idUser="1" class="droppable TableRows">
-                    <td>l_lapenna</td>
-                    <td>
-                        <ul>
-                            <li><input type="button" class="ButtonDark" value="X" />Enfermerx </li>
-                            <li><input type="button" class="ButtonDark" value="X" />SuperUser </li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr idUSer="2" class="droppable TableRows">
-                    <td>atomicperson</td>
-                    <td>
-                        <ul>
-                            <li>SuperUser</li>
-                        </ul>
-                    </td>
-                </tr>--%>
+                    %>                
             </table>
 
         </div>
     </div>
 
     <!-- Modo editar-->
-    <div style="display: none;">
+    <div id="editarDiv" style="display: none;">
 
         <!-- Rol, eliminar y editar-->
         <div>

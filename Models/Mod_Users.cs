@@ -143,11 +143,27 @@ namespace Models
                 {
                     Mod_Roles auxR = Mod_Roles.Get_ById(int.Parse(DR["RoleId"].ToString()));
                     roles.Add(auxR);
+                }                
+            }                        
+        }
+
+        public List<Mod_Users> GetByRole(int idRole)
+        {
+            List<Mod_Users> LMU = Get_All();
+            List<Mod_Users> LMUR = new List<Mod_Users>();
+            Mod_Roles role = Mod_Roles.Get_ById(idRole);
+
+            if (LMU != null && LMU.Count > 0)
+            {
+                foreach (Mod_Users User in LMU)
+                {
+                    if (User.ROLES.Contains(role))
+                        LMUR.Add(User);
                 }
-                
+                return LMUR;
             }
-            
-            
+            else
+                return null;            
         }
     }
 }

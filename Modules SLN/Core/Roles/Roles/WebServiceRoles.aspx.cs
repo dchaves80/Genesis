@@ -38,6 +38,9 @@ namespace Roles
             if (Request["getAllUsersRoles"] != null)
                 content = GetAllUsersRoles();
 
+            if (Request["unassignRole"] != null)
+                content = UnassignRole(int.Parse(Request["idUser"]), int.Parse(Request["idRole"]));
+
             Response.Write(content);
             Response.Flush();
             Response.End();
@@ -129,17 +132,26 @@ namespace Roles
             return Mod_Users.Get_ById(idUser).AddRole(idRole).ToString();
         }
 
-
+        /// <summary>
+        /// Obtiene todos los usuarios y roles
+        /// </summary>
+        /// <returns>Devuelve una lista de objetos 'Mod_Users' serializada en JSON</returns>
         private string GetAllUsersRoles()
         {            
             return new JavaScriptSerializer().Serialize(Mod_Users.Get_All());
         }
 
-        //private string UnassignRole(
-        //    int idUser,
-        //    int idRole)
-        //{
-        //    Mod_Roles.
-        //}
+        /// <summary>
+        /// Desasigna un rol de un usuario
+        /// </summary>
+        /// <param name="idUser">Id de usuario</param>
+        /// <param name="idRole">Id de rol</param>
+        /// <returns>Devuelve un string "True" si se desasignó, "False" sino</returns>
+        private string UnassignRole(
+            int idUser,
+            int idRole)
+        {
+            return Mod_Users.Get_ById(idUser).RemoveRole(idRole).ToString();
+        }
     }
 }
