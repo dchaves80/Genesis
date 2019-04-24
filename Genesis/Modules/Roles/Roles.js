@@ -387,7 +387,7 @@ $(window).on('load', function () {
 ///                         ///
 ///         OTROS           ///
 ///                         ///
-// Get All Roles
+// Obtiene todos los roles
 function GetAllRoles() {
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
@@ -414,6 +414,7 @@ function GetAllRoles() {
     })
 }
 
+// Obtener todos los usuarios y roles asociados
 function GetAllUserRoles() {
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
@@ -437,7 +438,6 @@ function GetAllUserRoles() {
                         }
                     }
                     
-
                     $('#tablaUsuariosRoles').append(
                         "<tr class='droppable TableRows' idUser='" + data[a].ID + "'>" +
                             "<td>" + data[a].USERNAME + "</td>" +
@@ -453,6 +453,40 @@ function GetAllUserRoles() {
             CrearDragDrop();
         }
     })
+}
+
+// Obtener todos los usuarios de un rol determinado
+function VerUsuariosAsociados(idRol) {
+
+    var tablaDiv = $('#tablaUsuariosAsociados');
+    var tabla = tablaDiv.children("table");
+   
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'json',
+        data:
+        {
+            getAllUsersAssociated: 'true',
+            idRol: idRol,
+        },
+        success: function (data) {
+
+            if (data != null) {
+                tabla.empty()
+                tabla.append(
+                    "<tr class='TopRow'> <th>USUARIO</th> </tr>");
+
+                for (a = 0; a < data.length; a++) {
+
+                    tabla.append(
+                        "<tr class='TableRows'>" +
+                            "<td> <input type='button' class='ButtonDark' value='X' onclick='DesasignarUsuario(\"" + idRol + "\", \"" + data[a].ID + "\")' /> " + data[a].USERNAME + " </td>" +
+                        "</tr> ");
+                }
+            }
+        }
+    })
+    tablaDiv.show('blind');
 }
 
 // Reconstruir tablas
@@ -591,9 +625,34 @@ function DesasignarRol(idRole, idUser) {
                 GetAllUserRoles();
             }
             else
-                alert("Hubo un error y no se pudo asignar el rol. Contacte con el soporte.");
+                alert("Hubo un error y no se pudo desasignar el rol. Contacte con el soporte.");
         }
     });
+}
+
+// Desasignar usuario de un rol
+function DesasignarUsuario(idRol, idUser) {
+
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'text',
+        data:
+        {
+            unassignUser: 'true',
+            idUser: idUser,
+            idRole: idRol,
+        },
+        success: function (data) {
+            if (data == "True") {
+                alert("Usuario desasignado con éxito.");
+
+                VerUsuariosAsociados();
+            }
+            else
+                alert("Hubo un error y no se pudo desasignar el usuario. Contacte con el soporte.");
+        }
+    })
+
 }
 
 ///                               ///
@@ -633,9 +692,9 @@ function AbrirEditarRol(idRol) {
                         "<br />" +                        
                     "</div>" +
                     "<div style='margin-top: 50px;'>" +
-                        "<input type='button' class='ButtonDark' value='VER USUARIOS ASOCIADOS' onclick='GetAssociatedUsers(\"" + data.ID + "\")' />" +
-                        "<div style='display: none;'>" +
-                            "<table class='Table'>" +
+                        "<input type='button' class='ButtonDark' value='VER USUARIOS ASOCIADOS' onclick='VerUsuariosAsociados(\"" + data.ID + "\")' />" +
+                        "<div id='tablaUsuariosAsociados' style='display: none;'>" +
+                            "<table style='margin-top: 40px;' class='Table'>" +
                                 "<tr class='TopRow'> <th>USUARIO</th> </tr>" +
                             "</table>" +
                         "</div>" +
@@ -696,7 +755,7 @@ function EditarRol(object, idRol) {
 }
 
 ///                         ///
-///         ASIGNAR         ///
+///         ELIMINAR        ///
 ///                         ///
 // Eliminar rol
 function EliminarRol(idRol) {
@@ -730,10 +789,11 @@ function EliminarRol(idRol) {
 
 
 /* FUNCIONES QUE FALTAN
- * EliminarRol(idRol)
- * EditarRol(idRol)
- * GetAssociatedUsers(idRol)
- * VolverCrearRol()
+ * xEliminarRol(idRol)
+ * xEditarRol(idRol)
+ * VerUsuariosAsociados(idRol)
+ * xVolverCrearRol()
+ * DesasignarUsuario()
  */
 
 

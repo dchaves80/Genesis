@@ -44,6 +44,12 @@ namespace Roles
             if (Request["getRole"] != null)
                 content = GetRole(int.Parse(Request["idRol"]));
 
+            if (Request["getAllUsersAssociated"] != null)
+                content = GetAssociatedUsers(int.Parse(Request["idRol"]));
+
+            if (Request["unassignUser"] != null)
+                content = UnassignUser(int.Parse(Request["idRol"]), int.Parse(Request["idUser"]));
+
             Response.Write(content);
             Response.Flush();
             Response.End();
@@ -163,6 +169,23 @@ namespace Roles
         private string GetRole(int idRole)
         {
             return new JavaScriptSerializer().Serialize(Mod_Roles.Get_ById(idRole));
+        }
+
+        /// <summary>
+        /// Busca los usuarios asociados a un rol
+        /// </summary>
+        /// <param name="idRole">Id del rol</param>
+        /// <returns>Devuelve un string serializado en jsojn con una lista de Mod_Users.</returns>
+        private string GetAssociatedUsers(int idRole)
+        {
+            return new JavaScriptSerializer().Serialize(Mod_Users.GetByRole(idRole));
+        }
+
+        private string UnassignUser(
+            int idRole,
+            int idUser)
+        {
+            return Mod_Users.Get_ById(idUser).RemoveRole(idRole).ToString();
         }
     }
 }

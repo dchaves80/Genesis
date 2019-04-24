@@ -147,7 +147,7 @@ namespace Models
             }                        
         }
 
-        public List<Mod_Users> GetByRole(int idRole)
+        public static List<Mod_Users> GetByRole(int idRole)
         {
             List<Mod_Users> LMU = Get_All();
             List<Mod_Users> LMUR = new List<Mod_Users>();
@@ -157,8 +157,12 @@ namespace Models
             {
                 foreach (Mod_Users User in LMU)
                 {
-                    if (User.ROLES.Contains(role))
-                        LMUR.Add(User);
+                    foreach (Mod_Roles Roles in User.ROLES)
+                    {
+                        if (Roles.ID == role.ID)
+                            LMUR.Add(User);
+                    }                    
+                        
                 }
                 return LMUR;
             }
