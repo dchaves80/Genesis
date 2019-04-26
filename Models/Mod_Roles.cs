@@ -99,5 +99,22 @@ namespace Models
             }
         }
 
+        ////                                        ////
+        ////    Role settings for each user         ////
+        ////                                        ////
+        public List<Mod_Users> GetUsers()
+        {
+            List<Mod_Users> aux = new List<Mod_Users>();
+            DataTable DT = Con_UsersRoles.Get_UsersRoles(null, null, ID);
+            if (DT != null)
+            {
+                foreach (DataRow DR in DT.Rows)
+                {
+                    aux.Add(Mod_Users.Get_ById(int.Parse(DR["UserId"].ToString())));
+                }
+                return aux;
+            }
+            return null;
+        }
     }
 }

@@ -16,13 +16,11 @@ namespace Models
         string username;
         string email;
         string password;
-        List<Mod_Roles> roles;
 
         public int ID { get => id; }
         public string USERNAME { get => username; }
         public string EMAIL { get => email; }
         public string PASSWORD { get => password; }
-        public List<Mod_Roles> ROLES { get => roles; }
 
         private Mod_Users(DataRow DR)
         {
@@ -30,7 +28,6 @@ namespace Models
             username = DR["UserName"].ToString();
             email = DR["Email"].ToString();
             password = DR["Password"].ToString();
-            GetRoles();
         }
 
         /// <summary>
@@ -44,10 +41,6 @@ namespace Models
             string password)
         {
             DataTable DT = Con_Users.Get_User(null, user, null, password, 0);
-            //if (DT != null && DT.Rows.Count > 0)
-            //    return new Mod_Users(DT.Rows[0]);
-            //else
-            //    return null;
 
             return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
@@ -76,22 +69,12 @@ namespace Models
             int id = int.Parse(Con_Users.Insert_User(userName, email, Crypt.StringByMD5(password)).Rows[0][0].ToString());
             DataTable DT = Con_Users.Get_User(id, null, null, null, 0);
 
-
-            //if (DT != null && DT.Rows.Count > 0)
-            //    return new Mod_Users(DT.Rows[0]);
-            //else
-            //    return null;
-
             return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
 
         public static Mod_Users Get_ById(int Id)
         {
             DataTable DT = Con_Users.Get_User(Id, null, null, null, 1);
-            //if (DT != null && DT.Rows.Count > 0)
-            //    return new Mod_Users(DT.Rows[0]);
-            //else
-            //    return null;
 
             return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
@@ -99,11 +82,6 @@ namespace Models
         public static Mod_Users Get_ByUsername(string username)
         {
             DataTable DT = Con_Users.Get_User(null, username, null, null, 0);
-
-            //if (DT != null && DT.Rows.Count > 0)
-            //    return new Mod_Users(DT.Rows[0]);
-            //else
-            //    return null;
 
             return (DT != null && DT.Rows.Count > 0) ? new Mod_Users(DT.Rows[0]) : null;
         }
@@ -132,42 +110,20 @@ namespace Models
             return Con_UsersRoles.Delete_UsersRoles(null, ID, Role.ID);
         }
 
-        public void GetRoles()
+        public List<Mod_Roles> GetRoles()
         {
             List<Mod_Roles> aux = new List<Mod_Roles>();
-            DataTable DT = Con_UsersRoles.Get_UsersRoles(null, id, null);
+            DataTable DT = Con_UsersRoles.Get_UsersRoles(null, ID, null);
             if (DT != null)
             {
-                roles = new List<Mod_Roles>();
                 foreach (DataRow DR in DT.Rows)
                 {
-                    Mod_Roles auxR = Mod_Roles.Get_ById(int.Parse(DR["RoleId"].ToString()));
-                    roles.Add(auxR);
-                }                
-            }                        
-        }
-
-        public static List<Mod_Users> GetByRole(int idRole)
-        {
-            List<Mod_Users> LMU = Get_All();
-            List<Mod_Users> LMUR = new List<Mod_Users>();
-            Mod_Roles role = Mod_Roles.Get_ById(idRole);
-
-            if (LMU != null && LMU.Count > 0)
-            {
-                foreach (Mod_Users User in LMU)
-                {
-                    foreach (Mod_Roles Roles in User.ROLES)
-                    {
-                        if (Roles.ID == role.ID)
-                            LMUR.Add(User);
-                    }                    
-                        
+                    aux.Add(Mod_Roles.Get_ById(int.Parse(DR["RoleId"].ToString())));
                 }
-                return LMUR;
+                return aux;
             }
-            else
-                return null;            
+            return null;
         }
+
     }
 }
