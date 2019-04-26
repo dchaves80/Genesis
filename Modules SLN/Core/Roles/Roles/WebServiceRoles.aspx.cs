@@ -178,7 +178,8 @@ namespace Roles
         /// <returns>Devuelve un string serializado en jsojn con una lista de Mod_Users.</returns>
         private string GetAssociatedUsers(int idRole)
         {
-            return new JavaScriptSerializer().Serialize(Mod_Users.GetByRole(idRole));
+            Mod_Roles aux = Mod_Roles.Get_ById(idRole);
+            return new JavaScriptSerializer().Serialize(aux.GetUsers());
         }
 
         private string UnassignUser(
