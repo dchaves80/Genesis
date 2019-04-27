@@ -16,11 +16,13 @@ namespace Models
         string username;
         string email;
         string password;
+        List<Mod_Roles> roles;
 
         public int ID { get => id; }
         public string USERNAME { get => username; }
         public string EMAIL { get => email; }
         public string PASSWORD { get => password; }
+        public List<Mod_Roles> ROLES { get => roles; }
 
         private Mod_Users(DataRow DR)
         {
@@ -28,6 +30,7 @@ namespace Models
             username = DR["UserName"].ToString();
             email = DR["Email"].ToString();
             password = DR["Password"].ToString();
+            roles = GetRoles();
         }
 
         /// <summary>

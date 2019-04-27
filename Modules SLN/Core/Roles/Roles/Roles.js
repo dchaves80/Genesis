@@ -460,33 +460,45 @@ function VerUsuariosAsociados(idRol) {
 
     var tablaDiv = $('#tablaUsuariosAsociados');
     var tabla = tablaDiv.children("table");
-   
-    $.ajax({
-        url: '/Modules/Roles/WebServiceRoles.aspx',
-        dataType: 'json',
-        data:
-        {
-            getAllUsersAssociated: 'true',
-            idRol: idRol,
-        },
-        success: function (data) {
 
-            if (data != null) {
-                tabla.empty()
-                tabla.append(
-                    "<tr class='TopRow'> <th>USUARIO</th> </tr>");
+    if (!tablaDiv.is(":visible")) {
 
-                for (a = 0; a < data.length; a++) {
+        tablaDiv.siblings("input").val("OCULTAR USUARIOS ASOCIADOS");
 
+        $.ajax({
+            url: '/Modules/Roles/WebServiceRoles.aspx',
+            dataType: 'json',
+            data:
+            {
+                getAllUsersAssociated: 'true',
+                idRol: idRol,
+            },
+            success: function (data) {
+
+                if (data != null) {
+                    tabla.empty()
                     tabla.append(
-                        "<tr class='TableRows'>" +
+                        "<tr class='TopRow'> <th>USUARIO</th> </tr>");
+
+                    for (a = 0; a < data.length; a++) {
+
+                        tabla.append(
+                            "<tr class='TableRows'>" +
                             "<td> <input type='button' class='ButtonDark' value='X' onclick='DesasignarUsuario(\"" + idRol + "\", \"" + data[a].ID + "\")' /> " + data[a].USERNAME + " </td>" +
-                        "</tr> ");
+                            "</tr> ");
+                    }
                 }
             }
-        }
-    })
-    tablaDiv.show('blind');
+        })
+        tablaDiv.show('blind');
+    }
+    else {
+        tablaDiv.siblings("input").val("VER USUARIOS ASOCIADOS");
+        tablaDiv.hide('blind');
+    }
+
+   
+    
 }
 
 // Reconstruir tablas
@@ -679,23 +691,55 @@ function AbrirEditarRol(idRol) {
 
             if (data != null) {
                 editar.append(
+                    "<!-- EDITAR " + data.ROLE + " -->" +
                     "<div>" +
+
                         "<input type='button' class='ButtonDark' value='ATRÁS' onclick='VolverCrearRol()'/>" +
+
                         "<br/>" +
+
                         "<h2 style='display: inline;'>" + data.ROLE + "</h2>" +
+
                         "<input type='button' class='ButtonDark' value='ELIMINAR' onclick='EliminarRol(\"" + data.ID + "\")' style='margin-left: 20px;' />" +
+
                         "<label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>" +
                             "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text' />" +
                             "<span class='InputTextDarkPlaceholderWrap'><span class='InputTextDarkPlaceholder'>NUEVO NOMBRE</span></span>" +
                         "</label>" +
+
                         "<input type='button' class='ButtonDark' value='GUARDAR' onclick='EditarRol(this, \"" + data.ID + "\")'/>" +
+
                         "<br />" +                        
                     "</div>" +
+
+                    "<!-- ASIGNAR Módulos -->" +
+                    "<div>" +
+
+                        "<!-- Tabla módulos -->" +
+                        "<table class='Table'>" +
+                            "<tr class='TopRow'> <th>  </th> <th> MODULOS </th> </tr>" +
+
+                                GetAllModules() +
+
+                        "</table>" +
+
+                        "<!-- Tabla rol -->" +
+                        "<table class='Table'>" +
+                            "<tr class='TopRow'> <th>ROL</th> </tr>" +
+                            "<tr idRol='" + data.ID + "' class='droppable TableRows'> <td>" + data.ROLE + "</td> </tr>" +
+                        "</table>" +
+                    "</div>" +
+
+                    "<!-- Usuarios asociados a " + data.ROLE + " -->" +
                     "<div style='margin-top: 50px;'>" +
+
                         "<input type='button' class='ButtonDark' value='VER USUARIOS ASOCIADOS' onclick='VerUsuariosAsociados(\"" + data.ID + "\")' />" +
+
                         "<div id='tablaUsuariosAsociados' style='display: none;'>" +
                             "<table style='margin-top: 40px;' class='Table'>" +
+
                                 "<tr class='TopRow'> <th>USUARIO</th> </tr>" +
+
                             "</table>" +
                         "</div>" +
                     "</div>");
@@ -704,6 +748,39 @@ function AbrirEditarRol(idRol) {
             crear.hide('blind', function () {
                 editar.show('blind');
             });            
+        }
+    });
+}
+// Conseguir los módulos disponibles
+function GetAllModules() {
+    
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'json',
+        data:
+        {
+            getAllModules: 'true',
+        },        
+        success: function (data) {
+
+            if (data != null) {
+
+                var modules = "";
+
+                console.log(data);
+                for (a = 0; a < data.length; a++) {
+                    modules += "<tr class='draggable TableRows'>" +
+                        "<td> <i class='fa-" + data[a].Icon + "'><i/> </td>" +
+                        "<td> " + data[a].Name + " </td>" +
+                        "</tr>";
+
+
+                }
+                return modules;
+
+            }
+            else
+                return "Hubo un error y no se pudo recuperar la lista de módulos. Contacte al soporte.";
         }
     });
 }
@@ -791,7 +868,7 @@ function EliminarRol(idRol) {
 /* FUNCIONES QUE FALTAN
  * xEliminarRol(idRol)
  * xEditarRol(idRol)
- * VerUsuariosAsociados(idRol)
+ * xVerUsuariosAsociados(idRol)
  * xVolverCrearRol()
  * DesasignarUsuario()
  */

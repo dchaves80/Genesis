@@ -50,6 +50,9 @@ namespace Roles
             if (Request["unassignUser"] != null)
                 content = UnassignUser(int.Parse(Request["idRol"]), int.Parse(Request["idUser"]));
 
+            if (Request["getAllModules"] != null)
+                content = GetAllModules();
+
             Response.Write(content);
             Response.Flush();
             Response.End();
@@ -175,18 +178,30 @@ namespace Roles
         /// Busca los usuarios asociados a un rol
         /// </summary>
         /// <param name="idRole">Id del rol</param>
-        /// <returns>Devuelve un string serializado en jsojn con una lista de Mod_Users.</returns>
+        /// <returns>Devuelve un string serializado en json con una lista de Mod_Users.</returns>
         private string GetAssociatedUsers(int idRole)
         {
-            Mod_Roles aux = Mod_Roles.Get_ById(idRole);
-            return new JavaScriptSerializer().Serialize(aux.GetUsers());
+            Mod_Roles role = Mod_Roles.Get_ById(idRole);
+            return new JavaScriptSerializer().Serialize(role.GetUsers());
+
         }
 
+        /// <summary>
+        /// Desasigna un usuario de un rol
+        /// </summary>
+        /// <param name="idRole">idRol</param>
+        /// <param name="idUser">idUsuario</param>
+        /// <returns>Devuelve un string "True" si se desasignó, "False" sino</returns>
         private string UnassignUser(
             int idRole,
             int idUser)
         {
             return Mod_Users.Get_ById(idUser).RemoveRole(idRole).ToString();
+        }
+
+        private string GetAllModules()
+        {
+            return new JavaScriptSerializer().Serialize(Mod_Modules.Get_All());
         }
     }
 }
