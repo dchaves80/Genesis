@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Con_AccessCodes.cs" />
+    <Compile Include="Con_DynamicFields.cs" />
     <Compile Include="Con_Modules.cs" />
     <Compile Include="Con_Roles.cs" />
     <Compile Include="Con_RolesPermissions.cs" />
@@ -69,6 +70,7 @@
     <None Include="app.config" />
     <None Include="GenesisDataSet.xsc">
       <DependentUpon>GenesisDataSet.xsd</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="GenesisDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -77,6 +79,7 @@
     </None>
     <None Include="GenesisDataSet.xss">
       <DependentUpon>GenesisDataSet.xsd</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
