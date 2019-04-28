@@ -87,6 +87,7 @@
     <Content Include="Pages\Main\Controls\SideBar.ascx" />
     <Content Include="Pages\Main\Controls\TopBar.ascx" />
     <Content Include="Pages\Main\Main.aspx" />
+    <Content Include="Pages\Testing\Testing.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +139,13 @@
     </Compile>
     <Compile Include="Pages\Main\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Testing\Testing.aspx.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Testing\Testing.aspx.designer.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

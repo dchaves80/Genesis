@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DynamicField
+namespace Genesis.Pages.Testing
 {
-    public partial class DynamicFields : System.Web.UI.UserControl
+    public partial class Testing : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Models.Utils.IncludeJavaScript("/Modules/DynamicField/DynamicField.js",Page);
+
         }
     }
 }
