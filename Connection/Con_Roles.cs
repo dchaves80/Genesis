@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-// Editado el código para simplificarlo en los return - Losha - 2019/04/19 22.08
 
 
 namespace Connection
@@ -28,11 +27,6 @@ namespace Connection
 
             TA.Fill(DT, id, role);
 
-            //if (DT != null && DT.Rows.Count > 0)
-            //    return DT;
-            //else
-            //    return null;
-
             return (DT != null && DT.Rows.Count > 0) ? DT : null;
         }
 
@@ -43,12 +37,7 @@ namespace Connection
             GenesisDataSet.Insert_RoleDataTable DT =
                 new GenesisDataSet.Insert_RoleDataTable();
 
-            //TA.Fill(DT, role);
-
-            //if (DT != null && DT.Rows.Count > 0)
-            //    return DT;
-            //else
-            //    return null;
+            TA.Fill(DT, role);
 
             return (DT != null && DT.Rows.Count > 0) ? DT : null;
         }
@@ -58,11 +47,6 @@ namespace Connection
             string Role)
 		{
 			QTACustomized QTA = new QTACustomized();
-
-			//if (QTA.Update_Role(Id, Role) > 0)
-            //    return true;
-            //else
-            //    return false;
 
             return QTA.Update_Role(Id, Role) > 0;
 
@@ -74,12 +58,7 @@ namespace Connection
         {
             QTACustomized QTA = new QTACustomized();
 
-            //if (QTA.Delete_Role(id, role) > 0)
-            //    return true;
-            //else
-            //    return false;
-
-            return QTA.Update_Role(id, role) > 0;
+            return QTA.Delete_Role(id, role) > 0;
         }
 	}
 }

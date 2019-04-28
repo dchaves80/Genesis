@@ -161,7 +161,10 @@ namespace Roles
             int idUser,
             int idRole)
         {
-            return Mod_Users.Get_ById(idUser).RemoveRole(idRole).ToString();
+            Mod_Users aux = Mod_Users.Get_ById(idUser);
+            string ret = aux.RemoveRole(idRole).ToString();
+            return ret;
+            //return Mod_Users.Get_ById(idUser).RemoveRole(idRole).ToString();
         }
 
         /// <summary>

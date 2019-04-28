@@ -579,7 +579,7 @@ function CrearRol(object) {
             },
             success: function (data) {
                 if (data == "True") {
-                    alert("Rol creado con éxito");
+                    //alert("Rol creado con éxito");
                     GetAllRoles();
                 }
                 else
@@ -607,7 +607,7 @@ function AsignarRol(idRol, idUsuario) {
         success: function (data) {
             if (data != null) {
 
-                alert("Rol asignado con éxito");
+                //alert("Rol asignado con éxito");
 
                 GetAllUserRoles();
             }
@@ -632,7 +632,7 @@ function DesasignarRol(idRole, idUser) {
         success: function (data) {
 
             if (data == "True") {
-                alert("Rol desasignado con éxito.");
+                //alert("Rol desasignado con éxito.");
 
                 GetAllUserRoles();
             }
@@ -656,7 +656,7 @@ function DesasignarUsuario(idRol, idUser) {
         },
         success: function (data) {
             if (data == "True") {
-                alert("Usuario desasignado con éxito.");
+                //alert("Usuario desasignado con éxito.");
 
                 VerUsuariosAsociados();
             }
@@ -814,7 +814,7 @@ function EditarRol(object, idRol) {
             success: function (data) {
                 if (data == "True") {
 
-                    alert("Rol editado con éxito.");
+                    //alert("Rol editado con éxito.");
 
                     GetAllRoles();
                     GetAllUserRoles();
@@ -847,7 +847,7 @@ function EliminarRol(idRol) {
         success: function (data) {
             if (data == "True") {
 
-                alert("Rol eliminado con éxito.");
+                //alert("Rol eliminado con éxito.");
 
                 GetAllRoles();
                 GetAllUserRoles();
