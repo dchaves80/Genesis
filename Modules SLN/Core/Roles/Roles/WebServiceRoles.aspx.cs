@@ -27,7 +27,7 @@ namespace Roles
                 content = GetAllRoles();
 
             if (Request["deleteRole"] != null)
-                content = DeleteRole(int.Parse(Request["id"]));
+                content = DeleteRole(int.Parse(Request["idRol"]));
 
             if (Request["insertRole"] != null)
                 content = InsertRole(Request["newRole"]);
@@ -52,6 +52,8 @@ namespace Roles
 
             if (Request["getAllModules"] != null)
                 content = GetAllModules();
+            if (Request["Testing"] != null)
+                content = "True";
 
             Response.Write(content);
             Response.Flush();
@@ -126,7 +128,11 @@ namespace Roles
             //        return "False";
             #endregion
 
-            return (Mod_Roles.Insert(role) != null) ? "True" : "False";
+            if (Mod_Roles.Get_ByName(role) != null)
+                return "Ya existe un rol con ese nombre.";
+            else
+                return (Mod_Roles.Insert(role) != null) ? "True" : "False";
+
         }
 
         /// <summary>
@@ -139,7 +145,21 @@ namespace Roles
             int idRole,
             int idUser)
         {
-            return Mod_Users.Get_ById(idUser).AddRole(idRole).ToString();
+            Mod_Users user = Mod_Users.Get_ById(idUser);
+            bool exists = false;
+
+            if(user.ROLES != null)
+            {
+                for (int a = 0; a < user.ROLES.Count; a++)
+                {
+                    if (user.ROLES[a].ID == idRole)
+                    {
+                        exists = true;
+                    }
+                }
+            }
+            
+            return exists ? "El usuario ya tiene ese rol asignado. Elija otro." : user.AddRole(idRole).ToString();
         }
 
         /// <summary>

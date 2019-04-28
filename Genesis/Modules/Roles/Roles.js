@@ -402,7 +402,7 @@ function GetAllRoles() {
             if (data != null) {
                 for (a = 0; a < data.length; a++) {
                     $('#tablaRoles').append(
-                        "<tr style='cursor: grab;' class='draggable TableRows' idRole=" + data[a].ID + ">" +
+                        "<tr style='cursor: grab;' class='draggable TableRows' action='assignRoleToUser' idRole=" + data[a].ID + ">" +
                             "<td>" + data[a].ROLE + "</td>" +
                             "<td> <input type='button' class='ButtonDark' value='EDITAR' onclick='AbrirEditarRol(\"" + data[a].ID + "\")' /> </td>" +
                         "</tr>");
@@ -549,10 +549,16 @@ function CrearDragDrop() {
         // Función ejecutada al dropear el objeto
         drop: function (event, ui) {
 
-            idRole = ui.draggable.attr("idRole");
-            //idUsuario = $(this).
+            if (ui.draggable.attr("action") == "assignRoleToUser") {
+                idRole = ui.draggable.attr("idRole");
+                AsignarRol(idRole, $(this).attr("idUser"));
+            }         
+            if (ui.draggable.attr("action") == "assignModuleToRole") {
+                idModule = ui.draggable.attr("idModule");
+                
+            }
 
-            AsignarRol(idRole, $(this).attr("idUser"));
+            
 
         },
     })
@@ -563,9 +569,7 @@ function CrearDragDrop() {
 ///                         ///
 // Crear Rol
 function CrearRol(object) {    
-    var nombreRol = $(object).siblings("label").children("input").val();
-
-    console.log(nombreRol);
+    var nombreRol = $(object).siblings("label").children("input").val();    
 
     if (nombreRol != "") {
 
@@ -578,12 +582,12 @@ function CrearRol(object) {
                 newRole: nombreRol,
             },
             success: function (data) {
-                if (data == "True") {
-                    //alert("Rol creado con éxito");
-                    GetAllRoles();
-                }
-                else
+                if (data == 'True')                    
+                    GetAllRoles();               
+                else if (data == "False")
                     alert("Hubo un error y no se pudo crear el rol. Contacte con el soporte.");
+                else
+                    alert(data);
             }
         });
     }
@@ -595,8 +599,7 @@ function CrearRol(object) {
 ///         ASIGNAR         ///
 ///                         ///
 // Asignar rol
-function AsignarRol(idRol, idUsuario) {
-    console.log(idRol, idUsuario);
+function AsignarRol(idRol, idUsuario) {    
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
         dataType: 'text',
@@ -607,14 +610,14 @@ function AsignarRol(idRol, idUsuario) {
             idUsuario: idUsuario,
         },
         success: function (data) {
-            if (data != null) {
-
-                //alert("Rol asignado con éxito");
-
-                GetAllUserRoles();
-            }
-            else
+            if (data == 'True')             
+                GetAllUserRoles();    
+                
+            else if (data == "False")
                 alert("Hubo un error y no se pudo asignar el rol. Contacte con el soporte.");
+
+            else
+                alert(data);
         }
     });
 }
@@ -776,7 +779,7 @@ function GetAllModules() {
             if (data != null) {
                                
                 for (a = 0; a < data.length; a++) {
-                    modules +=  "<tr class='draggable TableRows'>" +
+                    modules +=  "<tr action='assignModuleToRole' class='draggable TableRows' idModule='" + data[a].Id + "'>" +
                                     "<td style='padding: 10px 10px'> <i class='fas fa-" + data[a].Icon + "'><i/> </td>" +
                                     "<td> " + data[a].Name + " </td>" +
                                 "</tr>";
@@ -873,20 +876,50 @@ function EliminarRol(idRol) {
 ///                         ///
 ///         TESTEO          ///
 ///                         ///
+function Test() {
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'text',
+        data: { Testing: 'true', },
+        success: function (data) {
 
-var ajax = $.ajax({
-    url: '/Modules/Roles/WebServiceRoles.aspx',
-    dataType: 'json',
-    data: { getAllRoles: 'true', },
-    success: function (data) {
-        // Algo
-    }
-})
+            //if (data == "True") {          
+            //    console.log("Resultado: TRUE")
+            //}
+            //if (data == "False") {
+            //    console.log("Resultado: False")
+            //}
+            //else {
+            //    console.log("Cualquier otra cosa");
+            //}
 
-function Test() {    
+            if (true) {          
+                console.log("Resultado: TRUE")
+            }
+            if (false) {
+                console.log("Resultado: False")
+            }
+            else {
+                console.log("Cualquier otra cosa");
+            }
 
-    $("#ModuleContainer").attr("disabled", "disabled").off('click');
+                
+        }
+    })
 }
+
+function a() {
+    if (true) {
+        console.log("Resultado: TRUE")
+    }
+    else if (false) {
+        console.log("Resultado: False")
+    }
+    else {
+        console.log("Cualquier otra cosa");
+    }
+}
+
 
 
 

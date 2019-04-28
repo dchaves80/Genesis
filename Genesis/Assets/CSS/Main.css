@@ -149,3 +149,9 @@ table.TableSideBarDark {
     table.TableSideBarDark td {
         min-width: 25px;
     }
+
+/* Desactivar animaciones*/
+.Disabled {
+    pointer-events: none;
+    /*user-select: none;    Por alguna razón esto no funciona, a su vez se usa .js*/
+}

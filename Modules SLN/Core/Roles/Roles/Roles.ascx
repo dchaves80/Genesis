@@ -38,7 +38,7 @@
                         foreach (Models.Mod_Roles Role in LMR)
                         {
                             Response.Write(
-                                "<tr  style='cursor: grab;' class='draggable TableRows' idRole=" + Role.ID + ">" +
+                                "<tr  style='cursor: grab;' class='draggable TableRows' action='assignRoleToUser' idRole=" + Role.ID + ">" +
                                     "<td>" + Role.ROLE + "</td>" +
                                     "<td> <input type='button' class='ButtonDark' value='EDITAR' onclick='AbrirEditarRol(\"" + Role.ID + "\")' /> </td>" +
                                 "</tr>");
