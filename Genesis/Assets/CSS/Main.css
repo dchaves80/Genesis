@@ -124,3 +124,28 @@ div.ModuleContainer {
     padding-left: 30px;
     transition: 0.3s;
 }
+
+
+/* SIDEBAR */
+table.TableSideBarDark {
+    display: block;
+}
+    table.TableSideBarDark tbody {
+        display: block;
+    }
+    table.TableSideBarDark tr {
+        display: block;
+        font-family: 'Roboto';
+        padding: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        white-space: nowrap;
+        margin-left: -10px;
+    }
+        table.TableSideBarDark tr:hover {
+            background: #3571A7;
+            transform: translateX(15px);
+        }
+    table.TableSideBarDark td {
+        min-width: 25px;
+    }

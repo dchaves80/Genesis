@@ -38,7 +38,7 @@
                         foreach (Models.Mod_Roles Role in LMR)
                         {
                             Response.Write(
-                                "<tr  style='cursor: pointer;' class='draggable TableRows' idRole=" + Role.ID + ">" +
+                                "<tr  style='cursor: grab;' class='draggable TableRows' idRole=" + Role.ID + ">" +
                                     "<td>" + Role.ROLE + "</td>" +
                                     "<td> <input type='button' class='ButtonDark' value='EDITAR' onclick='AbrirEditarRol(\"" + Role.ID + "\")' /> </td>" +
                                 "</tr>");
@@ -98,6 +98,27 @@
 
     <!-- Modo editar-->
     <div id="editarDiv" style="display: none;">
+
+       <%-- <!-- EDITAR -->
+
+        <div id="editarRoleDiv">
+
+            <input type="button" class="ButtonDark" value="ATRÁS" onclick="VolverCrearRol()" />
+
+            <br />
+
+            <h2 id="editRoleTitle" style="display: inline;"></h2>
+            <input type="button" class="ButtonDark" value="ELIMINAR" onclick="EliminarRol('0')" />
+
+        </div>--%>
+
+
+        
+
+
+
+
+
 
         <%--<!-- Rol, eliminar y editar-->
         <div>
