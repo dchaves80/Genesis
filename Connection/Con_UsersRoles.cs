@@ -51,9 +51,8 @@ namespace Connection
 		{
 			QTACustomized QTA = new QTACustomized();
 			int response = QTA.Delete_UsersRoles(Id, UserId, RoleId);
-            if (response > 0) { return true; } else { return false; }
 
-            //return response > 0;
+            return response > 0;
 		}
 
 	}
