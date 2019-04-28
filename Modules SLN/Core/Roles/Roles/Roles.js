@@ -402,7 +402,7 @@ function GetAllRoles() {
             if (data != null) {
                 for (a = 0; a < data.length; a++) {
                     $('#tablaRoles').append(
-                        "<tr style='cursor: pointer;' class='draggable TableRows' idRole=" + data[a].ID + ">" +
+                        "<tr style='cursor: grab;' class='draggable TableRows' idRole=" + data[a].ID + ">" +
                             "<td>" + data[a].ROLE + "</td>" +
                             "<td> <input type='button' class='ButtonDark' value='EDITAR' onclick='AbrirEditarRol(\"" + data[a].ID + "\")' /> </td>" +
                         "</tr>");
@@ -568,7 +568,7 @@ function CrearRol(object) {
     console.log(nombreRol);
 
     if (nombreRol != "") {
-        
+
         $.ajax({
             url: '/Modules/Roles/WebServiceRoles.aspx',
             dataType: 'text',
@@ -587,6 +587,8 @@ function CrearRol(object) {
             }
         });
     }
+    else
+        alert("Inserte un nombre para continuar.");
 }
 
 ///                         ///
@@ -690,6 +692,9 @@ function AbrirEditarRol(idRol) {
             editar.empty()
 
             if (data != null) {
+
+                $('#editRoleTitle').val(data.ROLE)
+
                 editar.append(
                     "<!-- EDITAR " + data.ROLE + " -->" +
                     "<div>" +
@@ -713,10 +718,10 @@ function AbrirEditarRol(idRol) {
                     "</div>" +
 
                     "<!-- ASIGNAR Módulos -->" +
-                    "<div>" +
+                    "<div style='margin-top: 50px;'>" +
 
                         "<!-- Tabla módulos -->" +
-                        "<table class='Table'>" +
+                        "<table style='display: inline;' class='Table'>" +
                             "<tr class='TopRow'> <th>  </th> <th> MODULOS </th> </tr>" +
 
                                 GetAllModules() +
@@ -724,7 +729,7 @@ function AbrirEditarRol(idRol) {
                         "</table>" +
 
                         "<!-- Tabla rol -->" +
-                        "<table class='Table'>" +
+                        "<table style='display: inline' class='Table'>" +
                             "<tr class='TopRow'> <th>ROL</th> </tr>" +
                             "<tr idRol='" + data.ID + "' class='droppable TableRows'> <td>" + data.ROLE + "</td> </tr>" +
                         "</table>" +
@@ -747,12 +752,16 @@ function AbrirEditarRol(idRol) {
 
             crear.hide('blind', function () {
                 editar.show('blind');
-            });            
+            });
+
+            CrearDragDrop();
         }
     });
 }
 // Conseguir los módulos disponibles
 function GetAllModules() {
+
+    var modules = "";
     
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
@@ -760,29 +769,27 @@ function GetAllModules() {
         data:
         {
             getAllModules: 'true',
-        },        
+        },
+        async: false,
         success: function (data) {
 
             if (data != null) {
-
-                var modules = "";
-
-                console.log(data);
+                               
                 for (a = 0; a < data.length; a++) {
-                    modules += "<tr class='draggable TableRows'>" +
-                        "<td> <i class='fa-" + data[a].Icon + "'><i/> </td>" +
-                        "<td> " + data[a].Name + " </td>" +
-                        "</tr>";
+                    modules +=  "<tr class='draggable TableRows'>" +
+                                    "<td style='padding: 10px 10px'> <i class='fas fa-" + data[a].Icon + "'><i/> </td>" +
+                                    "<td> " + data[a].Name + " </td>" +
+                                "</tr>";
 
-
-                }
-                return modules;
+                }                
 
             }
             else
                 return "Hubo un error y no se pudo recuperar la lista de módulos. Contacte al soporte.";
         }
     });
+
+    return modules;
 }
 // Volver a crear rol
 function VolverCrearRol() {
@@ -859,6 +866,29 @@ function EliminarRol(idRol) {
         }
     });
 }
+
+
+
+
+///                         ///
+///         TESTEO          ///
+///                         ///
+
+var ajax = $.ajax({
+    url: '/Modules/Roles/WebServiceRoles.aspx',
+    dataType: 'json',
+    data: { getAllRoles: 'true', },
+    success: function (data) {
+        // Algo
+    }
+})
+
+function Test() {    
+
+    $("#ModuleContainer").attr("disabled", "disabled").off('click');
+}
+
+
 
 
 
