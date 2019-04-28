@@ -99,18 +99,38 @@
     <!-- Modo editar-->
     <div id="editarDiv" style="display: none;">
 
-       <%-- <!-- EDITAR -->
-
+        <!-- EDITAR -->
         <div id="editarRoleDiv">
 
             <input type="button" class="ButtonDark" value="ATRÁS" onclick="VolverCrearRol()" />
 
             <br />
 
-            <h2 id="editRoleTitle" style="display: inline;"></h2>
-            <input type="button" class="ButtonDark" value="ELIMINAR" onclick="EliminarRol('0')" />
+            <h2 style="display: inline;"></h2>
+            <input type="button" class="ButtonDark" value="ELIMINAR" onclick="EliminarRol('0')" style="margin-left: 20px;" />
 
-        </div>--%>
+            <label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>
+                <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text' />
+                <span class='InputTextDarkPlaceholderWrap'><span class='InputTextDarkPlaceholder'>NUEVO NOMBRE</span></span>
+            </label>
+
+            <input type="button" class="ButtonDark" value="GUARDAR" onclick=""/>
+
+            <br />
+        </div>
+
+        <!-- ASIGNAR MÓDULOS -->
+        <div id="asignarModuleDiv" style="margin-top: 50px;">
+
+            <!-- Tabla módulos -->
+            <table style="display: inline;" class="Table">
+            </table>
+
+            <!-- Tabla roles -->
+            <table style="display: inline;" class="Table">
+
+            </table>                
+        </div>
 
 
         

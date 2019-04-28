@@ -12,9 +12,9 @@
 
         <!-- Input username -->
         <div>
-            <label class="LabelInput" style="display: inline-block;">
-                <input id="inputUsername" type="text" class="Input ExcludeChar" placeholder="ej: Luciano Lapenna" />
-                <span class="InputPlaceholderWrap"><span class="InputPlaceholder">USERNAME</span></span>
+            <label class="InputTextDarkLabel" style="display: inline-block;">
+                <input id="inputUsername" type="text" class="InputTextDark ExcludeChar" placeholder="ej: Luciano Lapenna" />
+                <span class="InputTextDarkPlaceholderWrap"><span class="InputTextDarkPlaceholder">USERNAME</span></span>
             </label>
         </div>
         
@@ -25,16 +25,16 @@
         <div style="display: inline-block; margin-top: 20px;">
 
             <!-- Input Email -->
-            <label class="LabelInput" style="display: inline-block;">
-                <input id="inputEmail" type="text" class="Input ExcludeChar" placeholder="ej: xxx@yyy.com" />
-                <span class="InputPlaceholderWrap"><span class="InputPlaceholder">E-MAIL</span></span>
+            <label class="InputTextDarkLabel" style="display: inline-block;">
+                <input id="inputEmail" type="text" class="InputTextDark ExcludeChar" placeholder="ej: xxx@yyy.com" />
+                <span class="InputTextDarkPlaceholderWrap"><span class="InputTextDarkPlaceholder">E-MAIL</span></span>
             </label>
 
 
             <!-- Input confirmar email -->
-            <label class="LabelInput" style="display: inline-block;">
-                <input id="inputConfirmEmail" type="text" class="Input ExcludeChar" placeholder="ej: xxx@yyy.com" />
-                <span class="InputPlaceholderWrap"><span class="InputPlaceholder">CONFIRMAR E-MAIL</span></span>
+            <label class="InputTextDarkLabel" style="display: inline-block;">
+                <input id="inputConfirmEmail" type="text" class="InputTextDark ExcludeChar" placeholder="ej: xxx@yyy.com" />
+                <span class="InputTextDarkPlaceholderWrap"><span class="InputTextDarkPlaceholder">CONFIRMAR E-MAIL</span></span>
             </label>
 
         </div>
@@ -53,15 +53,15 @@
         <div style="display: inline-block;">
 
             <!-- Input Password -->
-            <label class="LabelInput" style="display: inline-block;">
-                <input id="inputPassword" type="password" class="Input ExcludeChar" placeholder="ej: ********" />
-                <span class="InputPlaceholderWrap"><span class="InputPlaceholder">CONTRASEÑA</span></span>
+            <label class="InputTextDarkLabel" style="display: inline-block;">
+                <input id="inputPassword" type="password" class="InputTextDark ExcludeChar" placeholder="ej: ********" />
+                <span class="InputTextDarkPlaceholderWrap"><span class="InputTextDarkPlaceholder">CONTRASEÑA</span></span>
             </label>
 
             <!-- Input confirmar email -->
-            <label class="LabelInput" style="display: inline-block;">
-                <input id="inputConfirmPassword" type="password" class="Input ExcludeChar" placeholder="ej: ********" />
-                <span class="InputPlaceholderWrap"><span class="InputPlaceholder">CONFIRMAR CONTRASEÑA</span></span>
+            <label class="InputTextDarkLabel" style="display: inline-block;">
+                <input id="inputConfirmPassword" type="password" class="InputTextDark ExcludeChar" placeholder="ej: ********" />
+                <span class="InputTextDarkPlaceholderWrap"><span class="InputTextDarkPlaceholder">CONFIRMAR CONTRASEÑA</span></span>
             </label>
         </div>
 

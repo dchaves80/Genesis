@@ -681,6 +681,7 @@ function AbrirEditarRol(idRol) {
     var editar = $('#editarDiv');
     var crear = $('#crearDiv');
 
+
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
         dataType: 'json',
@@ -688,78 +689,91 @@ function AbrirEditarRol(idRol) {
         {
             getRole: 'true',
             idRol: idRol,
-
         },
         success: function (data) {
 
-            editar.empty()
+        }
+    })
 
-            if (data != null) {
+    //$.ajax({
+    //    url: '/Modules/Roles/WebServiceRoles.aspx',
+    //    dataType: 'json',
+    //    data:
+    //    {
+    //        getRole: 'true',
+    //        idRol: idRol,
 
-                $('#editRoleTitle').val(data.ROLE)
+    //    },
+    //    success: function (data) {
 
-                editar.append(
-                    "<!-- EDITAR " + data.ROLE + " -->" +
-                    "<div>" +
+    //        editar.empty()
 
-                        "<input type='button' class='ButtonDark' value='ATRÁS' onclick='VolverCrearRol()'/>" +
+    //        if (data != null) {
 
-                        "<br/>" +
+    //            $('#editRoleTitle').val(data.ROLE)
 
-                        "<h2 style='display: inline;'>" + data.ROLE + "</h2>" +
+    //            editar.append(
+    //                "<!-- EDITAR " + data.ROLE + " -->" +
+    //                "<div>" +
 
-                        "<input type='button' class='ButtonDark' value='ELIMINAR' onclick='EliminarRol(\"" + data.ID + "\")' style='margin-left: 20px;' />" +
+    //                    "<input type='button' class='ButtonDark' value='ATRÁS' onclick='VolverCrearRol()'/>" +
 
-                        "<label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>" +
-                            "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text' />" +
-                            "<span class='InputTextDarkPlaceholderWrap'><span class='InputTextDarkPlaceholder'>NUEVO NOMBRE</span></span>" +
-                        "</label>" +
+    //                    "<br/>" +
 
-                        "<input type='button' class='ButtonDark' value='GUARDAR' onclick='EditarRol(this, \"" + data.ID + "\")'/>" +
+    //                    "<h2 style='display: inline;'>" + data.ROLE + "</h2>" +
 
-                        "<br />" +                        
-                    "</div>" +
+    //                    "<input type='button' class='ButtonDark' value='ELIMINAR' onclick='EliminarRol(\"" + data.ID + "\")' style='margin-left: 20px;' />" +
 
-                    "<!-- ASIGNAR Módulos -->" +
-                    "<div style='margin-top: 50px;'>" +
+    //                    "<label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>" +
+    //                        "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text' />" +
+    //                        "<span class='InputTextDarkPlaceholderWrap'><span class='InputTextDarkPlaceholder'>NUEVO NOMBRE</span></span>" +
+    //                    "</label>" +
 
-                        "<!-- Tabla módulos -->" +
-                        "<table style='display: inline;' class='Table'>" +
-                            "<tr class='TopRow'> <th>  </th> <th> MODULOS </th> </tr>" +
+    //                    "<input type='button' class='ButtonDark' value='GUARDAR' onclick='EditarRol(this, \"" + data.ID + "\")'/>" +
 
-                                GetAllModules() +
+    //                    "<br />" +                        
+    //                "</div>" +
 
-                        "</table>" +
+    //                "<!-- ASIGNAR Módulos -->" +
+    //                "<div style='margin-top: 50px;'>" +
 
-                        "<!-- Tabla rol -->" +
-                        "<table style='display: inline' class='Table'>" +
-                            "<tr class='TopRow'> <th>ROL</th> </tr>" +
-                            "<tr idRol='" + data.ID + "' class='droppable TableRows'> <td>" + data.ROLE + "</td> </tr>" +
-                        "</table>" +
-                    "</div>" +
+    //                    "<!-- Tabla módulos -->" +
+    //                    "<table style='display: inline;' class='Table'>" +
+    //                        "<tr class='TopRow'> <th>  </th> <th> MODULOS </th> </tr>" +
 
-                    "<!-- Usuarios asociados a " + data.ROLE + " -->" +
-                    "<div style='margin-top: 50px;'>" +
+    //                            GetAllModules() +
 
-                        "<input type='button' class='ButtonDark' value='VER USUARIOS ASOCIADOS' onclick='VerUsuariosAsociados(\"" + data.ID + "\")' />" +
+    //                    "</table>" +
 
-                        "<div id='tablaUsuariosAsociados' style='display: none;'>" +
-                            "<table style='margin-top: 40px;' class='Table'>" +
+    //                    "<!-- Tabla rol -->" +
+    //                    "<table style='display: inline' class='Table'>" +
+    //                        "<tr class='TopRow'> <th>ROL</th> </tr>" +
+    //                        "<tr idRol='" + data.ID + "' class='droppable TableRows'> <td>" + data.ROLE + "</td> </tr>" +
+    //                    "</table>" +
+    //                "</div>" +
 
-                                "<tr class='TopRow'> <th>USUARIO</th> </tr>" +
+    //                "<!-- Usuarios asociados a " + data.ROLE + " -->" +
+    //                "<div style='margin-top: 50px;'>" +
 
-                            "</table>" +
-                        "</div>" +
-                    "</div>");
-            }
+    //                    "<input type='button' class='ButtonDark' value='VER USUARIOS ASOCIADOS' onclick='VerUsuariosAsociados(\"" + data.ID + "\")' />" +
+
+    //                    "<div id='tablaUsuariosAsociados' style='display: none;'>" +
+    //                        "<table style='margin-top: 40px;' class='Table'>" +
+
+    //                            "<tr class='TopRow'> <th>USUARIO</th> </tr>" +
+
+    //                        "</table>" +
+    //                    "</div>" +
+    //                "</div>");
+    //        }
 
             crear.hide('blind', function () {
                 editar.show('blind');
             });
 
-            CrearDragDrop();
-        }
-    });
+    //        CrearDragDrop();
+    //    }
+    //});
 }
 // Conseguir los módulos disponibles
 function GetAllModules() {
