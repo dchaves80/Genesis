@@ -13,6 +13,7 @@ namespace Roles
         protected void Page_Load(object sender, EventArgs e)
         {
             Utils.IncludeJavaScript("../../Modules/Roles/Roles.js", Page);
+            Utils.IncludeCSS("../../Modules/Roles/Roles.css", Page);
         }
     }
 }

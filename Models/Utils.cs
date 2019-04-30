@@ -40,6 +40,19 @@ namespace Models
             Page.Header.Controls.Add(Meta1);
         }
 
+        /// <summary>
+        /// Incluye el tag <link></link> con sus respectivas propiedades en la cabecera de una página.
+        /// </summary>
+        /// <param name="Path">Raw html path</param>
+        /// <param name="Page">Suele ser "this" si se invoca desde modulo o control</param>
+        public static void IncludeCSS(string Path, Page Page)
+        {
+            System.Web.UI.HtmlControls.HtmlGenericControl Meta1 = new System.Web.UI.HtmlControls.HtmlGenericControl("link");
+            Meta1.Attributes.Add("href", Path);
+            Meta1.Attributes.Add("rel", "stylesheet");
+            Page.Header.Controls.Add(Meta1);
+        }
+
         
         /// <summary>
         /// Obtiene el path de un modulo 

@@ -11,10 +11,14 @@ $(window).on('load', function () {
 ///         OTROS           ///
 ///                         ///
 $(document).on("keypress", ".RoleName", function (e) {
+    
     if (e.which == 13) {
-        var inputVal = $(this).val();
-        alert("You've entered: " + inputVal);
+        EditarRol(this);
+        GetAllRoles();
+        GetAllUserRoles();
     }
+
+    
 });
 
 
@@ -36,8 +40,8 @@ function GetAllRoles() {
                     $('#tablaRoles').append(
                         "<tr style='cursor: grab;' class='draggable TableRows' action='assignRoleToUser' idRole=" + data[a].ID + ">" +
                             "<td>" +
-                                "<label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>" +
-                                    "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text' value='" + data[a].ROLE + "'/>" +
+                                "<label class='InputTextDarkLabel'>" +
+                                    "<input idRol='" + data[a].ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + data[a].ROLE + "'/>" +
                                     "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + data[a].ROLE + "</span> </span>" +
                                 "</label>" +
                             "</td>" +
@@ -159,9 +163,9 @@ function CrearDragDrop() {
 ///                         ///
 // Crear Rol
 function CrearRol(object) {    
-    var nombreRol = $(object).siblings("label").children("input").val();    
+    var input = $(object).siblings("label").children("input");   
 
-    if (nombreRol != "") {
+    if (input.val() != "") {
 
         $.ajax({
             url: '/Modules/Roles/WebServiceRoles.aspx',
@@ -169,12 +173,12 @@ function CrearRol(object) {
             data:
             {
                 insertRole: 'true',
-                newRole: nombreRol,
+                newRole: input.val(),
             },
             success: function (data) {
                 if (data == 'True') {
                     GetAllRoles();  
-                    $(object).val("");
+                    input.val("");
                 }                                 
                 else if (data == "False")
                     alert("Hubo un error y no se pudo crear el rol. Contacte con el soporte.");
@@ -269,8 +273,10 @@ function DesasignarUsuario(idRol, idUser) {
 ///                          ///
 
 // Editar rol
-function EditarRol(object, idRol) {
-    var nombreRol = $(object).siblings("label").children("input").val();
+function EditarRol(object) {
+
+    var nombreRol = $(object).val();
+    var idRol = $(object).attr("idRol");
 
     if (nombreRol != "") {
         $.ajax({
@@ -288,9 +294,7 @@ function EditarRol(object, idRol) {
                     //alert("Rol editado con éxito.");
 
                     GetAllRoles();
-                    GetAllUserRoles();
-
-                    VolverCrearRol();
+                    GetAllUserRoles();                    
                 }
                 else
                     alert("Hubo un error y no se pudo eliminar el rol. Contacte con el soporte.");

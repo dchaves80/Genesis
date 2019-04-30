@@ -137,7 +137,8 @@
     <PostBuildEvent>copy /Y "$(ProjectDir)*.aspx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
 copy /Y "$(ProjectDir)*.js" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
 copy /Y "$(ProjectDir)*.ascx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
-copy /Y "$(ProjectDir)bin\$(ProjectName).dll" "$(ProjectDir)..\..\..\..\Genesis\bin"</PostBuildEvent>
+copy /Y "$(ProjectDir)bin\$(ProjectName).dll" "$(ProjectDir)..\..\..\..\Genesis\bin"
+copy /Y "$(ProjectDir)*.css" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

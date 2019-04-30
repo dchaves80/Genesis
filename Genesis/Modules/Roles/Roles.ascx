@@ -40,8 +40,8 @@
                             Response.Write(
                                 "<tr  style='cursor: grab;' class='draggable TableRows' action='assignRoleToUser' idRole=" + Role.ID + ">" +
                                     "<td>" +
-                                        "<label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>" +
-                                            "<input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text' value='" + Role.ROLE + "'/>" +
+                                        "<label class='InputTextDarkLabel'>" +
+                                            "<input idRol='" + Role.ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + Role.ROLE + "'/>" +
                                             "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + Role.ROLE + "</span> </span>" +
                                         "</label>" +
                                     "</td>" +
