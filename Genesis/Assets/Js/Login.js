@@ -1,22 +1,14 @@
 ﻿//  Datos correctos, procede a entrar a la página
-//var Line;
-
 function AccessGranted(data) {
     window.location.href = "/Pages/Main/Main.aspx?sk=" + data;
 }
 
-function LoadProgressBar() {
 
-   /* Line = new ProgressBar.Circle('#progressbarContainer', {
-        color: '#FCB03C',
-        duration: 1500,
-        easing: 'easeInOut',
+$(document).keypress( function (event) {
+    if (event.key == "Enter")
+        CheckUserPass();
+});
 
-    });
-
-    Line.animate(0);*/
-    
-}
 
 //  Verifica las credenciales
 function CheckUserPass() {

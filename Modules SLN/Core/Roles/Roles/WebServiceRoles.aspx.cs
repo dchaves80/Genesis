@@ -51,9 +51,7 @@ namespace Roles
                 content = UnassignUser(int.Parse(Request["idRol"]), int.Parse(Request["idUser"]));
 
             if (Request["getAllModules"] != null)
-                content = GetAllModules();
-            if (Request["Testing"] != null)
-                content = "True";
+                content = GetAllModules();           
 
             Response.Write(content);
             Response.Flush();
@@ -219,6 +217,10 @@ namespace Roles
             return Mod_Users.Get_ById(idUser).RemoveRole(idRole).ToString();
         }
 
+        /// <summary>
+        /// Obtiene todos los módulos
+        /// </summary>
+        /// <returns>Devuelve un string serializado en json con una lista de Mod_Modules.</returns>
         private string GetAllModules()
         {
             return new JavaScriptSerializer().Serialize(Mod_Modules.Get_All());

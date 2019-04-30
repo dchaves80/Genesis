@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Roles.ascx" />
+    <Content Include="Roles.css" />
     <Content Include="Roles.js" />
     <Content Include="Web.config" />
     <Content Include="WebServiceRoles.aspx" />
