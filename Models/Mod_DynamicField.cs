@@ -45,7 +45,7 @@ namespace Models
         public static Mod_DynamicField GetById(int Id)
         {
             DataTable dt = Connection.Con_DynamicFields.Get_DynamicField(Id, null, null);
-            if (dt.Rows.Count > 0)
+            if (dt !=null  && dt.Rows.Count > 0)
             {
                 return new Mod_DynamicField(dt.Rows[0]);
             }

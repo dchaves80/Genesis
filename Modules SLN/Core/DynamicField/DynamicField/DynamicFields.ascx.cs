@@ -12,6 +12,8 @@ namespace DynamicField
         protected void Page_Load(object sender, EventArgs e)
         {
             Models.Utils.IncludeJavaScript("/Modules/DynamicField/DynamicField.js",Page);
+            Models.Utils.IncludeCSS("/Modules/DynamicField/particles.css", Page);
+            Models.Utils.IncludeCSS("/Modules/DynamicField/base.css",Page);
         }
     }
 }
