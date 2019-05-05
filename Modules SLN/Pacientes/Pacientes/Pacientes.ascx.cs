@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Models;
 
 namespace Pacientes
 {
@@ -11,7 +12,8 @@ namespace Pacientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Utils.IncludeJavaScript("../../Modules/Pacientes/Pacientes.js", Page);
+            Utils.IncludeCSS("../../Modules/Pacientes/Pacientes.css", Page);
         }
     }
 }

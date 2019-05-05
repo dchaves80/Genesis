@@ -4,6 +4,21 @@
 $(window).on('load', function () {    
 
     CrearDragDrop();
+
+    
+    $('.draggable').hover(
+        function () {
+            $(this).children("td:last-child").children("input").animate(
+                {
+                    opacity: "1",
+                }, 25);
+        },
+        function () {
+            $(this).children("td:last-child").children("input").animate(
+                {
+                    opacity: "0",
+                }, 25);
+        });
     
 })
 
@@ -18,6 +33,7 @@ $(document).on("keypress", ".RoleName", function (e) {
         GetAllUserRoles();
     }
 
+    
     
 });
 
@@ -309,8 +325,11 @@ function EditarRol(object) {
 ///                         ///
 ///         ELIMINAR        ///
 ///                         ///
+var imageDataArray = [];
+var canvasCount = 35;
 // Eliminar rol
 function EliminarRol(idRol) {
+    
     $.ajax({
         url: '/Modules/Roles/WebServiceRoles.aspx',
         dataType: 'text',
@@ -332,9 +351,8 @@ function EliminarRol(idRol) {
             else
                 alert("Hubo un error y no se pudo eliminar el rol. Contacte con el soporte.");
         }
-    });
+    });    
 }
-
 
 
 

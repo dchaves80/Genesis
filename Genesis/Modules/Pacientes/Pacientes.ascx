@@ -1,56 +1,147 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Pacientes.ascx.cs" Inherits="Pacientes.Pacientes" %>
 
+<!-- PACIENTES -->
+<h1>PACIENTES</h1>
+
 <!-- CONTENT -->
 <div>
 
-    <!-- Buscador -->
+    <!-- Create and search -->
     <div>
 
-        <label style="display: inline-block;" class="LabelInput">
-            <input placeholder="ej: Lapenna Luciano" style="color: rgba(255,255,255,0.8)" class="Input" type="text" />
-            <span class="InputPlaceholderWrap">
-                <span class="InputPlaceholder">NOMBRE</span>
+        <label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>
+            <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text'/>
+            <span class="InputTextDarkPlaceholderWrap">
+                <span class="InputTextDarkPlaceholder"><i class="fas fa-search"></i></span>
             </span>
         </label>
 
-        <input type="button" class="ButtonDark" value="BUSCAR" />
-        <input type="button" value="AGREGAR" class="ButtonDark"/>
+        <i id="test" class="fas fa-plus" style="margin-right: 50px;"></i>
+         
     </div>
 
-    <!-- Tabla de resultados -->
-    <div class="Table">
-        <table>
 
-            <tr class="TopRow">
-                <th>APELLIDO</th>
-                <th>NOMBRE</th>
-                <th>TELÉFONO</th>
-                <th>NRO. DOC.</th>
-            </tr>
-            <tr class="TableRows">
-                <td>Lapenna</td>
-                <td>Luciano</td>
-                <td>52912920</td>
-                <td>42673345</td>
-                <td><input type="button" value="EDITAR" class="ButtonDark"/></td>
-            </tr>
-            <tr class="TableRows">
-                <td>Suriano</td>
-                <td>Ramiro</td>
-                <td>14408732</td>
-                <td>32874014</td>
-                <td><input type="button" value="EDITAR" class="ButtonDark"/></td>
-            </tr>
-            <tr class="TableRows">
-                <td>Chaves</td>
-                <td>David</td>
-                <td>34084119</td>
-                <td>19410834</td>
-                <td><input type="button" value="EDITAR" class="ButtonDark"/></td>
-            </tr>
+    <!-- Text Inputs -->
+    <div>
 
-        </table>
+        <!-- Personal Info -->
+        <div>
+            <h2>Información Personal</h2>
+
+            <!-- Name and surname -->
+
+            <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Juan' class='InputTextDark' type='text' />
+                <span class="InputTextDarkPlaceholderWrap">
+                    <span class="InputTextDarkPlaceholder">NOMBRE </span>
+                </span>
+            </label>
+
+            <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Pérez' class='InputTextDark' type='text' />
+                <span class="InputTextDarkPlaceholderWrap">
+                    <span class="InputTextDarkPlaceholder">APELLIDO </span>
+                </span>
+            </label>
+
+
+            <!-- Identity card -->
+
+            <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                <input style='color: rgba(255,255,255,0.8)' placeholder='ej: 25978269' class='InputTextDark' type='text' />
+                <span class="InputTextDarkPlaceholderWrap">
+                    <span class="InputTextDarkPlaceholder">DOCUMENTO </span>
+                </span>
+            </label>
+
+
+            <!-- Birth date -->
+            <label style="display: inline-block;">
+                <span style="display: block;">FECHA DE NACIMIENTO</span>
+                <input style="margin-left: 10px;" type="date" class="ButtonDark" />
+            </label>
+            
+
+            <!-- Sex -->
+            <div style="display: inline-block; margin-left: 20px; margin-top: -30px;">
+
+                <span style="display: block;">SEXO</span>
+
+                <label class="RadioDark">
+                    <input type="radio" name="sex" />
+                    <span>Masculino</span>
+                </label>
+
+                <br />
+
+                <label class="RadioDark">
+                    <input type="radio" name="sex" />
+                    <span>Femenino</span>
+                </label>
+
+            </div>
+
+            <!-- Gender -->                         
+                <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                    <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Masculino' class='InputTextDark' type='text' />
+                    <span class="InputTextDarkPlaceholderWrap">
+                        <span class="InputTextDarkPlaceholder">GÉNERO </span>
+                    </span>
+                </label>            
+
+        </div>
+
+        <!-- Contact Info -->
+        <div style="margin-top: 100px;">
+            <h2>Información de contacto</h2>
+            
+            <!-- Residence -->
+            <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Villa Nueva 269' class='InputTextDark' type='text' />
+                <span class="InputTextDarkPlaceholderWrap">
+                    <span class="InputTextDarkPlaceholder">DOMICILIO </span>
+                </span>
+            </label>
+
+            <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Arroyo Cabral' class='InputTextDark' type='text' />
+                <span class="InputTextDarkPlaceholderWrap">
+                    <span class="InputTextDarkPlaceholder">LOCALIDAD </span>
+                </span>
+            </label>
+
+            <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                <input style='color: rgba(255,255,255,0.8)' placeholder='ej: 49782435' class='InputTextDark' type='text' />
+                <span class="InputTextDarkPlaceholderWrap">
+                    <span class="InputTextDarkPlaceholder">TELÉFONO </span>
+                </span>
+            </label>
+
+        </div>
+
+        <!-- Health Insurance -->
+        <div style="margin-top: 100px;">
+            <h2>OBRA SOCIAL</h2>
+            <!-- Confirms health insurance -->
+            <div>
+                <span>¿Posee obra social?</span>
+                <input id="chboxHealthInsurance" type="checkbox" />
+            </div>
+
+            <div style="display: none;">
+                <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                    <input style='color: rgba(255,255,255,0.8)' placeholder='ej: 478915-0' class='InputTextDark' type='text' />
+                    <span class="InputTextDarkPlaceholderWrap">
+                        <span class="InputTextDarkPlaceholder">NRO AFILIADO </span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+
     </div>
+    
+    
 </div>
 
 <!-- POP UPS -->

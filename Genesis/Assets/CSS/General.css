@@ -203,3 +203,80 @@ div.PopUpTitle {
     padding: 5px;
     text-align: center;
 }
+
+
+/* INPUT RADIO */
+.RadioDark {
+    margin: 10px 0;
+    display: block;
+    cursor: pointer;
+    display: inline-block;
+}
+
+    .RadioDark input {
+        display: none;
+    }
+
+        .RadioDark input + span {
+            line-height: 22px;
+            height: 22px;
+            padding-left: 22px;
+            display: block;
+            position: relative;
+        }
+
+            .RadioDark input + span:not(:empty) {
+                padding-left: 30px;
+            }
+
+            .RadioDark input + span:before, .RadioDark input + span:after {
+                content: '';
+                width: 22px;
+                height: 22px;
+                display: block;
+                border-radius: 50%;
+                left: 0;
+                top: 0;
+                position: absolute;
+            }
+
+            .RadioDark input + span:before {
+                background: #3a7999;
+                transition: background 0.2s ease, -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+                transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+                transition: background 0.2s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2), -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+            }
+
+            .RadioDark input + span:after {
+                background: #fff;
+                transform: scale(0.78);
+                transition: -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+                transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+                transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4), -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+            }
+
+        .RadioDark input:checked + span:before {
+            transform: scale(1.04);
+            background: #3a7999;
+        }
+
+        .RadioDark input:checked + span:after {
+            transform: scale(0.4);
+            transition: -webkit-transform .3s ease;
+            transition: transform .3s ease;
+            transition: transform .3s ease, -webkit-transform .3s ease;
+        }
+
+    .RadioDark:hover input + span:before {
+        transform: scale(0.92);
+    }
+
+    .RadioDark:hover input + span:after {
+        transform: scale(0.74);
+    }
+
+    .RadioDark:hover input:checked + span:after {
+        transform: scale(0.4);
+    }
+
+    

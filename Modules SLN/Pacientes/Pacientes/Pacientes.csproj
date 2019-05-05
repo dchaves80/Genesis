@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Models">
+      <HintPath>..\..\..\Models\bin\Debug\Models.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -68,7 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pacientes.ascx" />
+    <Content Include="Pacientes.css" />
+    <Content Include="Pacientes.js" />
     <Content Include="Web.config" />
+    <Content Include="WebServicePacientes.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pacientes.ascx.cs">
@@ -79,6 +85,13 @@
       <DependentUpon>Pacientes.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebServicePacientes.aspx.cs">
+      <DependentUpon>WebServicePacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebServicePacientes.aspx.designer.cs">
+      <DependentUpon>WebServicePacientes.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -120,6 +133,17 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(ProjectDir)*.aspx" "$(ProjectDir)..\..\..\Genesis\Modules\$(ProjectName)"
+copy /Y "$(ProjectDir)*.js" "$(ProjectDir)..\..\..\Genesis\Modules\$(ProjectName)"
+copy /Y "$(ProjectDir)*.ascx" "$(ProjectDir)..\..\..\Genesis\Modules\$(ProjectName)"
+copy /Y "$(ProjectDir)bin\$(ProjectName).dll" "$(ProjectDir)..\..\..\Genesis\bin"
+copy /Y "$(ProjectDir)*.css" "$(ProjectDir)..\..\..\Genesis\Modules\$(ProjectName)"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
