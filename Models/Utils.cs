@@ -62,7 +62,7 @@ namespace Models
         public static string GetModulePath(int IdModule)
         {
             Mod_Modules aux = Mod_Modules.Get_ById(IdModule);
-            return aux.Path;
+            return aux.PATH;
         }
     }
 }

@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Genesis.Pages.Main.Controls {
+namespace Permisos {
     
     
-    public partial class SideBar {
+    public partial class Permisos {
     }
 }

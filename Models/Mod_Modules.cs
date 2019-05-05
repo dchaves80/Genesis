@@ -17,12 +17,14 @@ namespace Models
         string path;
         string dll;
         string icon;
+        List<Mod_Roles> roles;
 
-        public string Name { get => name; set => name = value; }
-        public string Path { get => path; set => path = value; }
-        public string Dll { get => dll; set => dll = value; }
-        public int Id { get => id; set => id = value; }
-        public string Icon { get => icon; set => icon = value; }
+        public string NAME { get => name; set => name = value; }
+        public string PATH { get => path; set => path = value; }
+        public string DLL { get => dll; set => dll = value; }
+        public int ID { get => id; set => id = value; }
+        public string ICON { get => icon; set => icon = value; }
+        public List<Mod_Roles> ROLES { get => roles; set => roles = value; }
 
         private Mod_Modules(DataRow DR)
         {
@@ -31,6 +33,7 @@ namespace Models
             path = DR["Ascx"].ToString();
             dll = DR["Dll"].ToString();
             icon = DR["Icon"].ToString();
+            ROLES = Get_Permissions();
         }
 
         public static List<Mod_Modules> Get_All()

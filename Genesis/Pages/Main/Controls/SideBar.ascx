@@ -30,9 +30,9 @@
                                 if (legalRole.ID == activeRole.ID)
                                 {
                                     Response.Write(
-                                        "<tr OnClick='LoadModule(\"" + module.Id + "\")'>" +
-                                            "<td style='text-align: center; padding-right: 10px;'> <i class='fas fa-" + module.Icon + "'></i> </td>" +
-                                            "<td> " + module.Name + " </td>" +
+                                        "<tr OnClick='LoadModule(\"" + module.ID + "\")'>" +
+                                            "<td style='text-align: center; padding-right: 10px;'> <i class='fas fa-" + module.ICON + "'></i> </td>" +
+                                            "<td> " + module.NAME + " </td>" +
                                         "</tr>");
                                     //Response.Write("<a class=\"SideBarDarkOption\" OnClick=\"LoadModule('" + module.Id + "')\">");
                                     //Response.Write("<i class=\"fas fa-" + module.Icon + "\"></i> ");
