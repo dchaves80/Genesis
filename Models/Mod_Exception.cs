@@ -22,13 +22,15 @@ namespace Models
 
             R.Write("<script>");
             R.Write("function showerrors"  + baseguid + "(){");
-            R.Write("$(\".classguid\" + \"" + baseguid + "\").show();");
+            R.Write("if ($(\".classguid\" + \"" + baseguid + "\").is(\":visible\")){");
+            R.Write("$(\".classguid\" + \"" + baseguid + "\").hide();");
+            R.Write("} else { $(\".classguid\" + \"" + baseguid + "\").show(); }");
             R.Write("}");
             
             R.Write("</script>" + Environment.NewLine);
 
             R.Write("<div style=\"padding: 10px 10px 10px 10px; border-width:1px; border-style:solid; border-color:red\">" + Environment.NewLine);
-            R.Write("<input type=\"button\" value=\"Error\" onclick=\"showerrors" + baseguid +  "()\">" + Environment.NewLine);
+            R.Write("<input type=\"button\" value=\"Extender Detalle\" onclick=\"showerrors" + baseguid +  "()\">" + Environment.NewLine);
             R.Write("<div style=\"color:white\">Error: " + main_Message + "</div>" + Environment.NewLine);
             if (CustomMessage != null)
             {
