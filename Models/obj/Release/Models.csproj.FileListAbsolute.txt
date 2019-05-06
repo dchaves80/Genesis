@@ -1,0 +1,10 @@
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\bin\Release\Models.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\bin\Release\Models.pdb
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\bin\Release\Connection.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\bin\Release\Connection.pdb
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\bin\Release\Connection.dll.config
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\obj\Release\Models.csprojAssemblyReference.cache
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\obj\Release\Models.csproj.CoreCompileInputs.cache
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\obj\Release\Models.csproj.CopyComplete
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\obj\Release\Models.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Models\obj\Release\Models.pdb

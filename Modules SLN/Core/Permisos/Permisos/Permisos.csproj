@@ -134,8 +134,7 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)" mkdir "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
-copy /Y "$(ProjectDir)*.aspx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
+    <PostBuildEvent>copy /Y "$(ProjectDir)*.aspx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
 copy /Y "$(ProjectDir)*.js" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
 copy /Y "$(ProjectDir)*.ascx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
 copy /Y "$(ProjectDir)bin\$(ProjectName).dll" "$(ProjectDir)..\..\..\..\Genesis\bin"

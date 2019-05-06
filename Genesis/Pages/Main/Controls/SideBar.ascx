@@ -12,37 +12,64 @@
 
         <%@ Import Namespace="Models" %>
         <%
+            //Gets all the active modules in the system, and a new list to avoid duplicated modules in the sidebar
             List<Mod_Modules> ActiveModules = Mod_Modules.Get_All();
+            List<Mod_Modules> GrantedModules = new List<Mod_Modules>();
+
+            //Gets the active user and its roles.
+            Mod_Users activeUser = Session[Models.ConstantLibrary.Session_Library.USER] as Mod_Users;
+            List<Mod_Roles> activeRoles = activeUser.ROLES;
+            bool is_SU = false;
             try
             {
-                foreach (Mod_Modules module in ActiveModules)
+                //If the user is a SuperUser, access to all modules must be granted right away.
+                foreach (Mod_Roles role in activeRoles) { if (role.ROLE == "SuperUser") { is_SU = true; break; } }
+                if (is_SU)
                 {
-                    List<Mod_Roles> legalRoles = module.Get_Permissions();
-                    Mod_Users activeUser = Session[Models.ConstantLibrary.Session_Library.USER] as Mod_Users;
-                    List<Mod_Roles> activeRoles = activeUser.ROLES;
-
-                    if (legalRoles != null && activeRoles != null)
+                    foreach (Mod_Modules module in ActiveModules)
                     {
-                        foreach (Mod_Roles legalRole in legalRoles)
+                        Response.Write(
+                                    "<tr OnClick='LoadModule(\"" + module.ID + "\")'>" +
+                                        "<td style='text-align: center; padding-right: 10px;'> <i class='fas fa-" + module.ICON + "'></i> </td>" +
+                                        "<td> " + module.NAME + " </td>" +
+                                    "</tr>");
+                    }
+                }
+                //..but if the user isn't a SuperUser, a search for coincidences in the two lists is conducted.
+                else
+                {
+                    foreach (Mod_Modules module in ActiveModules)
+                    {
+                        List<Mod_Roles> legalRoles = module.Get_Permissions();
+                        bool hasPermission = false;
+                        if (legalRoles != null && activeRoles != null)
                         {
                             foreach (Mod_Roles activeRole in activeRoles)
                             {
-                                if (legalRole.ID == activeRole.ID)
+                                foreach (Mod_Roles legalRole in legalRoles)
                                 {
-                                    Response.Write(
-                                        "<tr OnClick='LoadModule(\"" + module.ID + "\")'>" +
-                                            "<td style='text-align: center; padding-right: 10px;'> <i class='fas fa-" + module.ICON + "'></i> </td>" +
-                                            "<td> " + module.NAME + " </td>" +
-                                        "</tr>");
-                                    //Response.Write("<a class=\"SideBarDarkOption\" OnClick=\"LoadModule('" + module.Id + "')\">");
-                                    //Response.Write("<i class=\"fas fa-" + module.Icon + "\"></i> ");
-                                    //Response.Write(module.Name + "</a>");
+                                    if (legalRole.ID == activeRole.ID)
+                                    {
+                                        hasPermission = true;
+                                    }
                                 }
                             }
                         }
+                        else
+                        {
+                            Response.Write("<tr><td>" + module.NAME + " no tiene roles</td></tr>");
+                        }
+                        if (hasPermission)
+                        {
+                            Response.Write(
+                                            "<tr OnClick='LoadModule(\"" + module.ID + "\")'>" +
+                                                "<td style='text-align: center; padding-right: 10px;'> <i class='fas fa-" + module.ICON + "'></i> </td>" +
+                                                "<td> " + module.NAME + " </td>" +
+                                            "</tr>");
+                        }
                     }
-
                 }
+
 
             }
             catch (Exception E)

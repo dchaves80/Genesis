@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Connection;
 
-// Editado el código para simplificarlo en los return - Losha - 2019/04/19 22.18
 
 namespace Models
 {

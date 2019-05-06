@@ -1,0 +1,7 @@
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\bin\Release\Connection.dll.config
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\bin\Release\Connection.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\bin\Release\Connection.pdb
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\obj\Release\Connection.csprojAssemblyReference.cache
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\obj\Release\Connection.csproj.CoreCompileInputs.cache
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\obj\Release\Connection.dll
+C:\Users\Ramiro\Documents\GitHub\Genesis\Connection\obj\Release\Connection.pdb

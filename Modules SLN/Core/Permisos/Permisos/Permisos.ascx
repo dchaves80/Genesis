@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Permisos.ascx.cs" Inherits="Permisos.Permisos" %>
 
-<!-- ROLES -->
 <h1>PERMISOS</h1>
 
 <!-- CONTENT -->
@@ -22,7 +21,7 @@
                             if (Role.ROLE != "SuperUser")
                             {
                             Response.Write(
-                                "<tr  style='cursor: grab;' class='draggable TableRows' action='assignRoleToUser' idRole=" + Role.ID + ">" +
+                                "<tr  style='cursor: grab;' class='draggable TableRows' action='assignRoleToModule' idRole=" + Role.ID + ">" +
                                     "<td>" + Role.ROLE + "</td>"  +
                                 "</tr>");
                             }
@@ -64,7 +63,7 @@
                                 }
 
                                 Response.Write(
-                                    "<tr class='droppable TableRows' idUser='" + Module.ID + "'>" +
+                                    "<tr class='droppable TableRows' idModule='" + Module.ID + "'>" +
                                         "<td>" + Module.NAME + "</td>" +
                                         "<td>" +
                                             "<ul idUser='" + Module.ID + "' style='list-style-type: none;'>" +

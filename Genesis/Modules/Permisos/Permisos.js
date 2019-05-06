@@ -26,7 +26,7 @@ $(document).on("keypress", ".RoleName", function (e) {
 // Obtiene todos los roles
 function GetAllRoles() {
     $.ajax({
-        url: '/Modules/Roles/WebServiceRoles.aspx',
+        url: '/Modules/Permisos/WebServicePermisos.aspx',
         dataType: 'json',
         data:
         {
@@ -38,14 +38,8 @@ function GetAllRoles() {
             if (data != null) {
                 for (a = 0; a < data.length; a++) {
                     $('#tablaRoles').append(
-                        "<tr style='cursor: grab;' class='draggable TableRows' action='assignRoleToUser' idRole=" + data[a].ID + ">" +
-                        "<td>" +
-                        "<label class='InputTextDarkLabel'>" +
-                        "<input idRol='" + data[a].ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + data[a].ROLE + "'/>" +
-                        "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + data[a].ROLE + "</span> </span>" +
-                        "</label>" +
-                        "</td>" +
-                        "<td> <input type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + data[a].ID + ")' />  </td>" +
+                        "<tr style='cursor: grab;' class='draggable TableRows' action='assignRoleToModule' idRole=" + data[a].ID + ">" +
+                        "<td>" + Role.ROLE + "</td>" +
                         "</tr>");
                 }
 
@@ -55,20 +49,20 @@ function GetAllRoles() {
     })
 }
 
-// Obtener todos los usuarios y roles asociados
+// Obtener todos los modulos y roles asociados
 function GetAllModules() {
     $.ajax({
-        url: '/Modules/Roles/WebServiceRoles.aspx',
+        url: '/Modules/Permisos/WebServicePermisos.aspx',
         dataType: 'json',
         data:
         {
-            getAllUsersRoles: 'true',
+            getAllModules: 'true',
         },
         success: function (data) {
 
             if (data != null) {
 
-                ReconstruirTablaUsuariosRoles();
+                ReconstruirTablaModulos();
 
                 for (a = 0; a < data.length; a++) {
 
@@ -80,10 +74,10 @@ function GetAllModules() {
                     }
 
                     $('#tablaModulos').append(
-                        "<tr class='droppable TableRows' idUser='" + data[a].ID + "'>" +
-                        "<td>" + data[a].USERNAME + "</td>" +
+                        "<tr class='droppable TableRows' idModule='" + data[a].ID + "'>" +
+                        "<td>" + data[a].NAME + "</td>" +
                         "<td>" +
-                        "<ul  idUser='" + data[a].ID + "' style='list-style-type: none;'>" +
+                        "<ul  idModule='" + data[a].ID + "' style='list-style-type: none;'>" +
                         listItems +
                         "</ul>" +
                         "</td>" +
@@ -97,19 +91,11 @@ function GetAllModules() {
 }
 
 
-// Reconstruir tablas
-function ReconstruirTablaRoles() {
-    $('#tablaRoles').empty();
-    $('#tablaRoles').append(
-        "<tr class='TopRow'>" +
-        "<td>ROL</td>" +
-        "</tr>");
-}
-function ReconstruirTablaUsuariosRoles() {
+function ReconstruirTablaModulos() {
     $('#tablaModulos').empty();
     $('#tablaModulos').append(
         "<tr class='TopRow'>" +
-        "<td>USUARIO</td>" +
+        "<td>MODULO</td>" +
         "<td>ROL ASIGNADO</td>" +
         "</tr>");
 }
@@ -145,65 +131,28 @@ function CrearDragDrop() {
         // Función ejecutada al dropear el objeto
         drop: function (event, ui) {
 
-            if (ui.draggable.attr("action") == "assignRoleToUser") {
+            if (ui.draggable.attr("action") == "assignRoleToModule") {
                 idRole = ui.draggable.attr("idRole");
-                AsignarRol(idRole, $(this).attr("idUser"));
-            }
-            if (ui.draggable.attr("action") == "assignModuleToRole") {
-                idModule = ui.draggable.attr("idModule");
-                AsignarModulo(idModule, $(this).attr("idRole"));
-
+                AsignarRol(idRole, $(this).attr("idModule"));
             }
         },
     })
 }
 
-///                         ///
-///         CREAR           ///
-///                         ///
-// Crear Rol
-function CrearRol(object) {
-    var input = $(object).siblings("label").children("input");
-
-    if (input.val() != "") {
-
-        $.ajax({
-            url: '/Modules/Roles/WebServiceRoles.aspx',
-            dataType: 'text',
-            data:
-            {
-                insertRole: 'true',
-                newRole: input.val(),
-            },
-            success: function (data) {
-                if (data == 'True') {
-                    GetAllRoles();
-                    input.val("");
-                }
-                else if (data == "False")
-                    alert("Hubo un error y no se pudo crear el rol. Contacte con el soporte.");
-                else
-                    alert(data);
-            }
-        });
-    }
-    else
-        alert("Inserte un nombre para continuar.");
-}
 
 ///                         ///
 ///         ASIGNAR         ///
 ///                         ///
 // Asignar rol
-function AsignarRol(idRol, idUsuario) {
+function AsignarRol(idRol, idModule) {
     $.ajax({
-        url: '/Modules/Roles/WebServiceRoles.aspx',
+        url: '/Modules/Permisos/WebServicePermisos.aspx',
         dataType: 'text',
         data:
         {
             assignRole: 'true',
             idRol: idRol,
-            idUsuario: idUsuario,
+            idModule: idModule,
         },
         success: function (data) {
             if (data == 'True')
@@ -218,22 +167,21 @@ function AsignarRol(idRol, idUsuario) {
     });
 }
 // Desasignar un rol
-function DesasignarRol(idRole, idUser) {
+function DesasignarRol(idRole, idModule) {
 
 
     $.ajax({
-        url: '/Modules/Roles/WebServiceRoles.aspx',
+        url: '/Modules/Permisos/WebServicePermisos.aspx',
         dataType: 'text',
         data:
         {
             unassignRole: 'true',
-            idUser: idUser,
+            idModule: idModule,
             idRole: idRole,
         },
         success: function (data) {
 
             if (data == "True") {
-                //alert("Rol desasignado con éxito.");
 
                 GetAllModules();
             }
@@ -242,113 +190,3 @@ function DesasignarRol(idRole, idUser) {
         }
     });
 }
-
-// Desasignar usuario de un rol
-function DesasignarUsuario(idRol, idUser) {
-
-    $.ajax({
-        url: '/Modules/Roles/WebServiceRoles.aspx',
-        dataType: 'text',
-        data:
-        {
-            unassignUser: 'true',
-            idUser: idUser,
-            idRole: idRol,
-        },
-        success: function (data) {
-            if (data == "True") {
-                //alert("Usuario desasignado con éxito.");
-
-                VerUsuariosAsociados();
-            }
-            else
-                alert("Hubo un error y no se pudo desasignar el usuario. Contacte con el soporte.");
-        }
-    })
-
-}
-
-///                          ///
-///         EDITAR           ///
-///                          ///
-
-// Editar rol
-function EditarRol(object) {
-
-    var nombreRol = $(object).val();
-    var idRol = $(object).attr("idRol");
-
-    if (nombreRol != "") {
-        $.ajax({
-            url: '/Modules/Roles/WebServiceRoles.aspx',
-            dataType: 'text',
-            data:
-            {
-                editRole: 'true',
-                idRol: idRol,
-                roleName: nombreRol,
-            },
-            success: function (data) {
-                if (data == "True") {
-
-                    //alert("Rol editado con éxito.");
-
-                    GetAllRoles();
-                    GetAllModules();
-                }
-                else
-                    alert("Hubo un error y no se pudo eliminar el rol. Contacte con el soporte.");
-            }
-
-        })
-    }
-    else
-        alert("Inserte un nombre nuevo para el rol.");
-}
-
-///                         ///
-///         ELIMINAR        ///
-///                         ///
-// Eliminar rol
-function EliminarRol(idRol) {
-    $.ajax({
-        url: '/Modules/Roles/WebServiceRoles.aspx',
-        dataType: 'text',
-        data:
-        {
-            deleteRole: 'true',
-            idRol: idRol,
-        },
-        success: function (data) {
-            if (data == "True") {
-
-                //alert("Rol eliminado con éxito.");
-
-                GetAllRoles();
-                GetAllModules();
-
-                //VolverCrearRol();
-            }
-            else
-                alert("Hubo un error y no se pudo eliminar el rol. Contacte con el soporte.");
-        }
-    });
-}
-
-
-
-
-
-
-
-
-
-/* FUNCIONES QUE FALTAN
- * xEliminarRol(idRol)
- * xEditarRol(idRol)
- * xVolverCrearRol()
- * DesasignarUsuario()
- */
-
-
-
