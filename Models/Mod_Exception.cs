@@ -26,7 +26,7 @@ namespace Models
             R.Write("$(\".classguid\" + \"" + baseguid + "\").hide();");
             R.Write("} else { $(\".classguid\" + \"" + baseguid + "\").show(); }");
             R.Write("}");
-            
+
             R.Write("</script>" + Environment.NewLine);
 
             R.Write("<div style=\"padding: 10px 10px 10px 10px; border-width:1px; border-style:solid; border-color:red\">" + Environment.NewLine);
@@ -38,15 +38,15 @@ namespace Models
             }
             foreach (StackFrame sf in main_st.GetFrames())
             {
-                R.Write("<Div class=\"classguid" + baseguid + "\" style=\"padding:10px 10px 10px 10px;margin-top:10px 10px 10px 10px\">" + Environment.NewLine);
+                R.Write("<div class=\"classguid" + baseguid + "\" style=\"padding:10px 10px 10px 10px;margin-top:10px 10px 10px 10px; display:none;\">" + Environment.NewLine);
                 R.Write("<div><b>Archivo:</b>" + sf.GetFileName() + "</div>" + Environment.NewLine);
                 R.Write("<div><b>Metodo:</b>" + sf.GetMethod().Name + "</div>" + Environment.NewLine);
                 R.Write("<div><b>Linea:</b>" + sf.GetFileLineNumber().ToString() + "</div>" + Environment.NewLine);
-                R.Write("</Div>");
+                R.Write("</div>");
             }
             R.Write("</div>" + Environment.NewLine);
-            R.Write("<script>");
-            R.Write("$(\".classguid\" + \"" + baseguid + "\").hide();");
+            R.Write("<script language=\"JavaScript\" type=\"text / javascript\">\"");
+            R.Write("$(\".classguid" + baseguid + "\").hide();");
             R.Write("</script>");
 
         }
