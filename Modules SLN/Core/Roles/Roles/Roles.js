@@ -5,22 +5,30 @@ $(window).on('load', function () {
 
     CrearDragDrop();
 
+    CreateEventHandler();
     
-    $('.draggable').hover(
+
+    
+})
+
+
+function CreateEventHandler() {
+    $('.RowRole').hover(
         function () {
+            console.log("Entró");
             $(this).children("td:last-child").children("input").animate(
                 {
                     opacity: "1",
                 }, 25);
         },
         function () {
+            console.log("Salió");
             $(this).children("td:last-child").children("input").animate(
                 {
                     opacity: "0",
                 }, 25);
         });
-    
-})
+}
 
 ///                         ///
 ///         OTROS           ///
@@ -36,6 +44,37 @@ $(document).on("keypress", ".RoleName", function (e) {
     
     
 });
+
+// Get a single role to edit
+function GetRoleToEdit(object, idRole) {
+    var tr = $(object).parent().parent();
+    tr.removeClass("draggable");
+    tr.empty();
+
+    $.ajax({
+        url: '/Modules/Roles/WebServiceRoles.aspx',
+        dataType: 'json',
+        data:
+        {
+            getSingleRole: 'true',
+            idRole: idRole,
+        },
+        success: function (data) {
+
+            tr.append(
+                "<td>" +
+                    "<label class='InputTextDarkLabel'>" +
+                        "<input idRol='" + data.ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + data.ROLE + "'/>" +
+                        "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + data.ROLE + "</span> </span>" +
+                    "</label>" +
+                "</td>" +
+                    
+                "<td>" +
+                    "<input type='button' class='ButtonDark' value='VOLVER' onclick='GetAllRoles()'/>" +
+                "</td>");
+        }
+    })
+}
 
 
 
@@ -54,19 +93,23 @@ function GetAllRoles() {
             if (data != null) {
                 for (a = 0; a < data.length; a++) {
                     $('#tablaRoles').append(
-                        "<tr style='cursor: grab;' class='draggable TableRows' action='assignRoleToUser' idRole=" + data[a].ID + ">" +
-                            "<td>" +
-                                "<label class='InputTextDarkLabel'>" +
-                                    "<input idRol='" + data[a].ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + data[a].ROLE + "'/>" +
-                                    "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + data[a].ROLE + "</span> </span>" +
-                                "</label>" +
+                        "<tr style='cursor: grab;' class='draggable RowRole TableRows' action='assignRoleToUser' idRole=" + data[a].ID + ">" +
+                            "<td>" + data[a].ROLE + 
+                                //"<label class='InputTextDarkLabel'>" +
+                                //    "<input idRol='" + data[a].ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + data[a].ROLE + "'/>" +
+                                //    "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + data[a].ROLE + "</span> </span>" +
+                                //"</label>" +
                             "</td>" +
-                            "<td> <input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + data[a].ID + ")' />  </td>" +
+                            "<td>" + 
+                                "<input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + data[a].ID + ")' />" +
+                                "<input style='opacity: 0;' type='button' class='ButtonDark' value='EDITAR' onclick='GetRoleToEdit(this," + data[a].ID + ")' />" +
+                            "</td>" +
                         "</tr>");
                 }
                 
             }
             CrearDragDrop();
+            CreateEventHandler();
         }
     })
 }

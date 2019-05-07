@@ -51,7 +51,10 @@ namespace Roles
                 content = UnassignUser(int.Parse(Request["idRol"]), int.Parse(Request["idUser"]));
 
             if (Request["getAllModules"] != null)
-                content = GetAllModules();           
+                content = GetAllModules();
+
+            if (Request["getSingleRole"] != null)
+                content = GetSingleRole(int.Parse(Request["idRole"]));
 
             Response.Write(content);
             Response.Flush();
@@ -224,6 +227,11 @@ namespace Roles
         private string GetAllModules()
         {
             return new JavaScriptSerializer().Serialize(Mod_Modules.Get_All());
+        }
+
+        private string GetSingleRole(int idRole)
+        {
+            return new JavaScriptSerializer().Serialize(Mod_Roles.Get_ById(idRole));
         }
     }
 }

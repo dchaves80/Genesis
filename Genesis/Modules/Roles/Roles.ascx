@@ -38,14 +38,18 @@
                         foreach (Models.Mod_Roles Role in LMR)
                         {
                             Response.Write(
-                                "<tr  style='cursor: grab;' class='draggable TableRows' action='assignRoleToUser' idRole=" + Role.ID + ">" +
-                                    "<td>" +
-                                        "<label class='InputTextDarkLabel'>" +
-                                            "<input idRol='" + Role.ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + Role.ROLE + "'/>" +
-                                            "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + Role.ROLE + "</span> </span>" +
-                                        "</label>" +
+                                "<tr  style='cursor: grab;' class='draggable RowRole TableRows' action='assignRoleToUser' idRole=" + Role.ID + ">" +
+                                    "<td>" + Role.ROLE +
+                                    //"<label class='InputTextDarkLabel'>" +
+                                    //    "<input idRol='" + Role.ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + Role.ROLE + "'/>" +
+                                    //    "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + Role.ROLE + "</span> </span>" +
+                                    //"</label>" +
+                                        
                                     "</td>" +
-                                    "<td> <input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + Role.ID + ")' /> </td>" +
+                                    "<td>" + 
+                                        "<input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + Role.ID + ")' />" +
+                                        "<input style='opacity: 0;' class='ButtonDark' type='button' value='EDITAR' onclick='GetRoleToEdit(this," + Role.ID + ")'/>" +
+                                    "</td>" +
                                 "</tr>");
                         }
                     }
