@@ -86,7 +86,7 @@ namespace Permisos
             int idModule,
             int idRole)
         {
-            return Mod_Modules.Get_ById(idModule).UnlinkRole(idModule).ToString();
+            return Mod_Modules.Get_ById(idModule).UnlinkRole(idRole).ToString();
         }
 
         /// <summary>

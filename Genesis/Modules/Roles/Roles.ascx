@@ -45,7 +45,7 @@
                                             "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + Role.ROLE + "</span> </span>" +
                                         "</label>" +
                                     "</td>" +
-                                    "<td> <input type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + Role.ID + ")' /> </td>" +
+                                    "<td> <input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + Role.ID + ")' /> </td>" +
                                 "</tr>");
                         }
                     }

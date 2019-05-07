@@ -60,10 +60,21 @@
                 <span style="display: block;">FECHA DE NACIMIENTO</span>
                 <input style="margin-left: 10px;" type="date" class="ButtonDark" />
             </label>
+
+            <br />
             
 
+            <!-- Gender -->                         
+                <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
+                    <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Masculino' class='InputTextDark' type='text' />
+                    <span class="InputTextDarkPlaceholderWrap">
+                        <span class="InputTextDarkPlaceholder">GÉNERO </span>
+                    </span>
+                </label>     
+
+
             <!-- Sex -->
-            <div style="display: inline-block; margin-left: 20px; margin-top: -30px;">
+            <div style="display: inline-block; margin-left: 20px; margin-top: 20px;">
 
                 <span style="display: block;">SEXO</span>
 
@@ -79,15 +90,7 @@
                     <span>Femenino</span>
                 </label>
 
-            </div>
-
-            <!-- Gender -->                         
-                <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
-                    <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Masculino' class='InputTextDark' type='text' />
-                    <span class="InputTextDarkPlaceholderWrap">
-                        <span class="InputTextDarkPlaceholder">GÉNERO </span>
-                    </span>
-                </label>            
+            </div>                   
 
         </div>
 
@@ -123,12 +126,12 @@
         <div style="margin-top: 100px;">
             <h2>OBRA SOCIAL</h2>
             <!-- Confirms health insurance -->
-            <div>
+            <div style="display: inline-block; margin-top: 25px;">
                 <span>¿Posee obra social?</span>
-                <input id="chboxHealthInsurance" type="checkbox" />
+                <input id="chboxHealthInsurance" type="checkbox" checked />
             </div>
 
-            <div style="display: none;">
+            <div style="display: inline-block;">
                 <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                     <input style='color: rgba(255,255,255,0.8)' placeholder='ej: 478915-0' class='InputTextDark' type='text' />
                     <span class="InputTextDarkPlaceholderWrap">

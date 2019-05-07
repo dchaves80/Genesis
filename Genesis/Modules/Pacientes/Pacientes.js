@@ -2,16 +2,31 @@
 // data function Create()
 
 ///                         ///
-///         OTHERS          ///
+///         LOAD            ///
 ///                         ///
-// Check Health Insurance
+$(window).on('load', function () {
 
-
-$('input').on("change", function () {
-    console.log($('#chboxHealthInsurance').is(":checked"));
+    // Event Handler
+    CheckHealthInsurance();
+        
 })
 
+///                         ///
+///         OTROS           ///
+///                         ///
+// Check Health Insurance
+function CheckHealthInsurance() {
+    var chbox = $('#chboxHealthInsurance');
 
+    chbox.on("change", function () {
+
+        if (chbox.is(":checked"))
+            chbox.parent().siblings("div").fadeIn(100);
+
+        else
+            chbox.parent().siblings("div").fadeOut(100);
+    })
+}
 
 ///                         ///
 ///         CREATE          ///
@@ -37,6 +52,25 @@ function Create() {
                 // Error
 
             }
+        }
+    })
+}
+
+///                         ///
+///         SEARCH          ///
+///                         ///
+// Search for Patients by NAME OR DNI
+function getPatientsByParam(patientParam) {
+    $.ajax({
+        url: '/Modules/Pacientes/WebServicePacientes.aspx',
+        dataType: 'json',
+        data:
+        {
+            getPatientsByParam: 'true',
+            patientParam: patientParam,
+        },
+        success: function (data) {
+
         }
     })
 }

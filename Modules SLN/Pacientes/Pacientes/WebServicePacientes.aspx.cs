@@ -11,7 +11,39 @@ namespace Pacientes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string content = "null";
 
+            Response.Clear();
+            Response.ClearHeaders();
+
+            if (Request["getPatientsByParam"] != null)
+                content = GetPatients(Request["patientParam"]);
+
+            Response.Write(content);
+            Response.Flush();
+            Response.End();
         }
+
+
+        /// <summary>
+        /// Search patients by a parameter (DNI or name)
+        /// </summary>
+        /// <param name="param">Patient's parameter (DNI or NAME)</param>
+        /// <returns>Returns a serialized string</returns>
+        private string GetPatients(string param)
+        {
+            // Check if the patient's param contains a number
+            if (param.All(char.IsDigit))
+            {
+                // Is a number
+            }
+            else
+            {
+                // Itsn't a number
+            }
+
+            return "TEst";
+        }
+        
     }
 }

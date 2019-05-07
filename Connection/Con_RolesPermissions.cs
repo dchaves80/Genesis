@@ -42,7 +42,7 @@ namespace Connection
 			int response = QTA.Delete_RolesPermissions(Id, RoleId, ModuleId);
 
             return response > 0;
-		}
 
+        }
 	}
 }

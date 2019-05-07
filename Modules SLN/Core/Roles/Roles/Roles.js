@@ -61,7 +61,7 @@ function GetAllRoles() {
                                     "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + data[a].ROLE + "</span> </span>" +
                                 "</label>" +
                             "</td>" +
-                            "<td> <input type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + data[a].ID + ")' />  </td>" +
+                            "<td> <input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + data[a].ID + ")' />  </td>" +
                         "</tr>");
                 }
                 
