@@ -16,7 +16,7 @@
             </span>
         </label>
 
-        <i id="test" class="fas fa-plus" style="margin-right: 50px;"></i>
+        <i id="test" class="fas fa-plus" style="margin-right: 50px;" onclick="Test(this)"></i>
          
     </div>
 

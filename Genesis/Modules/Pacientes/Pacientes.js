@@ -74,3 +74,18 @@ function getPatientsByParam(patientParam) {
         }
     })
 }
+
+///                         ///
+///         TEST            ///
+///                         ///
+// Testing function
+function Test(object) {
+
+    $(object).siblings("label").hide("drop");
+
+    $(object).addClass("rotate");
+
+    $(object).parent().next().show("slow");
+    
+
+}
