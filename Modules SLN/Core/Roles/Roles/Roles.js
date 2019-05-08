@@ -90,16 +90,20 @@ function GetAllRoles() {
 
             if (data != null) {
                 for (a = 0; a < data.length; a++) {
-                    $('#tablaRoles').append(
-                        "<tr style='cursor: grab;' class='draggable RowRole TableRows' idRole=" + data[a].ID + ">" +
+
+                    var buttons = "";
+
+                    if (data[a].ROLE != "SuperUser") {
+                        buttons = "<input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='DeleteRole(" + data[a].ID + ")' />" +
+                            "<input style='opacity: 0;' type='button' class='ButtonDark' value='EDITAR' onclick='GetRoleToEdit(this," + data[a].ID + ")' />";
+
+                        $('#tablaRoles').append(
+                            "<tr style='cursor: grab;' class='draggable RowRole TableRows' idRole=" + data[a].ID + ">" +
                             "<td>" + data[a].ROLE + "</td>" +
-                            "<td>" + 
-                                "<input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='DeleteRole(" + data[a].ID + ")' />" +
-                                "<input style='opacity: 0;' type='button' class='ButtonDark' value='EDITAR' onclick='GetRoleToEdit(this," + data[a].ID + ")' />" +
-                            "</td>" +
-                        "</tr>");
-                }
-                
+                            "<td>" + buttons + "</td>" +
+                            "</tr>");
+                    }
+                }                
             }
             CreateDragDrop();
             CreateEventHandler();
@@ -127,7 +131,9 @@ function GetAllUserRoles() {
                     var listItems = "";
                     if (data[a].ROLES != undefined) {
                         for (i = 0; i < data[a].ROLES.length; i++) {
-                            listItems += "<li><input type='button' class='ButtonDark' value='X' onclick='UnassignRole(\"" + data[a].ROLES[i].ID + "\",\"" + data[a].ID + "\")' /> " + data[a].ROLES[i].ROLE + " </li>";
+
+                            if(data[a].ROLES[i].ROLE != "SuperUser")
+                                listItems += "<li><input type='button' class='ButtonDark' value='X' onclick='UnassignRole(\"" + data[a].ROLES[i].ID + "\",\"" + data[a].ID + "\")' /> " + data[a].ROLES[i].ROLE + " </li>";                            
                         }
                     }
                     
