@@ -21,19 +21,19 @@ namespace Roles
 
             // Requests
             if (Request["editRole"] != null)
-                content = UpdateRole(int.Parse(Request["idRol"]), Request["roleName"]);
+                content = UpdateRole(int.Parse(Request["idRole"]), Request["roleName"]);
 
             if (Request["getAllRoles"] != null)
                 content = GetAllRoles();
 
             if (Request["deleteRole"] != null)
-                content = DeleteRole(int.Parse(Request["idRol"]));
+                content = DeleteRole(int.Parse(Request["idRole"]));
 
             if (Request["insertRole"] != null)
                 content = InsertRole(Request["newRole"]);
 
             if (Request["assignRole"] != null)
-                content = AssignRole(int.Parse(Request["idRol"]), int.Parse(Request["idUsuario"]));
+                content = AssignRole(int.Parse(Request["idRole"]), int.Parse(Request["idUser"]));
 
             if (Request["getAllUsersRoles"] != null)
                 content = GetAllUsersRoles();
@@ -42,19 +42,7 @@ namespace Roles
                 content = UnassignRole(int.Parse(Request["idUser"]), int.Parse(Request["idRole"]));
 
             if (Request["getRole"] != null)
-                content = GetRole(int.Parse(Request["idRol"]));
-
-            if (Request["getAllUsersAssociated"] != null)
-                content = GetAssociatedUsers(int.Parse(Request["idRol"]));
-
-            if (Request["unassignUser"] != null)
-                content = UnassignUser(int.Parse(Request["idRol"]), int.Parse(Request["idUser"]));
-
-            if (Request["getAllModules"] != null)
-                content = GetAllModules();
-
-            if (Request["getSingleRole"] != null)
-                content = GetSingleRole(int.Parse(Request["idRole"]));
+                content = GetRole(int.Parse(Request["idRole"]));
 
             Response.Write(content);
             Response.Flush();
@@ -191,45 +179,6 @@ namespace Roles
         /// <param name="idRole">Id del rol</param>
         /// <returns>Devuelve un string del objeto serializado a json</returns>
         private string GetRole(int idRole)
-        {
-            return new JavaScriptSerializer().Serialize(Mod_Roles.Get_ById(idRole));
-        }
-
-        /// <summary>
-        /// Busca los usuarios asociados a un rol
-        /// </summary>
-        /// <param name="idRole">Id del rol</param>
-        /// <returns>Devuelve un string serializado en json con una lista de Mod_Users.</returns>
-        private string GetAssociatedUsers(int idRole)
-        {
-            Mod_Roles role = Mod_Roles.Get_ById(idRole);
-            return new JavaScriptSerializer().Serialize(role.GetUsers());
-
-        }
-
-        /// <summary>
-        /// Desasigna un usuario de un rol
-        /// </summary>
-        /// <param name="idRole">idRol</param>
-        /// <param name="idUser">idUsuario</param>
-        /// <returns>Devuelve un string "True" si se desasignó, "False" sino</returns>
-        private string UnassignUser(
-            int idRole,
-            int idUser)
-        {
-            return Mod_Users.Get_ById(idUser).RemoveRole(idRole).ToString();
-        }
-
-        /// <summary>
-        /// Obtiene todos los módulos
-        /// </summary>
-        /// <returns>Devuelve un string serializado en json con una lista de Mod_Modules.</returns>
-        private string GetAllModules()
-        {
-            return new JavaScriptSerializer().Serialize(Mod_Modules.Get_All());
-        }
-
-        private string GetSingleRole(int idRole)
         {
             return new JavaScriptSerializer().Serialize(Mod_Roles.Get_ById(idRole));
         }

@@ -16,7 +16,7 @@
                 <span class='InputTextDarkPlaceholderWrap'><span class='InputTextDarkPlaceholder'>NUEVO ROL</span></span>
             </label>
 
-            <input type="button" class="ButtonDark" value="CREAR" onclick="CrearRol(this)" />
+            <input type="button" class="ButtonDark" value="CREAR" onclick="CreateRole(this)" />
 
         </div>
 
@@ -38,16 +38,16 @@
                         foreach (Models.Mod_Roles Role in LMR)
                         {
                             Response.Write(
-                                "<tr  style='cursor: grab;' class='draggable RowRole TableRows' action='assignRoleToUser' idRole=" + Role.ID + ">" +
+                                "<tr  style='cursor: grab;' class='draggable RowRole TableRows' idRole=" + Role.ID + ">" +
                                     "<td>" + Role.ROLE +
                                     //"<label class='InputTextDarkLabel'>" +
-                                    //    "<input idRol='" + Role.ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + Role.ROLE + "'/>" +
+                                    //    "<input idRole='" + Role.ID + "' style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark RoleName' type='text' value='" + Role.ROLE + "'/>" +
                                     //    "<span class='InputTextDarkPlaceholderWrap'> <span class='InputTextDarkPlaceholder'>" + Role.ROLE + "</span> </span>" +
                                     //"</label>" +
                                         
                                     "</td>" +
                                     "<td>" + 
-                                        "<input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='EliminarRol(" + Role.ID + ")' />" +
+                                        "<input style='opacity: 0;' type='button' class='ButtonDark' value='X' onclick='DeleteRole(" + Role.ID + ")' />" +
                                         "<input style='opacity: 0;' class='ButtonDark' type='button' value='EDITAR' onclick='GetRoleToEdit(this," + Role.ID + ")'/>" +
                                     "</td>" +
                                 "</tr>");
@@ -81,7 +81,7 @@
 
                                     foreach (Models.Mod_Roles Roles in User.ROLES)
                                     {
-                                        listItems += "<li> <input type='button' class='ButtonDark' value='X' onclick='DesasignarRol(\"" + Roles.ID + "\",\"" + User.ID + "\")' /> " + Roles.ROLE + " </li>";
+                                        listItems += "<li> <input type='button' class='ButtonDark' value='X' onclick='UnassignRole(\"" + Roles.ID + "\",\"" + User.ID + "\")' /> " + Roles.ROLE + " </li>";
                                     }
                                 }
 
