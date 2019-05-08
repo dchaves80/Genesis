@@ -48,7 +48,7 @@
                             {
                                 foreach (Mod_Roles legalRole in legalRoles)
                                 {
-                                    if (legalRole.ID == activeRole.ID)
+                                    if (legalRole.ID == activeRole.ID && module.NAME != "Usuarios")
                                     {
                                         hasPermission = true;
                                     }
