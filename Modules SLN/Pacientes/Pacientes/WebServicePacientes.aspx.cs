@@ -36,6 +36,10 @@ namespace Pacientes
             if (param.All(char.IsDigit))
             {
                 // Is a number
+                return  "[" +
+                        "{\"NOMBRE\":\"Alejandro\",\"APELLIDO\":\"Pérez\",\"DNI\":42673345}," +
+                        "{\"NOMBRE\":\"David Leonardo\",\"APELLIDO\":\"Chaves\",\"DNI\":17697231}," +
+                        "{\"NOMBRE\":\"Ramiro\",\"APELLIDO\":\"Suriano\",\"DNI\":38147951}]";
             }
             else
             {

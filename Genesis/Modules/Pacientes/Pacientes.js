@@ -28,6 +28,17 @@ function CheckHealthInsurance() {
     })
 }
 
+// Rebuild patient's table
+function RebuildPatientTable() {
+    $('#tableDiv').empty();
+    $('#tableDiv').append(+
+        "<tr>" +
+            "<th>APELLIDOS</th>"+
+            "<th>NOMBRES</th>"+
+            "<th>DNI</th>" +
+        "</tr> ");
+}
+
 ///                         ///
 ///         CREATE          ///
 ///                         ///
@@ -69,8 +80,19 @@ function getPatientsByParam(patientParam) {
             getPatientsByParam: 'true',
             patientParam: patientParam,
         },
-        success: function (data) {
+        success: function (data) {            
+            
+            if (data != null) {
+                RebuildPatientTable()
 
+                for (a = 0; a < data.length; a++) {}
+                    $('#tableDiv').append(+
+                        "<tr>" +
+                            "<td>" + data[a].APELLIDO + "</td>" +
+                            "<td>" + data[a].NOMBRE + "</td>" +
+                            "<td>" + data[a].DNI + "</td>" +
+                        "</tr>");
+            }            
         }
     })
 }

@@ -33,14 +33,14 @@
             <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                 <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Juan' class='InputTextDark' type='text' />
                 <span class="InputTextDarkPlaceholderWrap">
-                    <span class="InputTextDarkPlaceholder">NOMBRE </span>
+                    <span class="InputTextDarkPlaceholder"> NOMBRES </span>
                 </span>
             </label>
 
             <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                 <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Pérez' class='InputTextDark' type='text' />
                 <span class="InputTextDarkPlaceholderWrap">
-                    <span class="InputTextDarkPlaceholder">APELLIDO </span>
+                    <span class="InputTextDarkPlaceholder"> APELLIDOS </span>
                 </span>
             </label>
 
@@ -50,14 +50,14 @@
             <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                 <input style='color: rgba(255,255,255,0.8)' placeholder='ej: 25978269' class='InputTextDark' type='text' />
                 <span class="InputTextDarkPlaceholderWrap">
-                    <span class="InputTextDarkPlaceholder">DOCUMENTO </span>
+                    <span class="InputTextDarkPlaceholder"> DOCUMENTO </span>
                 </span>
             </label>
 
 
             <!-- Birth date -->
             <label style="display: inline-block;">
-                <span style="display: block;">FECHA DE NACIMIENTO</span>
+                <span style="display: block;"> FECHA DE NACIMIENTO</span>
                 <input style="margin-left: 10px;" type="date" class="ButtonDark" />
             </label>
 
@@ -68,7 +68,7 @@
                 <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                     <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Masculino' class='InputTextDark' type='text' />
                     <span class="InputTextDarkPlaceholderWrap">
-                        <span class="InputTextDarkPlaceholder">GÉNERO </span>
+                        <span class="InputTextDarkPlaceholder"> GÉNERO </span>
                     </span>
                 </label>     
 
@@ -76,7 +76,7 @@
             <!-- Sex -->
             <div style="display: inline-block; margin-left: 20px; margin-top: 20px;">
 
-                <span style="display: block;">SEXO</span>
+                <span style="display: block;"> SEXO</span>
 
                 <label class="RadioDark">
                     <input type="radio" name="sex" />
@@ -102,21 +102,21 @@
             <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                 <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Villa Nueva 269' class='InputTextDark' type='text' />
                 <span class="InputTextDarkPlaceholderWrap">
-                    <span class="InputTextDarkPlaceholder">DOMICILIO </span>
+                    <span class="InputTextDarkPlaceholder"> DOMICILIO </span>
                 </span>
             </label>
 
             <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                 <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Arroyo Cabral' class='InputTextDark' type='text' />
                 <span class="InputTextDarkPlaceholderWrap">
-                    <span class="InputTextDarkPlaceholder">LOCALIDAD </span>
+                    <span class="InputTextDarkPlaceholder"> LOCALIDAD </span>
                 </span>
             </label>
 
             <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                 <input style='color: rgba(255,255,255,0.8)' placeholder='ej: 49782435' class='InputTextDark' type='text' />
                 <span class="InputTextDarkPlaceholderWrap">
-                    <span class="InputTextDarkPlaceholder">TELÉFONO </span>
+                    <span class="InputTextDarkPlaceholder"> TELÉFONO </span>
                 </span>
             </label>
 
@@ -135,7 +135,7 @@
                 <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
                     <input style='color: rgba(255,255,255,0.8)' placeholder='ej: 478915-0' class='InputTextDark' type='text' />
                     <span class="InputTextDarkPlaceholderWrap">
-                        <span class="InputTextDarkPlaceholder">NRO AFILIADO </span>
+                        <span class="InputTextDarkPlaceholder"> NRO AFILIADO </span>
                     </span>
                 </label>
             </div>
@@ -143,8 +143,14 @@
 
 
     </div>
-    
-    
+
+    <!-- Search table -->
+    <div id="tableDiv">
+        <table class="TableDark">
+            
+        </table>
+    </div>
+
 </div>
 
 <!-- POP UPS -->
