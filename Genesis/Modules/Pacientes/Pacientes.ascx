@@ -9,20 +9,20 @@
     <!-- Create and search -->
     <div>
 
-        <label style='display: inline-block; margin-right: 20px; margin-top: 20px;' class='InputTextDarkLabel'>
+        <i id="test" class="fas fa-plus AddPatient" onclick="Test(this)"></i>
+
+        <label style='display: inline-block; margin-right: 20px;' class='InputTextDarkLabel'>
             <input style='color: rgba(255,255,255,0.8)' placeholder='ej: Enfermerx' class='InputTextDark' type='text'/>
             <span class="InputTextDarkPlaceholderWrap">
                 <span class="InputTextDarkPlaceholder"><i class="fas fa-search"></i></span>
             </span>
-        </label>
-
-        <i id="test" class="fas fa-plus" style="margin-right: 50px;" onclick="Test(this)"></i>
+        </label>        
          
     </div>
 
 
     <!-- Text Inputs -->
-    <div>
+    <div style="display: none;">
 
         <!-- Personal Info -->
         <div>

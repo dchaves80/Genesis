@@ -21,10 +21,10 @@ function CheckHealthInsurance() {
     chbox.on("change", function () {
 
         if (chbox.is(":checked"))
-            chbox.parent().siblings("div").fadeIn(100);
+            chbox.parent().siblings("div").fadeIn(400);
 
         else
-            chbox.parent().siblings("div").fadeOut(100);
+            chbox.parent().siblings("div").fadeOut(400);
     })
 }
 
@@ -81,11 +81,32 @@ function getPatientsByParam(patientParam) {
 // Testing function
 function Test(object) {
 
-    $(object).siblings("label").hide("drop");
+    var iButton = $(object);
+    var inputsDiv = iButton.parent().next()
+    var searchPatient = iButton.siblings("label");
+    
 
-    $(object).addClass("rotate");
+    if (inputsDiv.is(":visible")) {
 
-    $(object).parent().next().show("slow");
+        iButton.css("transform", "rotate(0deg)");
+        searchPatient.show("slow");
+        inputsDiv.hide("drop");
+    }
+    else {
+
+        iButton.css("transform", "rotate(45deg)");
+        searchPatient.hide("slow");
+        inputsDiv.show("drop");
+
+    }
+
+        
+    
+    
+
+    
+
+    //window.setTimeout(function () {  }, 10);
     
 
 }

@@ -279,4 +279,35 @@ div.PopUpTitle {
         transform: scale(0.4);
     }
 
-    
+
+
+
+
+
+
+
+/* TABLE */
+table.TableDark {
+    border-collapse: collapse;
+}
+
+    table.TableDark tr:first-child {
+        border-bottom: 1px solid rgba(255,255,255,0.8);
+    }
+    table.TableDark tr:not(:first-child) {
+        transition: 0.3s;
+        border-bottom: 1px solid rgba(0,0,0,0);
+    }
+        table.TableDark tr:not(:first-child):hover {
+            border-bottom: 1px solid white;
+            transform: translateX(20px);
+        }
+
+table.TableDark th{
+    color: #9CAAC1;
+}
+table.TableDark td {
+    padding: 10px 50px;
+    color: rgba(255,255,255,0.8);
+}
+
