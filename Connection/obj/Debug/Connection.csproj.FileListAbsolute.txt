@@ -1,0 +1,7 @@
+D:\Genesis\Connection\bin\Debug\Connection.dll.config
+D:\Genesis\Connection\bin\Debug\Connection.dll
+D:\Genesis\Connection\bin\Debug\Connection.pdb
+D:\Genesis\Connection\obj\Debug\Connection.csprojAssemblyReference.cache
+D:\Genesis\Connection\obj\Debug\Connection.csproj.CoreCompileInputs.cache
+D:\Genesis\Connection\obj\Debug\Connection.dll
+D:\Genesis\Connection\obj\Debug\Connection.pdb

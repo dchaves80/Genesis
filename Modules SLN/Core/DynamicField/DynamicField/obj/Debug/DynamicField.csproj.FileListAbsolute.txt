@@ -1,0 +1,13 @@
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\bin\DynamicField.dll.config
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\bin\DynamicField.dll
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\bin\DynamicField.pdb
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\obj\Debug\DynamicField.csproj.CoreCompileInputs.cache
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\obj\Debug\DynamicField.dll
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\obj\Debug\DynamicField.pdb
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\bin\Models.dll
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\bin\Connection.dll
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\bin\Models.pdb
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\bin\Connection.pdb
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\bin\Connection.dll.config
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\obj\Debug\DynamicField.csproj.CopyComplete
+D:\Genesis\Modules SLN\Core\DynamicField\DynamicField\obj\Debug\DynamicField.csprojAssemblyReference.cache

@@ -1,0 +1,10 @@
+D:\Genesis\Models\bin\Debug\Models.dll
+D:\Genesis\Models\bin\Debug\Models.pdb
+D:\Genesis\Models\bin\Debug\Connection.dll
+D:\Genesis\Models\bin\Debug\Connection.pdb
+D:\Genesis\Models\bin\Debug\Connection.dll.config
+D:\Genesis\Models\obj\Debug\Models.csprojAssemblyReference.cache
+D:\Genesis\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\Genesis\Models\obj\Debug\Models.csproj.CopyComplete
+D:\Genesis\Models\obj\Debug\Models.dll
+D:\Genesis\Models\obj\Debug\Models.pdb
