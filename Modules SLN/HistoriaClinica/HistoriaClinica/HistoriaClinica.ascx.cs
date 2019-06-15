@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Models;
 
 namespace HistoriaClinica
 {
@@ -11,7 +12,8 @@ namespace HistoriaClinica
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Utils.IncludeJavaScript("../../Modules/HistoriaClinica/HistoriaClinica.js", Page);
+            Utils.IncludeCSS("../../Modules/HistoriaClinica/HistoriaClinica.css", Page);
         }
     }
 }

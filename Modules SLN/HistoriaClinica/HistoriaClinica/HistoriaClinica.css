@@ -1,2 +1,18 @@
-﻿body {
+﻿div.Record{
+    padding: 20px;
 }
+    div.Record:nth-child(even) {
+        background: #3C7DB5;
+    }
+    div.Record:nth-child(odd) {
+        background: #225787;
+    }
+
+div.Antecedentes{
+    position: fixed;
+    top: 25%;
+    right: 0px;
+}
+    div.Antecedentes input {
+        width: 100%;
+    }
