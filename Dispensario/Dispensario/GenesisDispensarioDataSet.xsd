@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GenesisDispensarioConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GenesisDispensarioConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Connection.Properties.Settings.GlobalReference.Default.GenesisDispensarioConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GenesisDispensarioConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GenesisDispensarioConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Dispensario.Properties.Settings.GlobalReference.Default.GenesisDispensarioConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Get_PatientsTableAdapter" GeneratorDataComponentClassName="Get_PatientsTableAdapter" Name="Get_Patients" UserDataComponentName="Get_PatientsTableAdapter">
