@@ -33,6 +33,8 @@
             var x = document.getElementById("welcometag");
             x.play();
             $("#loginFrame").show(1000);
+            checkAccessCookie();
+
         });
     </script>
     <title>Login</title>
@@ -83,6 +85,13 @@
                         <input runat="server" id="inputPass" style="color:rgba(255,255,255,0.8)" placeholder="ej: *******" class="InputTextDark" type="password"/>                   
                         <span class="InputTextDarkPlaceholderWrap">
                             <span class="InputTextDarkPlaceholder">CONTRASEÑA</span>
+                        </span>
+                    </label>
+
+                    <label style="margin-top: 5px;" class="InputTextDarkLabel">
+                        <input runat="server" id="CheckRemember" style="color:rgba(255,255,255,0.8)" class="InputTextDark" type="checkbox"/>                   
+                        <span class="InputTextDarkPlaceholderWrap">
+                            <span class="InputTextDarkPlaceholder">Recordarme</span>
                         </span>
                     </label>
 

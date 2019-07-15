@@ -13,23 +13,48 @@ namespace Genesis.Pages.Main
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Request["IDM"] != null)
             {
-                Session.Add(Session_Library.ACTIVE_MODULE, Request["IDM"].ToString());
-                Response.Redirect("./Main.aspx");
+
+                switch (Request["IDM"])
+                {
+                    case "-1":
+                        Session.Add(Session_Library.ACTIVE_MODULE, "-1");
+                        Response.Redirect("./Main.aspx");
+                        break;
+                    default:
+                        Session.Add(Session_Library.ACTIVE_MODULE, Request["IDM"].ToString());
+                        Response.Redirect("./Main.aspx");
+                        break;
+                }
+
+
+                
+
             }
+
+
             else
             {
                 if (Session[Session_Library.ACTIVE_MODULE] != null)
                 {
-                    string path = Utils.GetModulePath(int.Parse(Session[Session_Library.ACTIVE_MODULE].ToString()));
-                    try
-                    {
-                        ModuleContainer.Controls.Add(LoadControl(path));
-                    }
-                    catch (Exception E)
-                    {
-                        new Mod_Exception(E, Response, "No se puede cargar el módulo " + Session[Session_Library.ACTIVE_MODULE].ToString());
+                    switch (int.Parse(Session[Session_Library.ACTIVE_MODULE].ToString())) {
+                        case -1:
+                            ModuleContainer.Controls.Add(LoadControl("/Modules/Profile/Profile.ascx"));
+                            break;
+                        default:
+                            string path = Utils.GetModulePath(int.Parse(Session[Session_Library.ACTIVE_MODULE].ToString()));
+                            try
+                            {
+                                ModuleContainer.Controls.Add(LoadControl(path));
+                            }
+                            catch (Exception E)
+                            {
+                                new Mod_Exception(E, Response, "No se puede cargar el módulo " + Session[Session_Library.ACTIVE_MODULE].ToString());
+                            }
+                            break;
+                            
                     }
                 }
             }

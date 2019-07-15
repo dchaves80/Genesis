@@ -5,3 +5,9 @@ D:\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.csprojAssemblyRefe
 D:\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.csproj.CoreCompileInputs.cache
 D:\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.dll
 D:\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.pdb
+D:\Genesis\Modules SLN\Core\Profile\Profile\bin\Models.dll
+D:\Genesis\Modules SLN\Core\Profile\Profile\bin\Connection.dll
+D:\Genesis\Modules SLN\Core\Profile\Profile\bin\Models.pdb
+D:\Genesis\Modules SLN\Core\Profile\Profile\bin\Connection.pdb
+D:\Genesis\Modules SLN\Core\Profile\Profile\bin\Connection.dll.config
+D:\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.csproj.CopyComplete

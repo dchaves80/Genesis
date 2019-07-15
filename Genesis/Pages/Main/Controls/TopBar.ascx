@@ -13,7 +13,7 @@
         <!-- Opciones -->
         <div class="DropDownContent">
             <a class="DropDownOption"><%=USERNAME%></a>
-            <a class="DropDownOption">Perfil</a>
+            <a class="DropDownOption" href="/Pages/Main/Main.aspx?IDM=-1">Perfil</a>
             <a class="DropDownOption">Opciones</a>
             <!-- <a class="DropDownSeparator"></a> -->
             <a class="DropDownOption" href="/Pages/Main/Main.aspx?Logout=1">Salir</a>

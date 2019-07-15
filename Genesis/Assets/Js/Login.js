@@ -10,6 +10,16 @@ $(document).keypress( function (event) {
 });
 
 
+function checkAccessCookie()
+{
+    if (Cookies.get("user") != undefined && Cookies.get("pass") != undefined)
+    {
+        $('#inputUser').val(Cookies.get("user"));
+        $('#inputPass').val(Cookies.get("pass"));
+        CheckUserPass();
+    }
+}
+
 //  Verifica las credenciales
 function CheckUserPass() {
     
@@ -30,8 +40,11 @@ function CheckUserPass() {
             async: true,
             success: function (data) {
                 if (data != 'False') {
+                    if ($('#CheckRemember').is(":checked") == true) {
+                        Cookies.set("user", user);
+                        Cookies.set("pass", pass);
+                    }
                     AccessGranted(data);
-
                 }
                 else {
 
