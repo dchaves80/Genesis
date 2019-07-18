@@ -3,7 +3,7 @@
 <!-- TopBar -->
 <div class="TopBarDark">
 
-    <img class="ProfilePic" src="../../Assets/Images/Images/photo_2018-09-28_20-11-18.jpg" />
+    <img class="ProfilePic MainProfilePic" src="../../Assets/Images/Images/photo_2018-09-28_20-11-18.jpg" />
 
     <!-- Dropdown de opciones -->
     <div class="DropDown">

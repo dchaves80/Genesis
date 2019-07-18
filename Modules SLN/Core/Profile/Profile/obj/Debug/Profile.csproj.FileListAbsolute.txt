@@ -11,3 +11,15 @@ D:\Genesis\Modules SLN\Core\Profile\Profile\bin\Models.pdb
 D:\Genesis\Modules SLN\Core\Profile\Profile\bin\Connection.pdb
 D:\Genesis\Modules SLN\Core\Profile\Profile\bin\Connection.dll.config
 D:\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.csproj.CopyComplete
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\bin\Profile.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\bin\Profile.pdb
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.csprojAssemblyReference.cache
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.csproj.CoreCompileInputs.cache
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.pdb
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\bin\Models.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\bin\Connection.dll
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\bin\Models.pdb
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\bin\Connection.pdb
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\bin\Connection.dll.config
+C:\Proyecto Genesis\Genesis\Modules SLN\Core\Profile\Profile\obj\Debug\Profile.csproj.CopyComplete

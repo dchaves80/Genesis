@@ -8,49 +8,71 @@
 
             <!-- Allergic -->
             <div>
-                <input type="button" value="Alérgicos"  class="ButtonDark" />
-                <div>
-
-                </div>
+                <input type="button" value="ANTECEDENTES" style="cursor: default;" onclick="OpenSideMenu(this)" class="ButtonDark" />                
             </div>
 
             <!-- Pathologic -->
             <div>
-                <input type="button" value="Patológicos" class="ButtonDark" />
-                <div>
-
+                <input type="button" value="Patológicos" onclick="OpenSideMenu(this)" class="ButtonDark" />
+                <div style="display: none;">
+                    <table class="TableDark">
+                            <tr>
+                                <th>Registro</th>
+                                <th>Fecha</th>
+                            </tr>                   
+                    </table>
                 </div>
             </div>
 
             <!-- Surgies -->
             <div>
-                <input type="button" value="Quirúrgicos" class="ButtonDark" />
-                <div>
-
+                <input type="button" value="Quirúrgicos" onclick="OpenSideMenu(this)" class="ButtonDark" />
+                <div style="display: none;">
+                    <table class="TableDark">
+                            <tr>
+                                <th>Registro</th>
+                                <th>Fecha</th>
+                            </tr>                   
+                    </table>
                 </div>
             </div>
 
             <!-- Toxic habits -->
             <div>
-                <input type="button" value="Hábitos tóxicos" class="ButtonDark" />
-                <div>
-
+                <input type="button" value="Hábitos tóxicos" onclick="OpenSideMenu(this)" class="ButtonDark" />
+                <div style="display: none;">
+                    <table class="TableDark">
+                            <tr>
+                                <th>Registro</th>
+                                <th>Fecha</th>
+                            </tr>                   
+                    </table>
                 </div>
             </div>
 
             <!-- Medication -->
             <div>
-                <input type="button" value="Medicación" class="ButtonDark" />
-                <div>
-
+                <input type="button" value="Medicación" onclick="OpenSideMenu(this)" class="ButtonDark" />
+                <div style="display: none;">
+                    <table class="TableDark">
+                            <tr>
+                                <th>Registro</th>
+                                <th>Fecha</th>
+                            </tr>                   
+                    </table>
                 </div>
             </div>
 
             <!-- Anthropometry -->
             <div>
-                <input type="button" value="Antropometría" class="ButtonDark" />
-                <div>
-
+                <input type="button" value="Antropometría" onclick="OpenSideMenu(this)" class="ButtonDark" />
+                <div style="display: none;">
+                    <table class="TableDark">
+                            <tr>
+                                <th>Registro</th>
+                                <th>Fecha</th>
+                            </tr>                   
+                    </table>
                 </div>
             </div>
 
@@ -87,7 +109,7 @@
     <!-- Medical Record -->
     <div style="margin-top: 50px; width: 50%;">
 
-        <div style="overflow-y: scroll; height: 300px;">
+        <div style="overflow-y: scroll; height: 370px;">
             <!-- 1st medical record-->
             <div class="Record">
                 <span><i style="margin-right: 10px;" class="fas fa-plus"></i>Corregimiento de córnea</span>

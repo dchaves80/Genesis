@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Models;
 
 namespace Profile
 {
@@ -11,7 +12,8 @@ namespace Profile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Utils.IncludeJavaScript("../../Modules/Profile/Profile.js", Page);
+            Utils.IncludeCSS("../../Modules/Profile/Profile.css", Page);
         }
     }
 }

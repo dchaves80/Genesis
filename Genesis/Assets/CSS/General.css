@@ -311,3 +311,11 @@ table.TableDark td {
     color: rgba(255,255,255,0.8);
 }
 
+
+/* Profile pic */
+img.ProfilePic {
+    height: 70%;    
+    border-radius: 50%;
+    border: 3px solid white;
+}
+

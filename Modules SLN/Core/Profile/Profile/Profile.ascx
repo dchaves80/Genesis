@@ -1,10 +1,38 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Profile.ascx.cs" Inherits="Profile.Profile" %>
+
+<!-- IMPORT -->
 <%@ Import Namespace="Models" %>
 
-<%Models.Mod_Users USR =  (Session[Models.ConstantLibrary.Session_Library.USER] as Models.Mod_Users)%>
-<%List<Models.Mod_Roles> Roles = USR.GetRoles(); %>
+<!-- Loads User -->
+<%
+    Models.Mod_Users USER = (Session[Models.ConstantLibrary.Session_Library.USER] as Models.Mod_Users);
+    List<Models.Mod_Roles> Roles = USER.GetRoles();
 
-<h1>PERFIL DE USUARIO:<%=USR.USERNAME %></h1>
+    %>
+
+<!-- PROFILE -->
+<h1>PERFIL</h1>
+
+<!-- CONTENT -->
+<div>
+
+    <img style="float: left; height: 250px;" class="ProfilePic" src="../../Assets/Images/Images/photo_2018-09-28_20-11-18.jpg">
+
+</div>
+
+<!-- POP UPS -->
+<div>
+
+</div>
+
+<!-- HIDDENS -->
+<div>
+
+</div>
+
+
+
+<%--<!-- <h1>PERFIL DE USUARIO:<%=USER.USERNAME %></h1> -->
 <h3>Roles:
     <%
         if (Roles != null)
@@ -42,5 +70,6 @@
     <br />
 
     <input class="ButtonDark" onclick="" value="CAMBIAR CONTRASEÑA" type="button" style="margin-top: 20px; margin-left: 150px;" />
-</div>
+</div>--%>
+
 

@@ -20,14 +20,6 @@ i.OpenSideBar {
     margin-left: 22px;
 }
 
-img.ProfilePic {
-    height: 70%;
-    float: right;
-    border-radius: 50%;
-    border: 3px solid white;
-    margin-top: 6px;
-    margin-right: 15px;
-}
 
 /* DropDown */
 .DropDown {
@@ -154,4 +146,10 @@ table.TableSideBarDark {
 .Disabled {
     pointer-events: none;
     /*user-select: none;    Por alguna razón esto no funciona, a su vez se usa .js*/
+}
+
+img.MainProfilePic {	
+	float: right;
+	margin-top: 6px;
+	margin-right: 15px;
 }

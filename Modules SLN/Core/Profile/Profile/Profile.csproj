@@ -44,7 +44,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Models">
-      <HintPath>..\..\..\..\Genesis\bin\Models.dll</HintPath>
+      <HintPath>..\..\..\..\Models\bin\Debug\Models.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -72,7 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Profile.ascx" />
+    <Content Include="Profile.css" />
+    <Content Include="Profile.js" />
     <Content Include="Web.config" />
+    <Content Include="WebServiceProfile.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Profile.ascx.cs">
@@ -83,6 +86,13 @@
       <DependentUpon>Profile.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebServiceProfile.aspx.cs">
+      <DependentUpon>WebServiceProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebServiceProfile.aspx.designer.cs">
+      <DependentUpon>WebServiceProfile.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -110,11 +120,11 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)" mkdir "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
-copy /Y "$(ProjectDir)*.aspx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
+    <PostBuildEvent>copy /Y "$(ProjectDir)*.aspx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
 copy /Y "$(ProjectDir)*.js" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
 copy /Y "$(ProjectDir)*.ascx" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"
-copy /Y "$(ProjectDir)bin\$(ProjectName).dll" "$(ProjectDir)..\..\..\..\Genesis\bin"</PostBuildEvent>
+copy /Y "$(ProjectDir)bin\$(ProjectName).dll" "$(ProjectDir)..\..\..\..\Genesis\bin"
+copy /Y "$(ProjectDir)*.css" "$(ProjectDir)..\..\..\..\Genesis\Modules\$(ProjectName)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
