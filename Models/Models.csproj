@@ -49,6 +49,7 @@
     <Compile Include="Mod_Exception.cs" />
     <Compile Include="Mod_Modules.cs" />
     <Compile Include="Mod_Roles.cs" />
+    <Compile Include="Mod_UsersResponse.cs" />
     <Compile Include="Mod_Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
