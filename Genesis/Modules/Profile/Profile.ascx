@@ -18,6 +18,10 @@
 
     <img style="float: left; height: 250px;" class="ProfilePic" src="../../Assets/Images/Images/photo_2018-09-28_20-11-18.jpg">
 
+    <div style="background: rgba(255,255,255,0.8);">
+
+    </div>
+
 </div>
 
 <!-- POP UPS -->

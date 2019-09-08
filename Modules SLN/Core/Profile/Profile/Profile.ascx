@@ -1,10 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Profile.ascx.cs" Inherits="Profile.Profile" %>
 
-<!-- IMPORT -->
-<%@ Import Namespace="Models" %>
+<% //IMPORT @ Import Namespace="Models" %>
 
-<!-- Loads User -->
 <%
+    // Load User
     Models.Mod_Users USER = (Session[Models.ConstantLibrary.Session_Library.USER] as Models.Mod_Users);
     List<Models.Mod_Roles> Roles = USER.GetRoles();
 
@@ -17,6 +16,10 @@
 <div>
 
     <img style="float: left; height: 250px;" class="ProfilePic" src="../../Assets/Images/Images/photo_2018-09-28_20-11-18.jpg">
+
+    <div style="background: rgba(255,255,255,0.8);">
+
+    </div>
 
 </div>
 
