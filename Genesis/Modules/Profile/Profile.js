@@ -1,6 +1,6 @@
 ﻿function AnimateRotate(angle) {
     // caching the object for performance reasons
-    var $elem = $('div');
+    var $elem = $("div");
 
     // we use a pseudo object for the animation
     // (starts from `0` to `angle`), you can name it as you want
@@ -15,4 +15,54 @@
             });
         }
     });
+}
+
+function ChangePw() {
+
+    // Closes info display
+    $("#infoDisplay").hide("blind", function () {
+
+        // Opens password div
+        $("#changeBInfo").hide();
+        $("#changePw").show();
+        $("#editDiv").show("blind");
+        
+    });
+}
+
+function ChangeBasicInfo() {
+
+    // Closes info display
+    $("#infoDisplay").hide("blind", function () {
+
+        // Opens password div
+        $("#changePw").hide();
+        $("#changeBInfo").show();
+        $("#editDiv").show("blind");
+    });
+}
+
+function BackToMain(obj) {
+
+    if (obj.id == "changePw") {
+
+        // Closes password div
+        $("#editDiv").hide("blind", function () {
+
+            // Opens password div
+            $("#changePw").hide("blind");
+            $("#infoDisplay").show("blind");
+
+        });
+    }
+    else {
+        // Closes password div
+        $("#editDiv").hide("blind", function () {
+
+            // Opens password div
+            $("#changeBInfo").hide("blind");
+            $("#infoDisplay").show("blind");
+
+        });
+    }
 }
