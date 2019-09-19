@@ -8,7 +8,6 @@ D:\Genesis\Connection\obj\Debug\Connection.pdb
 C:\Proyecto Genesis\Genesis\Connection\bin\Debug\Connection.dll.config
 C:\Proyecto Genesis\Genesis\Connection\bin\Debug\Connection.dll
 C:\Proyecto Genesis\Genesis\Connection\bin\Debug\Connection.pdb
-C:\Proyecto Genesis\Genesis\Connection\obj\Debug\Connection.csprojAssemblyReference.cache
 C:\Proyecto Genesis\Genesis\Connection\obj\Debug\Connection.csproj.CoreCompileInputs.cache
 C:\Proyecto Genesis\Genesis\Connection\obj\Debug\Connection.dll
 C:\Proyecto Genesis\Genesis\Connection\obj\Debug\Connection.pdb

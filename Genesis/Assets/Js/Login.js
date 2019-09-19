@@ -25,6 +25,8 @@ function CheckUserPass() {
     
     var user = $('#inputUser').val();
     var pass = $('#inputPass').val();
+	
+	console.log("Logging in...");
 
     if (user != "" && pass != "") {
 
